@@ -25,29 +25,32 @@
     <!-- body -->
      <div class="quiz-container container-column">
         <h3>Question Text</h3>
-        <div class="container-column">
+        <div class="container-column" id="options" onclick="changeSmiley()">
             <div class="container-row option-box">
-                <img src="../images/simple_smiley.png" alt="option-img" height="60px" width="60px">
+                <img src="../images/simple_smiley.png" alt="option-img" height="30px" width="30px">
                 <label for="option1">Option 1</label>
             </div>
-            <div class="container-row option-box">
-                <img src="../images/simple_smiley.png" alt="option-img" height="60px" width="60px">
+            <div class="container-row option-box" onclick="changeSmiley()">
+                <img src="../images/simple_smiley.png" alt="option-img" height="30px" width="30px">
                 <label for="option2">Option 2</label>
             </div>
-            <div class="container-row option-box">
-                <img src="../images/simple_smiley.png" alt="option-img" height="60px" width="60px">
+            <div class="container-row option-box" onclick="changeSmiley()">
+                <img src="../images/simple_smiley.png" alt="option-img" height="30px" width="30px">
                 <label for="option3">Option 3</label>
         </div>
-        <div class="container-row option-box">
-            <img src="../images/simple_smiley.png" alt="option-img" height="60px" width="60px">
+        <div class="container-row option-box" onclick="changeSmiley()">
+            <img src="../images/simple_smiley.png" alt="option-img" height="30px" width="30px">
             <label for="option4">Option 4</label>
     </div>
-    <div class="navButtons">
-        <i class="fa-solid fa-arrow-left"></i>
+</div>
+    <div class="navButtons" >
+        <i class="fa-solid fa-arrow-left" disabled></i>
         <button class="btn btn-primary">submit</button>
-        <i class="fa-solid fa-arrow-right"></i>
+        <i class="fa-solid fa-arrow-right" id="next-button"></i>
     </div>
-    </div>
+    <button class="btn btn-primary" id="final-submit-button">Submit Quiz </button>
+    
      </div>
+     <script src="../Scripts/quizScript.js"></script>
 </body>
 </html>

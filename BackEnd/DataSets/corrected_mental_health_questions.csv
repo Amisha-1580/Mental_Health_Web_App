@@ -1,0 +1,801 @@
+Question_id,Question,Option_name,Feeling,Score
+1,What would you do if you forgot an important deadline?,Panic and stress,Stress,5
+1,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,7
+1,What would you do if you forgot an important deadline?,Feel guilty,Guilt,9
+1,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,1
+2,How do you feel about trying something new?,Excited,Excitement,5
+2,How do you feel about trying something new?,Anxious,Anxiety,9
+2,How do you feel about trying something new?,Curious,Curiosity,7
+2,How do you feel about trying something new?,Indifferent,Indifference,7
+3,What do you think about public speaking?,Terrified,Fear,7
+3,What do you think about public speaking?,Excited,Excitement,4
+3,What do you think about public speaking?,Neutral,Neutrality,3
+3,What do you think about public speaking?,Confident,Confidence,9
+4,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,6
+4,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,4
+4,What do you usually do when stuck in traffic?,Call someone to vent,Anger,8
+4,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,3
+5,How do you react when you lose an important item?,Panic and search frantically,Panic,6
+5,How do you react when you lose an important item?,Accept it and move on,Acceptance,9
+5,How do you react when you lose an important item?,Blame myself,Self-Criticism,4
+5,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,5
+6,How do you feel about trying something new?,Excited,Excitement,10
+6,How do you feel about trying something new?,Anxious,Anxiety,7
+6,How do you feel about trying something new?,Curious,Curiosity,10
+6,How do you feel about trying something new?,Indifferent,Indifference,2
+7,What would you do if you forgot an important deadline?,Panic and stress,Stress,4
+7,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,10
+7,What would you do if you forgot an important deadline?,Feel guilty,Guilt,6
+7,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,10
+8,What do you think about public speaking?,Terrified,Fear,5
+8,What do you think about public speaking?,Excited,Excitement,5
+8,What do you think about public speaking?,Neutral,Neutrality,2
+8,What do you think about public speaking?,Confident,Confidence,4
+9,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,4
+9,What's your typical reaction to constructive criticism?,Take it positively,Openness,6
+9,What's your typical reaction to constructive criticism?,Ignore it,Neglect,1
+9,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,2
+10,What do you think about public speaking?,Terrified,Fear,9
+10,What do you think about public speaking?,Excited,Excitement,9
+10,What do you think about public speaking?,Neutral,Neutrality,3
+10,What do you think about public speaking?,Confident,Confidence,10
+11,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,5
+11,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,9
+11,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,10
+11,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,1
+12,What do you think about public speaking?,Terrified,Fear,9
+12,What do you think about public speaking?,Excited,Excitement,9
+12,What do you think about public speaking?,Neutral,Neutrality,8
+12,What do you think about public speaking?,Confident,Confidence,6
+13,How do you handle long lines at a store?,Get impatient,Impatience,4
+13,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,6
+13,How do you handle long lines at a store?,Feel irritated,Irritation,5
+13,How do you handle long lines at a store?,Chat with someone nearby,Sociability,7
+14,What would you do if you forgot an important deadline?,Panic and stress,Stress,3
+14,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,10
+14,What would you do if you forgot an important deadline?,Feel guilty,Guilt,3
+14,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,5
+15,What do you think about public speaking?,Terrified,Fear,10
+15,What do you think about public speaking?,Excited,Excitement,9
+15,What do you think about public speaking?,Neutral,Neutrality,5
+15,What do you think about public speaking?,Confident,Confidence,5
+15,What do you think about public speaking?,Terrified,Fear,1
+15,What do you think about public speaking?,Excited,Excitement,8
+15,What do you think about public speaking?,Neutral,Neutrality,10
+15,What do you think about public speaking?,Confident,Confidence,2
+15,What do you think about public speaking?,Terrified,Fear,10
+15,What do you think about public speaking?,Excited,Excitement,5
+15,What do you think about public speaking?,Neutral,Neutrality,5
+15,What do you think about public speaking?,Confident,Confidence,6
+16,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,9
+16,What's your typical reaction to constructive criticism?,Take it positively,Openness,9
+16,What's your typical reaction to constructive criticism?,Ignore it,Neglect,2
+16,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,5
+17,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,10
+17,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,10
+17,What do you do when someone interrupts you while talking?,Lose focus,Distraction,9
+17,What do you do when someone interrupts you while talking?,Pause and continue,Composure,6
+18,How do you handle long lines at a store?,Get impatient,Impatience,7
+18,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,10
+18,How do you handle long lines at a store?,Feel irritated,Irritation,7
+18,How do you handle long lines at a store?,Chat with someone nearby,Sociability,3
+18,How do you handle long lines at a store?,Get impatient,Impatience,7
+18,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,6
+18,How do you handle long lines at a store?,Feel irritated,Irritation,9
+18,How do you handle long lines at a store?,Chat with someone nearby,Sociability,7
+19,How do you usually spend your weekends?,Stay home and relax,Relaxation,8
+19,How do you usually spend your weekends?,Go out with friends,Social,2
+19,How do you usually spend your weekends?,Start a new hobby,Creativity,7
+19,How do you usually spend your weekends?,Finish pending work,Productivity,8
+20,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,5
+20,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,2
+20,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,3
+20,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,1
+21,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,10
+21,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,7
+21,What do you do when someone interrupts you while talking?,Lose focus,Distraction,4
+21,What do you do when someone interrupts you while talking?,Pause and continue,Composure,2
+22,What would you do if you forgot an important deadline?,Panic and stress,Stress,7
+22,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,8
+22,What would you do if you forgot an important deadline?,Feel guilty,Guilt,5
+22,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,8
+23,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,5
+23,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,1
+23,What do you do when someone interrupts you while talking?,Lose focus,Distraction,3
+23,What do you do when someone interrupts you while talking?,Pause and continue,Composure,10
+24,How do you react when you lose an important item?,Panic and search frantically,Panic,4
+24,How do you react when you lose an important item?,Accept it and move on,Acceptance,4
+24,How do you react when you lose an important item?,Blame myself,Self-Criticism,3
+24,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,1
+24,How do you react when you lose an important item?,Panic and search frantically,Panic,1
+24,How do you react when you lose an important item?,Accept it and move on,Acceptance,10
+24,How do you react when you lose an important item?,Blame myself,Self-Criticism,7
+24,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,7
+25,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,7
+25,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,5
+25,What do you do when someone interrupts you while talking?,Lose focus,Distraction,2
+25,What do you do when someone interrupts you while talking?,Pause and continue,Composure,4
+26,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,2
+26,What's your typical reaction to constructive criticism?,Take it positively,Openness,7
+26,What's your typical reaction to constructive criticism?,Ignore it,Neglect,3
+26,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,7
+27,How do you handle long lines at a store?,Get impatient,Impatience,10
+27,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,4
+27,How do you handle long lines at a store?,Feel irritated,Irritation,6
+27,How do you handle long lines at a store?,Chat with someone nearby,Sociability,7
+28,How do you react when you lose an important item?,Panic and search frantically,Panic,10
+28,How do you react when you lose an important item?,Accept it and move on,Acceptance,1
+28,How do you react when you lose an important item?,Blame myself,Self-Criticism,1
+28,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,6
+29,What do you think about public speaking?,Terrified,Fear,9
+29,What do you think about public speaking?,Excited,Excitement,1
+29,What do you think about public speaking?,Neutral,Neutrality,6
+29,What do you think about public speaking?,Confident,Confidence,6
+30,How do you react when you lose an important item?,Panic and search frantically,Panic,2
+30,How do you react when you lose an important item?,Accept it and move on,Acceptance,7
+30,How do you react when you lose an important item?,Blame myself,Self-Criticism,2
+30,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,6
+31,What would you do if you forgot an important deadline?,Panic and stress,Stress,6
+31,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,9
+31,What would you do if you forgot an important deadline?,Feel guilty,Guilt,10
+31,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,9
+32,How do you handle long lines at a store?,Get impatient,Impatience,6
+32,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,4
+32,How do you handle long lines at a store?,Feel irritated,Irritation,3
+32,How do you handle long lines at a store?,Chat with someone nearby,Sociability,4
+33,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,9
+33,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,6
+33,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,7
+33,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,6
+34,How do you handle long lines at a store?,Get impatient,Impatience,10
+34,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,5
+34,How do you handle long lines at a store?,Feel irritated,Irritation,5
+34,How do you handle long lines at a store?,Chat with someone nearby,Sociability,6
+35,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,1
+35,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,7
+35,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,5
+35,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,5
+36,How do you feel about trying something new?,Excited,Excitement,1
+36,How do you feel about trying something new?,Anxious,Anxiety,8
+36,How do you feel about trying something new?,Curious,Curiosity,10
+36,How do you feel about trying something new?,Indifferent,Indifference,3
+37,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,10
+37,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,9
+37,What do you usually do when stuck in traffic?,Call someone to vent,Anger,5
+37,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,6
+38,How do you handle long lines at a store?,Get impatient,Impatience,1
+38,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,8
+38,How do you handle long lines at a store?,Feel irritated,Irritation,3
+38,How do you handle long lines at a store?,Chat with someone nearby,Sociability,10
+39,What would you do if you forgot an important deadline?,Panic and stress,Stress,6
+39,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,7
+39,What would you do if you forgot an important deadline?,Feel guilty,Guilt,10
+39,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,8
+40,What do you think about public speaking?,Terrified,Fear,8
+40,What do you think about public speaking?,Excited,Excitement,6
+40,What do you think about public speaking?,Neutral,Neutrality,5
+40,What do you think about public speaking?,Confident,Confidence,1
+41,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,8
+41,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,8
+41,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,6
+41,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,1
+42,How do you react when you lose an important item?,Panic and search frantically,Panic,9
+42,How do you react when you lose an important item?,Accept it and move on,Acceptance,3
+42,How do you react when you lose an important item?,Blame myself,Self-Criticism,6
+42,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,6
+43,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,5
+43,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,1
+43,What do you do when someone interrupts you while talking?,Lose focus,Distraction,7
+43,What do you do when someone interrupts you while talking?,Pause and continue,Composure,9
+44,How do you react when you lose an important item?,Panic and search frantically,Panic,2
+44,How do you react when you lose an important item?,Accept it and move on,Acceptance,10
+44,How do you react when you lose an important item?,Blame myself,Self-Criticism,4
+44,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,6
+45,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,8
+45,What's your typical reaction to constructive criticism?,Take it positively,Openness,10
+45,What's your typical reaction to constructive criticism?,Ignore it,Neglect,5
+45,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,5
+46,How do you usually spend your weekends?,Stay home and relax,Relaxation,10
+46,How do you usually spend your weekends?,Go out with friends,Social,6
+46,How do you usually spend your weekends?,Start a new hobby,Creativity,5
+46,How do you usually spend your weekends?,Finish pending work,Productivity,10
+47,How do you handle long lines at a store?,Get impatient,Impatience,3
+47,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,9
+47,How do you handle long lines at a store?,Feel irritated,Irritation,3
+47,How do you handle long lines at a store?,Chat with someone nearby,Sociability,3
+48,How do you react when you lose an important item?,Panic and search frantically,Panic,8
+48,How do you react when you lose an important item?,Accept it and move on,Acceptance,3
+48,How do you react when you lose an important item?,Blame myself,Self-Criticism,1
+48,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,5
+49,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,8
+49,What's your typical reaction to constructive criticism?,Take it positively,Openness,10
+49,What's your typical reaction to constructive criticism?,Ignore it,Neglect,8
+49,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,9
+50,How do you feel about trying something new?,Excited,Excitement,2
+50,How do you feel about trying something new?,Anxious,Anxiety,3
+50,How do you feel about trying something new?,Curious,Curiosity,10
+50,How do you feel about trying something new?,Indifferent,Indifference,6
+50,How do you feel about trying something new?,Excited,Excitement,10
+50,How do you feel about trying something new?,Anxious,Anxiety,9
+50,How do you feel about trying something new?,Curious,Curiosity,6
+50,How do you feel about trying something new?,Indifferent,Indifference,8
+51,What do you think about public speaking?,Terrified,Fear,2
+51,What do you think about public speaking?,Excited,Excitement,9
+51,What do you think about public speaking?,Neutral,Neutrality,10
+51,What do you think about public speaking?,Confident,Confidence,9
+52,How do you usually spend your weekends?,Stay home and relax,Relaxation,2
+52,How do you usually spend your weekends?,Go out with friends,Social,2
+52,How do you usually spend your weekends?,Start a new hobby,Creativity,1
+52,How do you usually spend your weekends?,Finish pending work,Productivity,8
+53,How do you feel about trying something new?,Excited,Excitement,4
+53,How do you feel about trying something new?,Anxious,Anxiety,6
+53,How do you feel about trying something new?,Curious,Curiosity,2
+53,How do you feel about trying something new?,Indifferent,Indifference,9
+54,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,5
+54,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,2
+54,What do you usually do when stuck in traffic?,Call someone to vent,Anger,2
+54,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,7
+55,How do you usually spend your weekends?,Stay home and relax,Relaxation,6
+55,How do you usually spend your weekends?,Go out with friends,Social,3
+55,How do you usually spend your weekends?,Start a new hobby,Creativity,5
+55,How do you usually spend your weekends?,Finish pending work,Productivity,2
+56,How do you react when you lose an important item?,Panic and search frantically,Panic,7
+56,How do you react when you lose an important item?,Accept it and move on,Acceptance,2
+56,How do you react when you lose an important item?,Blame myself,Self-Criticism,5
+56,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,1
+57,How do you feel about trying something new?,Excited,Excitement,6
+57,How do you feel about trying something new?,Anxious,Anxiety,1
+57,How do you feel about trying something new?,Curious,Curiosity,9
+57,How do you feel about trying something new?,Indifferent,Indifference,5
+58,What would you do if you forgot an important deadline?,Panic and stress,Stress,8
+58,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,1
+58,What would you do if you forgot an important deadline?,Feel guilty,Guilt,9
+58,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,1
+59,How do you handle long lines at a store?,Get impatient,Impatience,6
+59,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,2
+59,How do you handle long lines at a store?,Feel irritated,Irritation,3
+59,How do you handle long lines at a store?,Chat with someone nearby,Sociability,3
+60,What do you think about public speaking?,Terrified,Fear,4
+60,What do you think about public speaking?,Excited,Excitement,4
+60,What do you think about public speaking?,Neutral,Neutrality,10
+60,What do you think about public speaking?,Confident,Confidence,7
+61,How do you react when you lose an important item?,Panic and search frantically,Panic,10
+61,How do you react when you lose an important item?,Accept it and move on,Acceptance,5
+61,How do you react when you lose an important item?,Blame myself,Self-Criticism,6
+61,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,10
+62,How do you feel about trying something new?,Excited,Excitement,6
+62,How do you feel about trying something new?,Anxious,Anxiety,1
+62,How do you feel about trying something new?,Curious,Curiosity,10
+62,How do you feel about trying something new?,Indifferent,Indifference,9
+62,How do you feel about trying something new?,Excited,Excitement,7
+62,How do you feel about trying something new?,Anxious,Anxiety,5
+62,How do you feel about trying something new?,Curious,Curiosity,3
+62,How do you feel about trying something new?,Indifferent,Indifference,9
+63,What would you do if you forgot an important deadline?,Panic and stress,Stress,10
+63,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,6
+63,What would you do if you forgot an important deadline?,Feel guilty,Guilt,6
+63,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,10
+64,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,1
+64,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,2
+64,What do you do when someone interrupts you while talking?,Lose focus,Distraction,2
+64,What do you do when someone interrupts you while talking?,Pause and continue,Composure,2
+64,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,7
+64,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,7
+64,What do you do when someone interrupts you while talking?,Lose focus,Distraction,1
+64,What do you do when someone interrupts you while talking?,Pause and continue,Composure,10
+65,How do you feel about trying something new?,Excited,Excitement,6
+65,How do you feel about trying something new?,Anxious,Anxiety,10
+65,How do you feel about trying something new?,Curious,Curiosity,5
+65,How do you feel about trying something new?,Indifferent,Indifference,1
+66,How do you react when you lose an important item?,Panic and search frantically,Panic,5
+66,How do you react when you lose an important item?,Accept it and move on,Acceptance,7
+66,How do you react when you lose an important item?,Blame myself,Self-Criticism,10
+66,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,10
+67,How do you handle long lines at a store?,Get impatient,Impatience,8
+67,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,6
+67,How do you handle long lines at a store?,Feel irritated,Irritation,10
+67,How do you handle long lines at a store?,Chat with someone nearby,Sociability,1
+68,How do you usually spend your weekends?,Stay home and relax,Relaxation,5
+68,How do you usually spend your weekends?,Go out with friends,Social,7
+68,How do you usually spend your weekends?,Start a new hobby,Creativity,7
+68,How do you usually spend your weekends?,Finish pending work,Productivity,7
+69,How do you handle long lines at a store?,Get impatient,Impatience,1
+69,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,2
+69,How do you handle long lines at a store?,Feel irritated,Irritation,3
+69,How do you handle long lines at a store?,Chat with someone nearby,Sociability,7
+70,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,3
+70,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,6
+70,What do you do when someone interrupts you while talking?,Lose focus,Distraction,10
+70,What do you do when someone interrupts you while talking?,Pause and continue,Composure,5
+71,What do you think about public speaking?,Terrified,Fear,4
+71,What do you think about public speaking?,Excited,Excitement,3
+71,What do you think about public speaking?,Neutral,Neutrality,10
+71,What do you think about public speaking?,Confident,Confidence,6
+72,What would you do if you forgot an important deadline?,Panic and stress,Stress,6
+72,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,9
+72,What would you do if you forgot an important deadline?,Feel guilty,Guilt,7
+72,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,9
+72,What would you do if you forgot an important deadline?,Panic and stress,Stress,3
+72,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,6
+72,What would you do if you forgot an important deadline?,Feel guilty,Guilt,2
+72,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,1
+73,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,4
+73,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,6
+73,What do you do when someone interrupts you while talking?,Lose focus,Distraction,1
+73,What do you do when someone interrupts you while talking?,Pause and continue,Composure,8
+74,How do you handle long lines at a store?,Get impatient,Impatience,2
+74,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,4
+74,How do you handle long lines at a store?,Feel irritated,Irritation,1
+74,How do you handle long lines at a store?,Chat with someone nearby,Sociability,7
+75,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,6
+75,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,10
+75,What do you usually do when stuck in traffic?,Call someone to vent,Anger,9
+75,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,5
+76,How do you feel about trying something new?,Excited,Excitement,3
+76,How do you feel about trying something new?,Anxious,Anxiety,4
+76,How do you feel about trying something new?,Curious,Curiosity,8
+76,How do you feel about trying something new?,Indifferent,Indifference,1
+77,How do you usually spend your weekends?,Stay home and relax,Relaxation,9
+77,How do you usually spend your weekends?,Go out with friends,Social,9
+77,How do you usually spend your weekends?,Start a new hobby,Creativity,4
+77,How do you usually spend your weekends?,Finish pending work,Productivity,7
+78,What would you do if you forgot an important deadline?,Panic and stress,Stress,1
+78,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,10
+78,What would you do if you forgot an important deadline?,Feel guilty,Guilt,6
+78,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,5
+79,How do you react when you lose an important item?,Panic and search frantically,Panic,10
+79,How do you react when you lose an important item?,Accept it and move on,Acceptance,1
+79,How do you react when you lose an important item?,Blame myself,Self-Criticism,1
+79,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,2
+80,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,3
+80,What's your typical reaction to constructive criticism?,Take it positively,Openness,7
+80,What's your typical reaction to constructive criticism?,Ignore it,Neglect,7
+80,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,4
+81,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,8
+81,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,9
+81,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,4
+81,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,9
+82,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,9
+82,What's your typical reaction to constructive criticism?,Take it positively,Openness,10
+82,What's your typical reaction to constructive criticism?,Ignore it,Neglect,9
+82,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,7
+83,How do you usually spend your weekends?,Stay home and relax,Relaxation,8
+83,How do you usually spend your weekends?,Go out with friends,Social,5
+83,How do you usually spend your weekends?,Start a new hobby,Creativity,3
+83,How do you usually spend your weekends?,Finish pending work,Productivity,1
+84,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,10
+84,What's your typical reaction to constructive criticism?,Take it positively,Openness,6
+84,What's your typical reaction to constructive criticism?,Ignore it,Neglect,5
+84,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,10
+85,How do you handle long lines at a store?,Get impatient,Impatience,9
+85,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,5
+85,How do you handle long lines at a store?,Feel irritated,Irritation,3
+85,How do you handle long lines at a store?,Chat with someone nearby,Sociability,2
+86,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,7
+86,What's your typical reaction to constructive criticism?,Take it positively,Openness,10
+86,What's your typical reaction to constructive criticism?,Ignore it,Neglect,7
+86,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,4
+87,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,1
+87,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,9
+87,What do you do when someone interrupts you while talking?,Lose focus,Distraction,9
+87,What do you do when someone interrupts you while talking?,Pause and continue,Composure,10
+88,What would you do if you forgot an important deadline?,Panic and stress,Stress,2
+88,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,2
+88,What would you do if you forgot an important deadline?,Feel guilty,Guilt,8
+88,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,9
+89,How do you react when you lose an important item?,Panic and search frantically,Panic,4
+89,How do you react when you lose an important item?,Accept it and move on,Acceptance,1
+89,How do you react when you lose an important item?,Blame myself,Self-Criticism,1
+89,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,6
+90,How do you usually spend your weekends?,Stay home and relax,Relaxation,10
+90,How do you usually spend your weekends?,Go out with friends,Social,1
+90,How do you usually spend your weekends?,Start a new hobby,Creativity,10
+90,How do you usually spend your weekends?,Finish pending work,Productivity,9
+90,How do you usually spend your weekends?,Stay home and relax,Relaxation,6
+90,How do you usually spend your weekends?,Go out with friends,Social,1
+90,How do you usually spend your weekends?,Start a new hobby,Creativity,9
+90,How do you usually spend your weekends?,Finish pending work,Productivity,8
+91,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,6
+91,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,9
+91,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,3
+91,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,1
+92,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,1
+92,What's your typical reaction to constructive criticism?,Take it positively,Openness,2
+92,What's your typical reaction to constructive criticism?,Ignore it,Neglect,6
+92,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,1
+93,What do you think about public speaking?,Terrified,Fear,9
+93,What do you think about public speaking?,Excited,Excitement,5
+93,What do you think about public speaking?,Neutral,Neutrality,4
+93,What do you think about public speaking?,Confident,Confidence,4
+94,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,8
+94,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,2
+94,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,4
+94,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,8
+95,How do you usually spend your weekends?,Stay home and relax,Relaxation,7
+95,How do you usually spend your weekends?,Go out with friends,Social,9
+95,How do you usually spend your weekends?,Start a new hobby,Creativity,8
+95,How do you usually spend your weekends?,Finish pending work,Productivity,5
+96,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,6
+96,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,1
+96,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,2
+96,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,4
+97,What do you think about public speaking?,Terrified,Fear,4
+97,What do you think about public speaking?,Excited,Excitement,5
+97,What do you think about public speaking?,Neutral,Neutrality,7
+97,What do you think about public speaking?,Confident,Confidence,10
+98,How do you usually spend your weekends?,Stay home and relax,Relaxation,4
+98,How do you usually spend your weekends?,Go out with friends,Social,8
+98,How do you usually spend your weekends?,Start a new hobby,Creativity,9
+98,How do you usually spend your weekends?,Finish pending work,Productivity,8
+99,How do you react when you lose an important item?,Panic and search frantically,Panic,6
+99,How do you react when you lose an important item?,Accept it and move on,Acceptance,7
+99,How do you react when you lose an important item?,Blame myself,Self-Criticism,3
+99,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,4
+100,How do you usually spend your weekends?,Stay home and relax,Relaxation,10
+100,How do you usually spend your weekends?,Go out with friends,Social,1
+100,How do you usually spend your weekends?,Start a new hobby,Creativity,4
+100,How do you usually spend your weekends?,Finish pending work,Productivity,9
+101,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,8
+101,What's your typical reaction to constructive criticism?,Take it positively,Openness,10
+101,What's your typical reaction to constructive criticism?,Ignore it,Neglect,2
+101,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,2
+102,How do you react when you lose an important item?,Panic and search frantically,Panic,5
+102,How do you react when you lose an important item?,Accept it and move on,Acceptance,6
+102,How do you react when you lose an important item?,Blame myself,Self-Criticism,5
+102,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,3
+103,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,7
+103,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,10
+103,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,4
+103,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,5
+103,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,6
+103,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,4
+103,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,5
+103,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,2
+104,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,2
+104,What's your typical reaction to constructive criticism?,Take it positively,Openness,2
+104,What's your typical reaction to constructive criticism?,Ignore it,Neglect,9
+104,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,3
+105,How do you handle long lines at a store?,Get impatient,Impatience,9
+105,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,3
+105,How do you handle long lines at a store?,Feel irritated,Irritation,10
+105,How do you handle long lines at a store?,Chat with someone nearby,Sociability,4
+106,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,9
+106,What's your typical reaction to constructive criticism?,Take it positively,Openness,6
+106,What's your typical reaction to constructive criticism?,Ignore it,Neglect,3
+106,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,2
+107,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,6
+107,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,9
+107,What do you do when someone interrupts you while talking?,Lose focus,Distraction,2
+107,What do you do when someone interrupts you while talking?,Pause and continue,Composure,6
+108,How do you handle long lines at a store?,Get impatient,Impatience,7
+108,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,10
+108,How do you handle long lines at a store?,Feel irritated,Irritation,8
+108,How do you handle long lines at a store?,Chat with someone nearby,Sociability,5
+109,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,4
+109,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,7
+109,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,8
+109,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,8
+110,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,9
+110,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,3
+110,What do you do when someone interrupts you while talking?,Lose focus,Distraction,5
+110,What do you do when someone interrupts you while talking?,Pause and continue,Composure,4
+110,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,4
+110,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,8
+110,What do you do when someone interrupts you while talking?,Lose focus,Distraction,4
+110,What do you do when someone interrupts you while talking?,Pause and continue,Composure,5
+111,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,9
+111,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,4
+111,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,10
+111,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,4
+112,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,3
+112,What's your typical reaction to constructive criticism?,Take it positively,Openness,7
+112,What's your typical reaction to constructive criticism?,Ignore it,Neglect,10
+112,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,6
+113,How do you feel about trying something new?,Excited,Excitement,4
+113,How do you feel about trying something new?,Anxious,Anxiety,5
+113,How do you feel about trying something new?,Curious,Curiosity,1
+113,How do you feel about trying something new?,Indifferent,Indifference,10
+114,What would you do if you forgot an important deadline?,Panic and stress,Stress,4
+114,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,7
+114,What would you do if you forgot an important deadline?,Feel guilty,Guilt,2
+114,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,6
+115,How do you usually spend your weekends?,Stay home and relax,Relaxation,7
+115,How do you usually spend your weekends?,Go out with friends,Social,1
+115,How do you usually spend your weekends?,Start a new hobby,Creativity,2
+115,How do you usually spend your weekends?,Finish pending work,Productivity,6
+116,How do you react when you lose an important item?,Panic and search frantically,Panic,5
+116,How do you react when you lose an important item?,Accept it and move on,Acceptance,5
+116,How do you react when you lose an important item?,Blame myself,Self-Criticism,5
+116,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,8
+117,How do you feel about trying something new?,Excited,Excitement,2
+117,How do you feel about trying something new?,Anxious,Anxiety,7
+117,How do you feel about trying something new?,Curious,Curiosity,6
+117,How do you feel about trying something new?,Indifferent,Indifference,8
+118,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,5
+118,What's your typical reaction to constructive criticism?,Take it positively,Openness,2
+118,What's your typical reaction to constructive criticism?,Ignore it,Neglect,9
+118,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,9
+119,What do you think about public speaking?,Terrified,Fear,10
+119,What do you think about public speaking?,Excited,Excitement,3
+119,What do you think about public speaking?,Neutral,Neutrality,5
+119,What do you think about public speaking?,Confident,Confidence,4
+119,What do you think about public speaking?,Terrified,Fear,6
+119,What do you think about public speaking?,Excited,Excitement,5
+119,What do you think about public speaking?,Neutral,Neutrality,5
+119,What do you think about public speaking?,Confident,Confidence,4
+120,How do you usually spend your weekends?,Stay home and relax,Relaxation,4
+120,How do you usually spend your weekends?,Go out with friends,Social,3
+120,How do you usually spend your weekends?,Start a new hobby,Creativity,7
+120,How do you usually spend your weekends?,Finish pending work,Productivity,4
+121,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,2
+121,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,8
+121,What do you usually do when stuck in traffic?,Call someone to vent,Anger,1
+121,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,6
+122,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,6
+122,What's your typical reaction to constructive criticism?,Take it positively,Openness,5
+122,What's your typical reaction to constructive criticism?,Ignore it,Neglect,6
+122,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,1
+122,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,8
+122,What's your typical reaction to constructive criticism?,Take it positively,Openness,5
+122,What's your typical reaction to constructive criticism?,Ignore it,Neglect,2
+122,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,10
+123,What do you think about public speaking?,Terrified,Fear,8
+123,What do you think about public speaking?,Excited,Excitement,7
+123,What do you think about public speaking?,Neutral,Neutrality,6
+123,What do you think about public speaking?,Confident,Confidence,7
+124,How do you usually spend your weekends?,Stay home and relax,Relaxation,4
+124,How do you usually spend your weekends?,Go out with friends,Social,3
+124,How do you usually spend your weekends?,Start a new hobby,Creativity,7
+124,How do you usually spend your weekends?,Finish pending work,Productivity,1
+125,How do you feel about trying something new?,Excited,Excitement,7
+125,How do you feel about trying something new?,Anxious,Anxiety,7
+125,How do you feel about trying something new?,Curious,Curiosity,9
+125,How do you feel about trying something new?,Indifferent,Indifference,2
+126,How do you usually spend your weekends?,Stay home and relax,Relaxation,5
+126,How do you usually spend your weekends?,Go out with friends,Social,4
+126,How do you usually spend your weekends?,Start a new hobby,Creativity,6
+126,How do you usually spend your weekends?,Finish pending work,Productivity,2
+127,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,1
+127,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,2
+127,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,5
+127,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,8
+128,What would you do if you forgot an important deadline?,Panic and stress,Stress,9
+128,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,8
+128,What would you do if you forgot an important deadline?,Feel guilty,Guilt,8
+128,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,2
+129,What do you think about public speaking?,Terrified,Fear,2
+129,What do you think about public speaking?,Excited,Excitement,2
+129,What do you think about public speaking?,Neutral,Neutrality,8
+129,What do you think about public speaking?,Confident,Confidence,3
+130,How do you feel about trying something new?,Excited,Excitement,1
+130,How do you feel about trying something new?,Anxious,Anxiety,4
+130,How do you feel about trying something new?,Curious,Curiosity,8
+130,How do you feel about trying something new?,Indifferent,Indifference,8
+131,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,8
+131,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,10
+131,What do you usually do when stuck in traffic?,Call someone to vent,Anger,3
+131,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,1
+132,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,7
+132,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,4
+132,What do you do when someone interrupts you while talking?,Lose focus,Distraction,8
+132,What do you do when someone interrupts you while talking?,Pause and continue,Composure,9
+133,What would you do if you forgot an important deadline?,Panic and stress,Stress,2
+133,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,3
+133,What would you do if you forgot an important deadline?,Feel guilty,Guilt,3
+133,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,7
+134,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,4
+134,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,9
+134,What do you do when someone interrupts you while talking?,Lose focus,Distraction,9
+134,What do you do when someone interrupts you while talking?,Pause and continue,Composure,3
+135,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,6
+135,What's your typical reaction to constructive criticism?,Take it positively,Openness,10
+135,What's your typical reaction to constructive criticism?,Ignore it,Neglect,4
+135,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,1
+136,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,1
+136,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,2
+136,What do you usually do when stuck in traffic?,Call someone to vent,Anger,4
+136,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,3
+137,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,6
+137,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,7
+137,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,8
+137,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,7
+138,How do you react when you lose an important item?,Panic and search frantically,Panic,1
+138,How do you react when you lose an important item?,Accept it and move on,Acceptance,6
+138,How do you react when you lose an important item?,Blame myself,Self-Criticism,9
+138,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,5
+139,What do you think about public speaking?,Terrified,Fear,1
+139,What do you think about public speaking?,Excited,Excitement,1
+139,What do you think about public speaking?,Neutral,Neutrality,7
+139,What do you think about public speaking?,Confident,Confidence,2
+140,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,7
+140,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,6
+140,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,3
+140,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,5
+141,How do you react when you lose an important item?,Panic and search frantically,Panic,10
+141,How do you react when you lose an important item?,Accept it and move on,Acceptance,3
+141,How do you react when you lose an important item?,Blame myself,Self-Criticism,1
+141,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,10
+142,How do you usually spend your weekends?,Stay home and relax,Relaxation,2
+142,How do you usually spend your weekends?,Go out with friends,Social,1
+142,How do you usually spend your weekends?,Start a new hobby,Creativity,5
+142,How do you usually spend your weekends?,Finish pending work,Productivity,6
+142,How do you usually spend your weekends?,Stay home and relax,Relaxation,1
+142,How do you usually spend your weekends?,Go out with friends,Social,8
+142,How do you usually spend your weekends?,Start a new hobby,Creativity,8
+142,How do you usually spend your weekends?,Finish pending work,Productivity,3
+143,How do you handle long lines at a store?,Get impatient,Impatience,3
+143,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,3
+143,How do you handle long lines at a store?,Feel irritated,Irritation,3
+143,How do you handle long lines at a store?,Chat with someone nearby,Sociability,10
+144,What would you do if you forgot an important deadline?,Panic and stress,Stress,4
+144,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,5
+144,What would you do if you forgot an important deadline?,Feel guilty,Guilt,6
+144,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,4
+145,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,5
+145,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,2
+145,What do you usually do when stuck in traffic?,Call someone to vent,Anger,5
+145,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,2
+145,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,2
+145,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,6
+145,What do you usually do when stuck in traffic?,Call someone to vent,Anger,9
+145,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,10
+146,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,9
+146,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,10
+146,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,9
+146,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,7
+147,What would you do if you forgot an important deadline?,Panic and stress,Stress,6
+147,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,9
+147,What would you do if you forgot an important deadline?,Feel guilty,Guilt,3
+147,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,10
+148,How do you react when you lose an important item?,Panic and search frantically,Panic,3
+148,How do you react when you lose an important item?,Accept it and move on,Acceptance,5
+148,How do you react when you lose an important item?,Blame myself,Self-Criticism,4
+148,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,4
+149,How do you usually spend your weekends?,Stay home and relax,Relaxation,2
+149,How do you usually spend your weekends?,Go out with friends,Social,4
+149,How do you usually spend your weekends?,Start a new hobby,Creativity,3
+149,How do you usually spend your weekends?,Finish pending work,Productivity,2
+149,How do you usually spend your weekends?,Stay home and relax,Relaxation,8
+149,How do you usually spend your weekends?,Go out with friends,Social,9
+149,How do you usually spend your weekends?,Start a new hobby,Creativity,10
+149,How do you usually spend your weekends?,Finish pending work,Productivity,4
+150,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,7
+150,What's your typical reaction to constructive criticism?,Take it positively,Openness,4
+150,What's your typical reaction to constructive criticism?,Ignore it,Neglect,4
+150,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,5
+151,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,2
+151,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,2
+151,What do you usually do when stuck in traffic?,Call someone to vent,Anger,2
+151,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,8
+152,What do you think about public speaking?,Terrified,Fear,10
+152,What do you think about public speaking?,Excited,Excitement,1
+152,What do you think about public speaking?,Neutral,Neutrality,6
+152,What do you think about public speaking?,Confident,Confidence,9
+153,How do you usually spend your weekends?,Stay home and relax,Relaxation,10
+153,How do you usually spend your weekends?,Go out with friends,Social,4
+153,How do you usually spend your weekends?,Start a new hobby,Creativity,6
+153,How do you usually spend your weekends?,Finish pending work,Productivity,6
+154,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,7
+154,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,6
+154,What do you do when someone interrupts you while talking?,Lose focus,Distraction,3
+154,What do you do when someone interrupts you while talking?,Pause and continue,Composure,4
+155,What do you think about public speaking?,Terrified,Fear,7
+155,What do you think about public speaking?,Excited,Excitement,8
+155,What do you think about public speaking?,Neutral,Neutrality,3
+155,What do you think about public speaking?,Confident,Confidence,5
+155,What do you think about public speaking?,Terrified,Fear,7
+155,What do you think about public speaking?,Excited,Excitement,9
+155,What do you think about public speaking?,Neutral,Neutrality,1
+155,What do you think about public speaking?,Confident,Confidence,6
+155,What do you think about public speaking?,Terrified,Fear,9
+155,What do you think about public speaking?,Excited,Excitement,8
+155,What do you think about public speaking?,Neutral,Neutrality,2
+155,What do you think about public speaking?,Confident,Confidence,5
+156,What would you do if you forgot an important deadline?,Panic and stress,Stress,8
+156,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,7
+156,What would you do if you forgot an important deadline?,Feel guilty,Guilt,7
+156,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,4
+157,How do you react when you lose an important item?,Panic and search frantically,Panic,1
+157,How do you react when you lose an important item?,Accept it and move on,Acceptance,3
+157,How do you react when you lose an important item?,Blame myself,Self-Criticism,2
+157,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,10
+158,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,3
+158,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,6
+158,What do you do when someone interrupts you while talking?,Lose focus,Distraction,8
+158,What do you do when someone interrupts you while talking?,Pause and continue,Composure,3
+159,How do you handle long lines at a store?,Get impatient,Impatience,3
+159,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,4
+159,How do you handle long lines at a store?,Feel irritated,Irritation,5
+159,How do you handle long lines at a store?,Chat with someone nearby,Sociability,2
+160,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,7
+160,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,3
+160,What do you do when someone interrupts you while talking?,Lose focus,Distraction,3
+160,What do you do when someone interrupts you while talking?,Pause and continue,Composure,7
+161,How do you react when you lose an important item?,Panic and search frantically,Panic,3
+161,How do you react when you lose an important item?,Accept it and move on,Acceptance,1
+161,How do you react when you lose an important item?,Blame myself,Self-Criticism,4
+161,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,4
+162,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,7
+162,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,5
+162,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,4
+162,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,6
+162,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,4
+162,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,6
+162,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,1
+162,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,1
+163,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,9
+163,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,6
+163,What do you do when someone interrupts you while talking?,Lose focus,Distraction,7
+163,What do you do when someone interrupts you while talking?,Pause and continue,Composure,2
+164,How do you handle long lines at a store?,Get impatient,Impatience,10
+164,How do you handle long lines at a store?,Use the time for mindfulness,Mindfulness,3
+164,How do you handle long lines at a store?,Feel irritated,Irritation,6
+164,How do you handle long lines at a store?,Chat with someone nearby,Sociability,3
+165,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,2
+165,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,4
+165,What do you usually do when stuck in traffic?,Call someone to vent,Anger,9
+165,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,2
+166,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,9
+166,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,10
+166,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,1
+166,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,6
+167,What do you think about public speaking?,Terrified,Fear,10
+167,What do you think about public speaking?,Excited,Excitement,4
+167,What do you think about public speaking?,Neutral,Neutrality,6
+167,What do you think about public speaking?,Confident,Confidence,5
+168,How do you usually spend your weekends?,Stay home and relax,Relaxation,4
+168,How do you usually spend your weekends?,Go out with friends,Social,10
+168,How do you usually spend your weekends?,Start a new hobby,Creativity,1
+168,How do you usually spend your weekends?,Finish pending work,Productivity,2
+169,How do you react when you lose an important item?,Panic and search frantically,Panic,6
+169,How do you react when you lose an important item?,Accept it and move on,Acceptance,6
+169,How do you react when you lose an important item?,Blame myself,Self-Criticism,7
+169,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,1
+170,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,4
+170,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,9
+170,What do you do when someone interrupts you while talking?,Lose focus,Distraction,4
+170,What do you do when someone interrupts you while talking?,Pause and continue,Composure,2
+171,What would you do if you forgot an important deadline?,Panic and stress,Stress,6
+171,What would you do if you forgot an important deadline?,Quickly come up with a backup plan,Problem-Solving,6
+171,What would you do if you forgot an important deadline?,Feel guilty,Guilt,1
+171,What would you do if you forgot an important deadline?,Ask for help,Seeking Support,3
+172,What do you usually do when stuck in traffic?,Get frustrated but try to stay calm,Anxiety,2
+172,What do you usually do when stuck in traffic?,Blast music to distract myself,Calm,3
+172,What do you usually do when stuck in traffic?,Call someone to vent,Anger,6
+172,What do you usually do when stuck in traffic?,Practice deep breathing,Mindfulness,2
+173,How do you react when you lose an important item?,Panic and search frantically,Panic,10
+173,How do you react when you lose an important item?,Accept it and move on,Acceptance,9
+173,How do you react when you lose an important item?,Blame myself,Self-Criticism,4
+173,How do you react when you lose an important item?,Try to recall my steps logically,Logical Thinking,5
+174,What's your typical reaction to constructive criticism?,Feel hurt,Sensitivity,10
+174,What's your typical reaction to constructive criticism?,Take it positively,Openness,8
+174,What's your typical reaction to constructive criticism?,Ignore it,Neglect,2
+174,What's your typical reaction to constructive criticism?,Analyze and improve,Self-Improvement,6
+175,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,4
+175,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,10
+175,What do you do when someone interrupts you while talking?,Lose focus,Distraction,8
+175,What do you do when someone interrupts you while talking?,Pause and continue,Composure,6
+176,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,6
+176,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,8
+176,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,9
+176,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,9
+176,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,2
+176,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,1
+176,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,5
+176,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,5
+177,How do you feel about trying something new?,Excited,Excitement,1
+177,How do you feel about trying something new?,Anxious,Anxiety,8
+177,How do you feel about trying something new?,Curious,Curiosity,9
+177,How do you feel about trying something new?,Indifferent,Indifference,5
+178,What's your go-to response when someone cancels plans last minute?,Feel relieved,Relief,6
+178,What's your go-to response when someone cancels plans last minute?,Get upset,Frustration,8
+178,What's your go-to response when someone cancels plans last minute?,Laugh it off,Humor,5
+178,What's your go-to response when someone cancels plans last minute?,Use the time for something else,Productivity,10
+179,What do you do when someone interrupts you while talking?,Get annoyed,Annoyance,10
+179,What do you do when someone interrupts you while talking?,Politely ask them to wait,Politeness,5
+179,What do you do when someone interrupts you while talking?,Lose focus,Distraction,6
+179,What do you do when someone interrupts you while talking?,Pause and continue,Composure,3
+180,What do you think about public speaking?,Terrified,Fear,7
+180,What do you think about public speaking?,Excited,Excitement,6
+180,What do you think about public speaking?,Neutral,Neutrality,5
+180,What do you think about public speaking?,Confident,Confidence,9

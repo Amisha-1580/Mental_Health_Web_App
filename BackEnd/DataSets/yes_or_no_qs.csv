@@ -1,0 +1,104 @@
+ID,Question,Mental Health Condition
+1,Do you often feel restless or on edge?,Anxiety
+2,Do you find yourself feeling hopeless or sad for most of the day?,Depression
+3,Do you find it difficult to stop engaging in repetitive behaviors or thoughts?,OCD
+4,Have you experienced extreme mood swings between high energy and depression?,Bipolar Disorder
+5,Do you experience flashbacks or nightmares related to a traumatic event?,PTSD
+6,Do you have trouble concentrating or staying organized in daily tasks?,ADHD
+7,Do you find yourself excessively worrying about your weight or appearance?,Eating Disorders
+8,Do you often hear voices or see things that others do not?,Schizophrenia
+9,"Do you experience extreme difficulty in managing your emotions, such as anger or sadness?",Borderline Personality Disorder
+10,Do you feel extremely nervous or anxious when in social situations?,Social Anxiety Disorder
+11,Do you frequently worry excessively about everyday situations?,Generalized Anxiety Disorder
+12,Have you had difficulty quitting or controlling the use of a substance like alcohol or drugs?,Substance Use Disorder
+13,Do you avoid certain places or situations because of a fear of being judged?,Phobias
+14,Do you often feel overwhelmed with stress at work or in your career?,Workplace Stress
+15,"Do you feel constantly tired or drained, even after a full night’s rest?",Chronic Fatigue
+16,Do you experience difficulty accepting the death of a loved one?,Grief and Loss
+17,"Do you ever have sudden, intense periods of fear that cause physical symptoms like shortness of breath?",Panic Disorder
+18,Do you feel particularly down during certain seasons or weather changes?,Seasonal Affective Disorder (SAD)
+19,Do you struggle with managing chronic pain and find that it impacts your mental well-being?,Chronic Pain and Mental Health
+20,Do you feel disconnected or detached from your reality or surroundings?,Dissociative Identity Disorder
+21,"Do you have a tendency to feel excessive anger, often leading to outbursts?",Anger Management
+22,Are there recurring issues in your relationship causing emotional distress?,Relationship Stress
+23,Do you find it difficult to maintain healthy boundaries in relationships?,Obsessive Love Disorder
+24,Do you experience pain in a part of your body that has been amputated?,Phantom Limb Pain
+25,Do you often find yourself unable to process a traumatic event or memory?,Trauma Recovery
+26,Do you avoid certain situations due to excessive fear or anxiety?,Phobias
+27,Do you feel exhausted even after completing basic tasks?,Chronic Fatigue
+28,Do you experience racing thoughts or a lack of control over your mind?,Bipolar Disorder
+29,Do you feel overwhelmed with fear of losing control?,Panic Disorder
+30,Do you experience intense irritability or mood swings?,Borderline Personality Disorder
+31,Are you often afraid of being judged by others in social situations?,Social Anxiety Disorder
+32,Do you engage in excessive physical activity to avoid negative thoughts?,OCD
+33,Have you had a period of intense happiness or elevated mood?,Bipolar Disorder
+34,Do you feel persistent low energy or difficulty getting out of bed?,Depression
+35,Do you find yourself avoiding people or places because you feel they may be unsafe?,PTSD
+36,Do you ever have thoughts of harming yourself or others?,Depression
+37,Do you often feel as though you are unable to relax?,Anxiety
+38,Do you find it difficult to enjoy activities you once found pleasurable?,Depression
+39,"Do you frequently feel the need to check things repeatedly, like doors or appliances?",OCD
+40,Do you engage in repetitive actions to reduce anxiety or stress?,OCD
+41,Do you feel easily irritated or upset by small things?,Borderline Personality Disorder
+42,Do you struggle with feeling disconnected from your sense of self?,Dissociative Identity Disorder
+43,Do you often feel insecure about your appearance?,Eating Disorders
+44,Are you frequently fearful that others are talking about you or judging you?,Social Anxiety Disorder
+45,Do you feel like you are in a constant battle with your mind or body?,Chronic Pain and Mental Health
+46,Do you often experience extreme fatigue even after a full night of sleep?,Chronic Fatigue
+47,Do you often avoid social activities or family gatherings due to anxiety?,Social Anxiety Disorder
+48,"Do you feel isolated or withdrawn from others, even in a crowd?",Depression
+49,Have you ever had to seek help to cope with the loss of someone close to you?,Grief and Loss
+50,Do you feel easily overwhelmed by stress in everyday situations?,Generalized Anxiety Disorder
+51,Do you experience periods of rapid speech and high activity?,Bipolar Disorder
+52,Do you feel constantly on edge or nervous about future events?,Anxiety
+53,Do you often feel sadness or despair without a clear cause?,Depression
+54,Do you have trouble staying still or sitting in one place for too long?,ADHD
+55,Do you feel fearful in crowded or unfamiliar places?,Phobias
+56,Do you often feel guilty about things that are beyond your control?,Depression
+57,Do you frequently engage in unhealthy eating habits to cope with emotions?,Eating Disorders
+58,Do you feel trapped in a cycle of unhealthy thoughts and behaviors?,OCD
+59,Do you often feel that you have no control over your emotions?,Borderline Personality Disorder
+60,Are you prone to impulsive decisions that you later regret?,Bipolar Disorder
+61,Do you feel as though your thoughts are racing or uncontrollable?,Bipolar Disorder
+62,Do you often think about the past in a way that causes distress or sadness?,PTSD
+63,Do you often struggle to concentrate at work or in social situations?,ADHD
+64,Do you tend to feel anxious or uneasy when you are alone?,Anxiety
+65,Do you frequently feel fatigued even with adequate sleep?,Chronic Fatigue
+66,Do you have a tendency to avoid conflict or confrontation?,Relationship Stress
+67,Do you struggle to manage time and responsibilities effectively?,ADHD
+68,Do you often feel overwhelmed by physical or emotional pain?,Chronic Pain and Mental Health
+69,Do you have intrusive thoughts that cause significant distress?,OCD
+70,Do you find it hard to talk about your feelings with others?,Social Anxiety Disorder
+71,Do you often feel that your emotional state is out of your control?,Borderline Personality Disorder
+72,Do you avoid situations or people that make you feel uncomfortable or anxious?,Social Anxiety Disorder
+73,"Do you experience emotional extremes in relationships, such as idealizing or devaluing someone?",Borderline Personality Disorder
+74,Do you have recurring thoughts or memories of a traumatic experience?,PTSD
+75,Do you engage in behavior that feels impulsive or out of character?,Bipolar Disorder
+76,Do you often feel disconnected from your body or surroundings?,Dissociative Identity Disorder
+77,Do you feel a deep sense of sadness or loss without understanding why?,Depression
+78,Do you find it difficult to focus on tasks due to constant worry?,Generalized Anxiety Disorder
+79,Do you find yourself participating in risky behaviors without concern for consequences?,Bipolar Disorder
+80,Do you often worry excessively about your health or physical condition?,Health Anxiety
+81,Do you avoid social gatherings because you fear they will lead to awkward situations?,Social Anxiety Disorder
+82,Do you find yourself engaging in extreme dieting or eating habits?,Eating Disorders
+83,Do you have an excessive fear of certain objects or situations?,Phobias
+84,"Do you struggle with emotional regulation, often feeling overwhelmed?",Borderline Personality Disorder
+85,Do you often feel anxious or fearful in situations that others would not?,Generalized Anxiety Disorder
+86,Do you experience excessive fatigue that doesn't seem to improve with rest?,Chronic Fatigue
+87,Do you often feel like you are not in control of your thoughts or actions?,Schizophrenia
+88,Do you find yourself avoiding contact with others because you feel awkward or nervous?,Social Anxiety Disorder
+89,Do you find yourself feeling distant or detached from others?,Dissociative Identity Disorder
+90,Do you often have difficulty making decisions or organizing your thoughts?,ADHD
+91,Do you have persistent negative thoughts about your future?,Depression
+92,Do you find yourself thinking obsessively about a specific subject or event?,OCD
+93,Do you feel mentally or physically fatigued even after a good rest?,Chronic Fatigue
+94,Do you struggle with managing or controlling your anger?,Anger Management
+95,Do you feel like you're unable to relax or unwind after a stressful event?,Generalized Anxiety Disorder
+96,Do you often feel a sense of dread or impending doom?,Anxiety
+97,Do you feel misunderstood or disconnected from others?,Schizophrenia
+98,Are you unable to enjoy activities that once made you happy?,Depression
+99,Do you feel emotionally numb or detached from your own emotions?,Dissociative Identity Disorder
+100,Do you feel intense pressure or difficulty meeting expectations in your career?,Workplace Stress
+101,Do you find it difficult to engage in social situations due to fear of embarrassment?,Social Anxiety Disorder
+102,Do you frequently experience negative self-talk or critical thoughts?,Depression
+103,Do you avoid situations or places because of a specific phobia?,Phobias
