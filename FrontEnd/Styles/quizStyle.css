@@ -1,0 +1,54 @@
+.quiz-container img{
+    object-fit: cover;
+    border-radius: 50%;
+    /* border: 1px solid #555050; */
+    padding: 0.3rem;
+
+  
+}
+
+.quiz-container{
+  padding: 2rem;
+    margin: 1rem;
+    /* border: 2px solid #555050;
+    background-color: rgb(92, 92, 233); */
+    /* width: 60%; */
+}
+
+.option-box{
+    /* padding: 2rem; */
+    margin: 0.5rem;
+    /* border: 2px solid #555050; */
+    background-color: rgb(252, 250, 252); 
+    width:100%;
+    border-radius: 8px;
+    /* width: 60%; */
+}
+
+h3{
+    font-size: 2rem;
+}
+
+body{
+    background-image: url("../images/quiz_background.jpg");
+    background: linear-gradient(rgba(137, 118, 234, 0.5), rgba(153, 135, 242, 0.5)), url("../images/quiz_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: azure;
+    /* opacity: 0.5; */
+}
+
+.navButtons{
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    /* background-color: rgb(137, 118, 234); */
+    color: azure;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
