@@ -8,7 +8,7 @@ CORS(app)  # Enable cross-origin requests
 # Load the dataset
 df = pd.read_csv('./dataSets/corrected_mental_health_questions.csv')
 
-# Endpoint to fetch a random question with options
+# Endpoint to fetch a question with options
 @app.route('/get-question/<int:question_id>', methods=['GET'])
 def get_question(question_id):
     # Fetch question by Question ID
@@ -26,7 +26,7 @@ def get_question(question_id):
                 "id": idx + 1,
                 "text": row['Option_name'],
                 "feeling": row['Feeling'],
-                "score": row['Score']
+                "score": row['Score']  # Each option has a score
             })
 
     return jsonify({
@@ -35,7 +35,7 @@ def get_question(question_id):
         "options": options
     })
 
-# Endpoint to submit the quiz and calculate score
+# Endpoint to submit the quiz and calculate total score
 @app.route('/submit-quiz', methods=['POST'])
 def submit_quiz():
     user_answers = request.json.get('answers', {})  # Example: {"1": 1, "2": 3}
@@ -45,11 +45,15 @@ def submit_quiz():
         question_rows = df[df['Question_id'] == int(question_id)]
 
         if not question_rows.empty:
-            selected_row = question_rows.iloc[selected_option - 1]  # Match index with option ID
-            total_score += selected_row['Score']
+            selected_row = question_rows.iloc[selected_option]  # Select based on index
+            total_score += selected_row['Score']  # Sum up scores of chosen options
+
+    # Scale score to be out of 10 (Assuming the max possible score isn't exactly 10)
+    max_possible_score = len(user_answers) * 3  # Adjust if needed based on dataset
+    scaled_score = round((total_score / max_possible_score) * 10)
 
     return jsonify({
-        "score": total_score,
+        "score": scaled_score,  # Scaled score out of 10
         "total_questions": len(user_answers)
     })
 

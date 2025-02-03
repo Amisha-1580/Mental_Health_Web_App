@@ -1,9 +1,7 @@
-// quizScript.js
-
-let currentQuestionId = 1; // Start from question ID 1
+let currentQuestionId = 1;
 const answers = {}; // Store user answers
 let q_no = 0;
-let MAX_QUESTIONS = 7;
+const MAX_QUESTIONS = 7;
 
 // Function to fetch and display a question
 async function fetchQuestion(questionId) {
@@ -26,11 +24,9 @@ function displayQuestion(data) {
     const questionContainer = document.querySelector(".quiz-container h3");
     const optionsContainer = document.getElementById("options");
 
-    // Set question text
     questionContainer.textContent = data.question;
+    optionsContainer.innerHTML = ""; // Clear previous options
 
-    // Clear and populate options
-    optionsContainer.innerHTML = "";
     data.options.forEach((option, index) => {
         const optionDiv = document.createElement("div");
         optionDiv.classList.add("container-row", "option-box");
@@ -48,61 +44,65 @@ function displayQuestion(data) {
     updateNavigationButtons();
 }
 
-// Function to handle option selection and smiley change
-const changeSmileyAndSelectOption = function (event) {
-    // Deselect all options (uncheck like radio button)
-    const options = document.querySelectorAll(".option-box");
-    options.forEach(option => {
+// Handle option selection
+const changeSmileyAndSelectOption = function () {
+    document.querySelectorAll(".option-box").forEach(option => {
         option.classList.remove("selected");
-        const img = option.querySelector("img");
-        img.src = "../images/simple_smiley.png"; // Reset image
-        option.style.backgroundColor = ""; // Reset background color
+        option.style.backgroundColor = "";
+        option.querySelector("img").src = "../images/simple_smiley.png";
     });
 
-    // Change the background color to blueish for the selected option
-    this.style.backgroundColor = "rgba(0, 0, 255, 0.2)"; // Light blue background
-
-    // Find the image inside the clicked option box and change the src
-    const img = this.querySelector("img");
-    img.src = "../images/opt_img.jpg"; // New image path
-
-    // Mark the current option as selected and store the answer
+    this.style.backgroundColor = "rgba(0, 0, 255, 0.2)";
+    this.querySelector("img").src = "../images/opt_img.jpg";
+    
     const optionIndex = [...this.parentElement.children].indexOf(this);
-    this.classList.add("selected");
-    answers[currentQuestionId] = optionIndex;  // Store the selected answer
-    console.log("Selected Answer for question " + currentQuestionId + ": " + optionIndex);  // Log the selected answer
-    updateNavigationButtons(); // Ensure navigation buttons are updated
+    answers[currentQuestionId] = optionIndex;
+    updateNavigationButtons();
 };
 
-// Update navigation buttons' state
+// Update navigation buttons
 function updateNavigationButtons() {
     const prevButton = document.querySelector(".fa-arrow-left");
     const nextButton = document.querySelector(".fa-arrow-right");
+    const finalSubmitButton = document.querySelector(".finalSubmission");
 
-    // Check if the answer is selected before enabling the next button
-    nextButton.disabled = answers[currentQuestionId] === undefined;
     prevButton.disabled = currentQuestionId === 1;
+    nextButton.disabled = answers[currentQuestionId] === undefined;
+
+    if (q_no === MAX_QUESTIONS - 1) {
+        nextButton.style.display = "none";
+        finalSubmitButton.style.display = "block";
+    } else {
+        nextButton.style.display = "inline-block";
+        finalSubmitButton.style.display = "none";
+    }
 }
 
-// Navigate to the previous question
+// Navigate to previous question
 function goToPreviousQuestion() {
     if (currentQuestionId > 1) {
         currentQuestionId--;
+        q_no--;
         fetchQuestion(currentQuestionId);
     }
 }
 
-// Navigate to the next question
+// Navigate to next question
 function goToNextQuestion() {
-    if (answers[currentQuestionId] !== undefined) { // Ensure the answer is selected
-        currentQuestionId++;
-        fetchQuestion(currentQuestionId);
+    if (answers[currentQuestionId] !== undefined) {
+        q_no++;
+        if (q_no < MAX_QUESTIONS) {
+            currentQuestionId++;
+            fetchQuestion(currentQuestionId);
+        } else {
+            submitQuiz();
+        }
     } else {
         alert("Please select an option before proceeding.");
     }
 }
 
-// Submit the quiz
+// Submit quiz and redirect to result page
 async function submitQuiz() {
     if (Object.keys(answers).length !== MAX_QUESTIONS) {
         alert("Please answer all the questions before submitting.");
@@ -112,18 +112,18 @@ async function submitQuiz() {
     try {
         const response = await fetch("http://127.0.0.1:5000/submit-quiz", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ answers }),
         });
 
-        // Hide navigation buttons and show the final submission button
-        document.querySelector(".navButtons").style.display = "none";
-        document.querySelector(".finalSubmission").style.display = "block";
-
         const result = await response.json();
-        alert(`Your total score is ${result.score} out of ${result.total_questions}.`);
+        const finalScore = result.score;
+
+        // Save score in localStorage to access in result page
+        localStorage.setItem("finalScore", finalScore);
+        localStorage.setItem("totalQuestions", result.total_questions);
+
+        window.location.href = "resultPage.html"; // Redirect to results page
     } catch (error) {
         console.error("Error submitting quiz:", error);
     }
@@ -134,13 +134,12 @@ document.querySelector(".fa-arrow-left").addEventListener("click", goToPreviousQ
 document.querySelector(".fa-arrow-right").addEventListener("click", goToNextQuestion);
 
 document.querySelector(".btn-primary").addEventListener("click", () => {
-    if (currentQuestionId <= MAX_QUESTIONS) {
-        currentQuestionId++;
+    if (q_no < MAX_QUESTIONS) {
         goToNextQuestion();
     } else {
         submitQuiz();
     }
 });
 
-// Load the first question on page load
+// Load first question
 fetchQuestion(currentQuestionId);
