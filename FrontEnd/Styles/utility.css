@@ -8,6 +8,43 @@
   } */
 
   
+  /* navbar */
+
+  .navbar {
+    background-color: #6a5acd;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 30px;
+    color: white;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+}
+.navbar a:hover {
+    background-color: #4b3f72;
+}
+.navbar .logo {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+.navbar .logo img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.navbar .logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -67,6 +104,7 @@ h1{
     align-items: center;
     justify-content: center;
     gap:1rem;
+    /* margin: 2rem; */
 }
 .container-column{
     flex-direction: column;
