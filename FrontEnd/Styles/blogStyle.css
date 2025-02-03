@@ -1,0 +1,62 @@
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+h2{
+    font-size: 55px;
+    color: rgb(38, 60, 137);
+
+
+}
+
+.blog-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+    .blog-box{
+        flex-direction: column;
+    }
+}
+
+.blog-box h2{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.blog-box p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.blog-box a{
+    font-size: 16px;
+    color: blue;
+}
+
+.card{
+    border: 2px solid rgb(166, 161, 161);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 500px;
+    width: 400px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
