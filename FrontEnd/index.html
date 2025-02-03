@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOD MAP</title>
+    <style>
+        body {
+            font-family: 'Lobo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .navbar {
+            background-color: #6a5acd;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 30px;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #4b3f72;
+        }
+        .navbar .logo {
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .navbar .logo span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 100px;
+            width: auto;
+        }
+        .left-section {
+            width: 50%;
+            text-align: left;
+            padding-right: 30px;
+        }
+        .right-section {
+            width: 40%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        .title {
+            font-size: 48px;
+            color: #6a5acd;
+            font-weight: bold;
+        }
+        .sub-title {
+            font-size: 20px;
+            color: #3a3a3a;
+            margin-top: 10px;
+        }
+        .button {
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #4b3f72;
+        }
+        .flip-card-container {
+            perspective: 1000px;
+            width: 100%;
+            height: 100%;
+            padding-left: 20px;
+        }
+        .flip-card {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            position: relative;
+        }
+        .flip-card.flipped {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        .flip-card-front {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .flip-card-back {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            transform: rotateY(180deg);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .background-image {
+            background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapers.com%2Fcalm-aesthetic-desktop&psig=AOvVaw2_Rcv8nOrWutzLVqTxYQHh&ust=1738607581722000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDWq5zQpYsDFQAAAAAdAAAAABAE'); 
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="main-logo.png" alt="Strong Brain Logo">
+            <span>MOOD MAP</span>
+        </div>
+        <a href="#">BLOCK</a>
+        <a href="#">ABOUT</a>
+        <a href="#">REGISTER</a>
+        <a href="#" id="login-btn">LOGIN</a>
+    </div>
+
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Section (Title and Description) -->
+        <div class="left-section">
+            <div class="title">MOOD MAP</div><br>
+            <div class="sub-title">Your journey to better mental health starts here. <br>Take care of yourself, because mental health matters.</div> <br> <br>
+            <div class="sub-title">Do you know how you're feeling today?</div>
+            <button class="button" onclick="window.location.href='#'">GET STARTED</button>
+        </div>
+
+        <!-- Right Section (Login/Registration with flip effect) -->
+        <div class="right-section">
+            <div class="flip-card-container">
+                <div class="flip-card" id="flip-card">
+                    <!-- Front: Login Form -->
+                    <div class="flip-card-front">
+                        <h2>Login</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                            </div>
+                            <button type="submit" class="button">Login</button>
+                            <p>
+                                Don't have an account?
+                                <button type="button" class="button" onclick="toggleFlip()">Sign Up</button>
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Back: Signup Form -->
+                    <div class="flip-card-back">
+                        <h2>Sign Up</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="reg-name">Full Name</label>
+                                <input type="text" id="reg-name" class="form-input" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-email">Email</label>
+                                <input type="email" id="reg-email" class="form-input" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password">Password</label>
+                                <input type="password" id="reg-password" class="form-input" placeholder="Create a password" required>
+                            </div>
+                            <button type="submit" class="button">Sign Up</button>
+                            <p>
+                                Already have an account?{" "}
+                                <button type="button" class="button" onclick="toggleFlip()">Login</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Simulate a check for whether the user is registered or not
+        const isRegistered = false; // Change this value to true for a registered user
+
+        // Flip the card to toggle between Login and Sign Up
+        function toggleFlip() {
+            const card = document.getElementById('flip-card');
+            card.classList.toggle('flipped');
+        }
+
+        // Initially, show the login page if user is already registered
+        if (isRegistered) {
+            toggleFlip(); // Flip to sign-up if user is already registered
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../mental_app_pages"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Mental_Health_Web_App"
+	}
+}
