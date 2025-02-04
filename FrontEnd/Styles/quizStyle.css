@@ -25,8 +25,10 @@ h3 {
 .option-box {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     padding: 1rem;
     margin: 0.5rem 0;
+    width: 100%;
     background-color: #6b81ec;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);

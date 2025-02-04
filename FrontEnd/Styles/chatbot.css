@@ -4,7 +4,7 @@ body{
 }
 
 .chat-card{
-    background: linear-gradient(to right, #0314c9, #3583d1);
+    background: linear-gradient(to right, #5661d3, #3583d1);
     background-color: rgb(105, 241, 139);
     height: 80%;
     width: 50%;
@@ -20,7 +20,7 @@ body{
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     border-radius: 10px;
     border: none;
     padding: 0.5rem;
@@ -29,7 +29,7 @@ body{
 }
 
 input{
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 10px;
     width: 70%;
     border: none;
@@ -56,3 +56,48 @@ input{
     padding: 0.2rem;
     margin: 1rem;
 }
+
+@media (max-width: 768px) {
+    .chat-card{
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .chat-card{
+        width: 100%;
+    }
+}
+@media (max-width: 425px) {
+    .chat-card{
+        width: 100%;
+    }
+    
+}
+
+      /* Quick inline styling for the chat window */
+      .chat-window {
+        border: 1px solid  #5661d3;
+        padding: 10px;
+        height: 400px;
+        overflow-y: auto;
+        background-color:  #5661d3;
+    }
+    .user-message {
+        text-align: left;
+        background-color: #e366ff;
+    }
+
+    .bot-message {
+        text-align: left; 
+        background-color: #3583d1;
+        margin-left:40px !important;
+
+    }
+
+    .user-message, .bot-message{
+        width:50%;
+        padding: 0.5rem;
+        color: white;
+        margin: 5px 0;
+        border-radius: 5px;
+    }

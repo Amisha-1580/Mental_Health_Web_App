@@ -3,34 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chatbot</title>
+    <title>Chatbot</title>
     <link rel="stylesheet" href="../Styles/utility.css" />
     <link rel="stylesheet" href="../Styles/chatbot.css" />
 </head>
 <body>
-<!-- navbar -->
- 
+
+<!-- Navbar -->
 <div class="navbar">
     <div class="logo">
-        <img src="../images/main-logo.png" alt="Strong Brain Logo">
+        <img src="../images/main-logo.png" alt="Strong Brain Logo" />
         <span>MOOD MAP</span>
     </div>
-    <a href="#">BLOCK</a>
-    <a href="#">ABOUT</a>
-    <a href="#">REGISTER</a>
-    <a href="#" id="login-btn">LOGIN</a>
+    <div class="nav-options container-row">
+        <a href="./blog.html">BLOG</a>
+        <a href="#">ABOUT</a>
+        <a href="#">REGISTER</a>
+        <a href="./LoginPage.html" id="login-btn"><button>LOGIN</button></a>
+    </div>
+    <div class="menu">
+        <img src="../images/menu-bar.jpg" alt="menu" id="menu">
+    </div>
 </div>
 
- <div class="chatbot">
-    <img src="../images/mental_chatbot.jpg" alt="chatbot" class="chatbot-img">
-</div>
-    <div class="chat-card">
-        <div class="bottom-chat container-row">
-            <input type="text" id="chat-input" placeholder="Type your message here..."  focused/>
-            <button id="send-btn">Send</button>
+<div class="menu-list">
+    <ul class="container-column">
+        <div class="cross-icon">
+            <img src="../images/close.png" alt="cross" id="cross">
         </div>
-       
-       
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./blog.html">BLOG</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">REGISTER</a></li>
+        <li><a href="#" id="login-btn"><button>LOGIN</button></a></li>
+    </ul>
+</div>
+
+<!-- Chatbot -->
+<div class="chat-card">
+    <img src="../images/mental_chatbot.jpg" alt="chatbot" class="chatbot-img">
+    <div id="chat-display" class="chat-window">
+        <!-- Messages will appear here -->
     </div>
+    <div class="bottom-chat container-row">
+        <input type="text" id="chat-input" placeholder="Type your message here..." />
+        <button id="send-btn" style="border: 2px solid white; padding: 0.8rem;">Send</button>
+    </div>
+</div>
+
+<script SRC="../Scripts/chatbotScript.js"></script>
+<script src="../Scripts/utilityScript.js"></script>
+
+
 </body>
 </html>
