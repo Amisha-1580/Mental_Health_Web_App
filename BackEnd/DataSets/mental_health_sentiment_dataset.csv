@@ -1,0 +1,201 @@
+query,condition,sentiment
+"I feel fine, just wanted to check my progress.",Depression,negative
+I'm having trouble controlling my anger recently.,Depression,negative
+I'm feeling pretty calm and happy today.,Depression,negative
+"I don't feel any major issues, just the usual ups and downs.",None,negative
+"I'm feeling much better now, thank you!",Stress,negative
+I feel mentally exhausted.,Anxiety,negative
+I can't shake this overwhelming fear.,Anxiety,negative
+I can't focus because of all this stress.,None,positive
+I'm having trouble controlling my anger recently.,Depression,negative
+I'm constantly worrying about everything.,Stress,negative
+I feel mentally exhausted.,Stress,negative
+I'm struggling with a lot of sadness lately.,Depression,negative
+I can't focus because of all this stress.,Stress,negative
+Stress at work is just too much to handle.,Stress,negative
+I can't focus because of all this stress.,Anxiety,negative
+Stress at work is just too much to handle.,None,negative
+"Sometimes I feel overwhelmed, but I manage.",Anxiety,negative
+I can't shake this overwhelming fear.,Depression,negative
+I feel mentally exhausted.,Anxiety,negative
+I feel stressed out and can't seem to relax.,Stress,negative
+I'm struggling with a lot of sadness lately.,Depression,negative
+I'm finding it hard to stay positive these days.,None,negative
+I'm finding it hard to stay positive these days.,None,negative
+I'm finding it hard to stay positive these days.,None,positive
+I feel hopeless and tired all the time.,None,neutral
+"I don't feel any major issues, just the usual ups and downs.",Anxiety,negative
+"I feel good, life has been treating me well.",None,neutral
+I feel like I'm drowning in my responsibilities.,None,negative
+"I don't feel any major issues, just the usual ups and downs.",Stress,negative
+I'm having trouble controlling my anger recently.,Anxiety,negative
+I'm constantly worrying about everything.,Anxiety,negative
+I can't focus because of all this stress.,Depression,negative
+I feel stressed out and can't seem to relax.,Stress,negative
+I'm having a hard time dealing with my thoughts.,Anxiety,negative
+"I don't feel any major issues, just the usual ups and downs.",Anxiety,negative
+I feel like I'm drowning in my responsibilities.,Anxiety,negative
+I'm finding it hard to stay positive these days.,Depression,negative
+Stress at work is just too much to handle.,Anxiety,negative
+"I don't feel any major issues, just the usual ups and downs.",Anxiety,negative
+"Sometimes I feel overwhelmed, but I manage.",Stress,negative
+I feel stressed out and can't seem to relax.,Stress,negative
+I can't shake this overwhelming fear.,None,positive
+I'm feeling pretty calm and happy today.,Stress,negative
+"I feel fine, just wanted to check my progress.",Depression,negative
+I had a minor panic attack yesterday.,None,positive
+I'm having trouble controlling my anger recently.,Anxiety,negative
+I'm struggling with a lot of sadness lately.,Stress,negative
+I'm feeling pretty calm and happy today.,None,negative
+I feel like I'm drowning in my responsibilities.,Anxiety,negative
+I feel stressed out and can't seem to relax.,Stress,negative
+I can't focus because of all this stress.,Stress,negative
+I'm constantly worrying about everything.,Stress,negative
+I'm finding it hard to stay positive these days.,Anxiety,negative
+I'm having trouble controlling my anger recently.,None,negative
+I feel hopeless and tired all the time.,Stress,negative
+I had a minor panic attack yesterday.,Anxiety,negative
+"I don't feel any major issues, just the usual ups and downs.",Anxiety,negative
+"I don't feel any major issues, just the usual ups and downs.",Stress,negative
+I feel like I'm drowning in my responsibilities.,None,neutral
+I'm having trouble controlling my anger recently.,None,negative
+I'm constantly worrying about everything.,Anxiety,negative
+I feel stressed out and can't seem to relax.,Depression,negative
+"Sometimes I feel overwhelmed, but I manage.",Stress,negative
+My anxiety keeps me awake at night.,None,neutral
+I can't focus because of all this stress.,Stress,negative
+I can't shake this overwhelming fear.,None,negative
+"I don't feel any major issues, just the usual ups and downs.",None,neutral
+I'm having a hard time dealing with my thoughts.,Anxiety,negative
+I can't shake this overwhelming fear.,Stress,negative
+I feel like I'm drowning in my responsibilities.,Stress,negative
+"I feel good, life has been treating me well.",Anxiety,negative
+I'm feeling pretty calm and happy today.,Depression,negative
+Stress at work is just too much to handle.,None,neutral
+My anxiety keeps me awake at night.,Anxiety,negative
+I'm feeling pretty calm and happy today.,Stress,negative
+I'm struggling with a lot of sadness lately.,Anxiety,negative
+I feel like I'm drowning in my responsibilities.,None,neutral
+"Sometimes I feel overwhelmed, but I manage.",Anxiety,negative
+I'm having trouble controlling my anger recently.,Stress,negative
+I'm having trouble controlling my anger recently.,Anxiety,negative
+I feel mentally exhausted.,Depression,negative
+"I don't feel any major issues, just the usual ups and downs.",None,neutral
+"I don't feel any major issues, just the usual ups and downs.",Depression,negative
+"I don't feel any major issues, just the usual ups and downs.",Stress,negative
+I'm having trouble controlling my anger recently.,None,negative
+My anxiety keeps me awake at night.,Depression,negative
+"I don't feel any major issues, just the usual ups and downs.",Anxiety,negative
+I'm feeling pretty calm and happy today.,Anxiety,negative
+I'm having trouble controlling my anger recently.,Depression,negative
+"I feel good, life has been treating me well.",Stress,negative
+My anxiety keeps me awake at night.,None,neutral
+"I feel fine, just wanted to check my progress.",None,neutral
+I had a minor panic attack yesterday.,None,neutral
+I'm finding it hard to stay positive these days.,Stress,negative
+I'm finding it hard to stay positive these days.,None,neutral
+I'm finding it hard to stay positive these days.,Depression,negative
+I feel like I'm drowning in my responsibilities.,Anxiety,negative
+"I'm feeling much better now, thank you!",Stress,negative
+I can't shake this overwhelming fear.,Depression,negative
+Stress at work is just too much to handle.,Depression,negative
+I can't shake this overwhelming fear.,None,negative
+"I feel good, life has been treating me well.",Stress,negative
+I'm having a hard time dealing with my thoughts.,Anxiety,negative
+I'm constantly worrying about everything.,Anxiety,negative
+I'm finding it hard to stay positive these days.,Stress,negative
+I can't focus because of all this stress.,Anxiety,negative
+I'm finding it hard to stay positive these days.,Anxiety,negative
+I can't focus because of all this stress.,Depression,negative
+I'm finding it hard to stay positive these days.,Anxiety,negative
+I feel hopeless and tired all the time.,Anxiety,negative
+"I'm feeling much better now, thank you!",None,negative
+I can't shake this overwhelming fear.,Stress,negative
+I can't shake this overwhelming fear.,Depression,negative
+"I feel good, life has been treating me well.",Stress,negative
+I can't shake this overwhelming fear.,Stress,negative
+"Sometimes I feel overwhelmed, but I manage.",Depression,negative
+I can't focus because of all this stress.,Depression,negative
+I feel like I'm drowning in my responsibilities.,Stress,negative
+I feel mentally exhausted.,Depression,negative
+I'm feeling pretty calm and happy today.,None,negative
+I can't focus because of all this stress.,Depression,negative
+I'm having trouble controlling my anger recently.,Depression,negative
+Stress at work is just too much to handle.,None,neutral
+"I'm feeling much better now, thank you!",Anxiety,negative
+I'm constantly worrying about everything.,Depression,negative
+"I feel good, life has been treating me well.",Depression,negative
+"I don't feel any major issues, just the usual ups and downs.",None,neutral
+I'm constantly worrying about everything.,Depression,negative
+"I feel good, life has been treating me well.",None,neutral
+I feel hopeless and tired all the time.,Depression,negative
+I can't focus because of all this stress.,None,neutral
+I'm struggling with a lot of sadness lately.,Depression,negative
+I feel mentally exhausted.,Anxiety,negative
+"Sometimes I feel overwhelmed, but I manage.",Depression,negative
+I'm finding it hard to stay positive these days.,Anxiety,negative
+I'm struggling with a lot of sadness lately.,Stress,negative
+I'm finding it hard to stay positive these days.,None,negative
+I'm having trouble controlling my anger recently.,Stress,negative
+I'm having trouble controlling my anger recently.,Depression,negative
+"Sometimes I feel overwhelmed, but I manage.",Stress,negative
+I'm struggling with a lot of sadness lately.,None,positive
+I feel like I'm drowning in my responsibilities.,Anxiety,negative
+Stress at work is just too much to handle.,Anxiety,negative
+"I'm feeling much better now, thank you!",Stress,negative
+I'm struggling with a lot of sadness lately.,Stress,negative
+I feel like I'm drowning in my responsibilities.,Stress,negative
+I feel mentally exhausted.,Stress,negative
+I feel hopeless and tired all the time.,Stress,negative
+I'm having a hard time dealing with my thoughts.,Depression,negative
+I'm having trouble controlling my anger recently.,Anxiety,negative
+I feel mentally exhausted.,Depression,negative
+I feel mentally exhausted.,Depression,negative
+"I'm feeling much better now, thank you!",Stress,negative
+I can't shake this overwhelming fear.,None,negative
+"I feel good, life has been treating me well.",None,negative
+I feel hopeless and tired all the time.,Stress,negative
+I'm having trouble controlling my anger recently.,Anxiety,negative
+I'm feeling pretty calm and happy today.,None,neutral
+"I'm feeling much better now, thank you!",Depression,negative
+Stress at work is just too much to handle.,None,neutral
+I feel like I'm drowning in my responsibilities.,Depression,negative
+Stress at work is just too much to handle.,Depression,negative
+I'm finding it hard to stay positive these days.,None,neutral
+Stress at work is just too much to handle.,None,negative
+Stress at work is just too much to handle.,Anxiety,negative
+I'm constantly worrying about everything.,None,negative
+I'm having trouble controlling my anger recently.,Anxiety,negative
+My anxiety keeps me awake at night.,None,positive
+I feel like I'm drowning in my responsibilities.,Depression,negative
+"I feel fine, just wanted to check my progress.",None,neutral
+"Sometimes I feel overwhelmed, but I manage.",Stress,negative
+I'm having a hard time dealing with my thoughts.,Anxiety,negative
+"I don't feel any major issues, just the usual ups and downs.",Stress,negative
+I can't shake this overwhelming fear.,Stress,negative
+I'm having trouble controlling my anger recently.,Anxiety,negative
+Stress at work is just too much to handle.,Stress,negative
+I'm finding it hard to stay positive these days.,Stress,negative
+"I feel good, life has been treating me well.",Stress,negative
+I'm feeling pretty calm and happy today.,Anxiety,negative
+I can't shake this overwhelming fear.,Stress,negative
+I feel mentally exhausted.,None,neutral
+"I feel good, life has been treating me well.",None,negative
+"Sometimes I feel overwhelmed, but I manage.",Stress,negative
+I'm having a hard time dealing with my thoughts.,Depression,negative
+I'm feeling pretty calm and happy today.,Anxiety,negative
+I feel hopeless and tired all the time.,Anxiety,negative
+I'm having a hard time dealing with my thoughts.,Stress,negative
+"I feel fine, just wanted to check my progress.",Anxiety,negative
+I'm finding it hard to stay positive these days.,Depression,negative
+I'm struggling with a lot of sadness lately.,Anxiety,negative
+I'm constantly worrying about everything.,Stress,negative
+I had a minor panic attack yesterday.,Anxiety,negative
+I can't shake this overwhelming fear.,Stress,negative
+I feel like I'm drowning in my responsibilities.,None,positive
+I'm having trouble controlling my anger recently.,Stress,negative
+I can't focus because of all this stress.,Stress,negative
+"I feel good, life has been treating me well.",None,positive
+"Sometimes I feel overwhelmed, but I manage.",Anxiety,negative
+"I feel good, life has been treating me well.",Depression,negative
+My anxiety keeps me awake at night.,Depression,negative

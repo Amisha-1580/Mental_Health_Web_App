@@ -1,83 +1,114 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, accuracy_score
-import pickle
+from flask import Flask, request, jsonify
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+from flask_cors import CORS
+CORS(sentimental_analysis_model)
 
-# Load Dataset
-def load_data(file_path):
-    data = pd.read_csv(file_path)
-    if 'Query' not in data.columns or 'mental_health_state' not in data.columns:
-        raise ValueError("CSV file must contain 'Query' and 'mental_health_state' columns.")
-    return data
+app = Flask(__name__)
 
-# Preprocess and Split Data
-def preprocess_data(data):
-    X = data['Query']
-    y = data['mental_health_state']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    return X_train, X_test, y_train, y_test
+# Load the trained model
+model = MultinomialNB()
+model.load("mental_health_model.pkl")
 
-# Train Model
-def train_model(X_train, y_train):
-    vectorizer = TfidfVectorizer(stop_words='english', max_features=5000)
-    X_train_tfidf = vectorizer.fit_transform(X_train)
+# Load the vectorizer
+vectorizer = CountVectorizer()
+vectorizer.load("mental_health_vectorizer.pkl")
+
+# Load the tokenizer
+tokenizer = CountVectorizer().build_tokenizer()
+
+# Load the trained model
+model = MultinomialNB()
+
+# Predefined questions and answers
+predefined_qna = {
+    "What is mental health?": "Mental health includes emotional, psychological, and social well-being. It affects how we think, feel, and behave.",
+    "How can I improve my mental health?": "Engage in regular exercise, maintain a healthy diet, seek support from loved ones, and consider therapy if needed.",
+    "What is depression?": "Depression is a common mental health disorder characterized by persistent sadness and loss of interest in activities.",
+    "How can I manage anxiety?": "Practice mindfulness, deep breathing exercises, and seek professional help if anxiety interferes with daily life.",
+}
+
+# Load datasets
+
+
+sentiment_dataset_path = "./DataSets/mental_health_sentiment_dataset.csv"  # Replace with the actual path
+tips_dataset_path = "./DataSets/mental_health_conditions.csv"  # Replace with the actual path
+
+# Load sentiment dataset
+try:
+    sentiment_data = pd.read_csv(sentiment_dataset_path)
+except FileNotFoundError:
+    raise FileNotFoundError(f"Sentiment dataset not found at {sentiment_dataset_path}")
+
+# Load tips dataset
+try:
+    tips_data = pd.read_csv(tips_dataset_path)
+except FileNotFoundError:
+    raise FileNotFoundError(f"Tips dataset not found at {tips_dataset_path}")
+
+# Check for and handle NaN values
+if sentiment_data.isna().sum().any():
+    print("Missing values found. Cleaning the data...")
+    sentiment_data["query"].fillna("", inplace=True)
+    sentiment_data["condition"].fillna("Unknown", inplace=True)
+    sentiment_data["sentiment"].fillna("neutral", inplace=True)
+
+# Train a basic sentiment and condition classifier
+X = sentiment_data["query"]
+y_condition = sentiment_data["condition"]
+y_sentiment = sentiment_data["sentiment"]
+
+# Create a pipeline for the classifier
+condition_model = Pipeline([
+    ('vectorizer', CountVectorizer()),
+    ('classifier', MultinomialNB())
+])
+
+sentiment_model = Pipeline([
+    ('vectorizer', CountVectorizer()),
+    ('classifier', MultinomialNB())
+])
+
+condition_model.fit(X, y_condition)
+sentiment_model.fit(X, y_sentiment)
+
+# Initialize Flask app
+app = Flask(__name__)
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_input = request.json.get("query", "")
     
-    model = LogisticRegression()
-    model.fit(X_train_tfidf, y_train)
+    if not user_input:
+        return jsonify({"error": "Query is required"}), 400
     
-    return model, vectorizer
-
-# Evaluate Model
-def evaluate_model(model, vectorizer, X_test, y_test):
-    X_test_tfidf = vectorizer.transform(X_test)
-    y_pred = model.predict(X_test_tfidf)
+    # Check predefined questions
+    predefined_answer = predefined_qna.get(user_input)
+    if predefined_answer:
+        return jsonify({
+            "query": user_input,
+            "answer": predefined_answer
+        })
     
-    print("Classification Report:\n", classification_report(y_test, y_pred))
-    print("Accuracy:", accuracy_score(y_test, y_pred))
-
-# Save Model and Vectorizer
-def save_model(model, vectorizer, model_path="mental_health_model.pkl", vectorizer_path="vectorizer.pkl"):
-    with open(model_path, 'wb') as model_file:
-        pickle.dump(model, model_file)
-    with open(vectorizer_path, 'wb') as vectorizer_file:
-        pickle.dump(vectorizer, vectorizer_file)
-
-# Load Model and Vectorizer
-def load_model(model_path="mental_health_model.pkl", vectorizer_path="vectorizer.pkl"):
-    with open(model_path, 'rb') as model_file:
-        model = pickle.load(model_file)
-    with open(vectorizer_path, 'rb') as vectorizer_file:
-        vectorizer = pickle.load(vectorizer_file)
-    return model, vectorizer
-
-# Predict Mental Health State
-def predict(query, model, vectorizer):
-    query_tfidf = vectorizer.transform([query])
-    prediction = model.predict(query_tfidf)
-    return prediction[0]
-
-# Main Execution
-if __name__ == "__main__":
-    # Replace 'dataset.csv' with your actual dataset file
-    file_path = "dataset.csv"
+    # Predict mental health condition and sentiment
+    predicted_condition = condition_model.predict([user_input])[0]
+    predicted_sentiment = sentiment_model.predict([user_input])[0]
     
-    try:
-        data = load_data("./dataSets/mental_health_conditions.csv")
-        X_train, X_test, y_train, y_test = preprocess_data(data)
-        
-        model, vectorizer = train_model(X_train, y_train)
-        evaluate_model(model, vectorizer, X_test, y_test)
-        
-        save_model(model, vectorizer)
-        print("Model and vectorizer saved successfully.")
-        
-        # Example query
-        model, vectorizer = load_model()
-        query = "I feel very anxious and worried all the time."
-        prediction = predict(query, model, vectorizer)
-        print(f"Predicted Mental Health State: {prediction}")
-        
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    # Fetch tips and treatments
+    tips = tips_data[tips_data["Mental Health Condition"] == predicted_condition]["Treatments and Tips"].values
+    tips_response = tips[0] if len(tips) > 0 else "No specific tips available for the identified condition."
+    
+    response = {
+        "query": user_input,
+        "condition": predicted_condition,
+        "sentiment": predicted_sentiment,
+        "tips": tips_response
+    }
+    return jsonify(response)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
