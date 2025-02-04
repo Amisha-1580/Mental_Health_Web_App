@@ -71,3 +71,11 @@ height: 100px;
     padding: 0.2rem;
     margin: 1rem;
 }
+
+.result-card{
+    background-color: #7857e1;
+    color: aliceblue;
+    padding: 2rem;
+    margin: 1rem;
+    width: 60%;
+}
