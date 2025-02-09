@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Get stored score and total questions from localStorage
     const finalScore = localStorage.getItem("finalScore") || 0;
-    const totalQuestions = localStorage.getItem("totalQuestions") || 10;
+    const totalQuestions = 10 ;//localStorage.getItem("totalQuestions") || 10;
 
     // DOM Elements
     const scoreBox = document.querySelector(".score");
@@ -10,9 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const tipsContainer = document.querySelector(".tips");
 
     // Update score display
+<<<<<<< HEAD
     // scoreBox.textContent = `${finalScore}/${totalQuestions*10}`;
     mental_health_grade = Math.floor((finalScore/(totalQuestions*10))*10);
     scoreBox.textContent = `${mental_health_grade}/10`;
+=======
+    scoreBox.textContent = `${finalScore/10}/${totalQuestions}`;
+>>>>>>> 480664d (chatbot working added)
 
     // Assign grade, emoji, and tips based on score
     let grade, emojiSrc, tipsHtml;

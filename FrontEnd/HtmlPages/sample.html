@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangular Image Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end; /* Align content to the right */
+            align-items: center; /* Vertically center the content */
+            background-color: #f0f0f0;
+        }
+        .image-container {
+            position: relative;
+            width: 250px; /* Width of the container */
+            height: 450px; /* Height of the container */
+        }
+        .image-container img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .image1 {
+            top: 0;
+            z-index: 3;
+        }
+        .image2 {
+            top: 80px; /* Adjust vertical overlap */
+            left: 20px; /* Adjust horizontal overlap */
+            z-index: 2;
+        }
+        .image3 {
+            top: 160px; /* Adjust vertical overlap */
+            left: 40px; /* Adjust horizontal overlap */
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img class="image1" src="https://previews.123rf.com/images/jetsam86/jetsam861906/jetsam86190600018/125107772-group-of-friends-taking-selfie-at-camera-in-city.jpg" alt="Group of Friends Selfie">
+        <img class="image2" src="https://t3.ftcdn.net/jpg/04/84/87/87/34/360_F_484873483_hg1ofIdXbMha5lKEDG3hJBrwKh1oikTq.jpg" alt="Happy People Image 1">
+        <img class="image3" src="https://www.adobe.com/content/dam/stock/mental-health-happy.jpg" alt="Happy People Image 2">
+    </div>
+</body>
+</html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuizPage</title>
     <link rel="stylesheet" href="../Styles/utility.css" />
     <link rel="stylesheet" href="../Styles/quizStyle.css" />
 
+<<<<<<< HEAD
      <!-- font awesome icons -->
      <link
      rel="stylesheet"
@@ -52,34 +53,85 @@
         <li><a href="#" id="login-btn"><button>LOGIN</button></a></li>
       </ul>
       
+=======
+    <!-- font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="../images/main-logo.png" alt="Strong Brain Logo" />
+        <span>MOOD MAP</span>
+      </div>
+      <a href="#">BLOG</a>
+      <a href="#">ABOUT</a>
+      <a href="#">REGISTER</a>
+      <a href="#" id="login-btn">LOGIN</a>
+>>>>>>> 480664d (chatbot working added)
     </div>
 
     <!-- body -->
-     <div class="quiz-container container-column">
-        <h3>Question Text</h3>
-        <div class="container-column" id="options" onclick="changeSmiley()">
-            <div class="container-row option-box">
-                <img src="../images/simple_smiley.png" alt="option-img" height="30px" width="30px">
-                <label for="option1">Option 1</label>
-            </div>
-            <div class="container-row option-box" onclick="changeSmiley()">
-                <img src="../images/simple_smiley.png" alt="option-img" height="30px" width="30px">
-                <label for="option2">Option 2</label>
-            </div>
-            <div class="container-row option-box" onclick="changeSmiley()">
-                <img src="../images/simple_smiley.png" alt="option-img" height="30px" width="30px">
-                <label for="option3">Option 3</label>
+    <div class="quiz-container container-column">
+      <h3>Question Text</h3>
+      <div class="container-column" id="options" onclick="changeSmiley()">
+        <div class="container-row option-box">
+          <img
+            src="../images/simple_smiley.png"
+            alt="option-img"
+            height="30px"
+            width="30px"
+          />
+          <label for="option1">Option 1</label>
         </div>
         <div class="container-row option-box" onclick="changeSmiley()">
-            <img src="../images/simple_smiley.png" alt="option-img" height="30px" width="30px">
-            <label for="option4">Option 4</label>
-    </div>
-</div>
-    <div class="navButtons" >
+          <img
+            src="../images/simple_smiley.png"
+            alt="option-img"
+            height="30px"
+            width="30px"
+          />
+          <label for="option2">Option 2</label>
+        </div>
+        <div class="container-row option-box" onclick="changeSmiley()">
+          <img
+            src="../images/simple_smiley.png"
+            alt="option-img"
+            height="30px"
+            width="30px"
+          />
+          <label for="option3">Option 3</label>
+        </div>
+        <div class="container-row option-box" onclick="changeSmiley()">
+          <img
+            src="../images/simple_smiley.png"
+            alt="option-img"
+            height="30px"
+            width="30px"
+          />
+          <label for="option4">Option 4</label>
+        </div>
+      </div>
+      <div class="navButtons">
         <i class="fa-solid fa-arrow-left" disabled></i>
         <button class="btn btn-primary">submit</button>
         <i class="fa-solid fa-arrow-right" id="next-button"></i>
+      </div>
+      <button class="btn btn-primary" id="final-submit-button">
+        Submit Quiz
+      </button>
     </div>
+<<<<<<< HEAD
     <button class="btn btn-primary" id="final-submit-button">Submit Quiz </button>
     
      </div>
@@ -87,3 +139,8 @@
      <script src="../Scripts/utilityScript.js"></script>
 </body>
 </html>
+=======
+    <script src="../Scripts/quizScript.js"></script>
+  </body>
+</html>
+>>>>>>> 480664d (chatbot working added)

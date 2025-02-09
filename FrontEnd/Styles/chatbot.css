@@ -1,9 +1,16 @@
-body{
+body {
     background: linear-gradient(to right, #063991, #e366ff);
+<<<<<<< HEAD
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .chat-card{
+=======
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  .chat-card {
+>>>>>>> 480664d (chatbot working added)
     background: linear-gradient(to right, #5661d3, #3583d1);
     background-color: rgb(105, 241, 139);
     height: 80%;
@@ -13,10 +20,10 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-}
-
-.bottom-chat{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .bottom-chat {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -25,36 +32,43 @@ body{
     border: none;
     padding: 0.5rem;
     font-size: 1rem;
+<<<<<<< HEAD
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 input{
+=======
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  input {
+>>>>>>> 480664d (chatbot working added)
     padding: 0.8rem;
     border-radius: 10px;
     width: 70%;
     border: none;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     font-size: 18px;
     color: black;
     background-color: white;
     border: none;
-    
-}
-.bottom-chat{
+  }
+  .bottom-chat {
     gap: 1px !important;
-}
-
-.chatbot-img{
+  }
+  
+  .chatbot-img {
     height: 100px;
     width: 100px;
     position: fixed;
     top: 0px;
     right: 0px;
-    z-index: 9999;
+    z-index: 999;
     border-radius: 50%;
     border: 2px solid #000;
     padding: 0.2rem;
     margin: 1rem;
+<<<<<<< HEAD
 }
 
 @media (max-width: 768px) {
@@ -101,3 +115,50 @@ input{
         margin: 5px 0;
         border-radius: 5px;
     }
+=======
+  }
+  
+  @media (max-width: 768px) {
+    .chat-card {
+      width: 100%;
+    }
+  }
+  @media (max-width: 576px) {
+    .chat-card {
+      width: 100%;
+    }
+  }
+  @media (max-width: 425px) {
+    .chat-card {
+      width: 100%;
+    }
+  }
+  
+  /* Quick inline styling for the chat window */
+  .chat-window {
+    border: 1px solid #5661d3;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+    background-color: #5661d3;
+  }
+  .user-message {
+    text-align: left;
+    background-color: #e366ff;
+  }
+  
+  .bot-message {
+    text-align: left;
+    background-color: #3583d1;
+    margin-left: 40px !important;
+  }
+  
+  .user-message,
+  .bot-message {
+    width: 50%;
+    padding: 0.5rem;
+    color: white;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+>>>>>>> 480664d (chatbot working added)

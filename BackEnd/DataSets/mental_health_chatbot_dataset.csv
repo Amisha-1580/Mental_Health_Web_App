@@ -1,0 +1,100 @@
+User_Input,Bot_Response,Sentiment,Intent,Context,Emotion
+I’m feeling really anxious.,Anxiety can be tough. Try grounding exercises to bring yourself to the present.,Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive?,Gratitude journaling can help. Write down 3 things you're thankful for daily.,Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today!,That’s great to hear! Keep spreading your joy to those around you.,Positive,General Conversation,Celebration,Happiness
+What are some ways to relax?,Relaxation techniques like yoga or deep breathing can help you unwind.,Neutral,Mental Health Tip,Relaxation-related,Neutral
+I feel so overwhelmed with work.,"Take a break and prioritize tasks. Remember, one step at a time.",Negative,Mental Health Tip,Stress-related,Stress
+I don’t feel like doing anything today.,It's okay to have off days. Try taking a small step towards something you enjoy.,Negative,Mental Health Tip,Motivation-related,Apathy
+I’m having trouble sleeping.,Sleep hygiene is important. Avoid screens before bed and try relaxation exercises.,Neutral,Mental Health Tip,Sleep-related,Restlessness
+I feel so alone.,You’re not alone. Consider reaching out to a friend or joining a support group.,Negative,Mental Health Tip,Loneliness-related,Loneliness
+I’m super excited about my new project!,That’s fantastic! Your enthusiasm is contagious—good luck with your project!,Positive,General Conversation,Achievement,Excitement
+I’m feeling really anxious. (variant 1),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 1),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 2),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 2),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 3),That’s great to hear! Keep spreading your joy to those around you. (variant 3),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 4),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 4),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 5),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 5),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 6),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 6),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 7),That’s great to hear! Keep spreading your joy to those around you. (variant 7),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 8),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 8),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 9),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 9),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 10),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 10),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 11),That’s great to hear! Keep spreading your joy to those around you. (variant 11),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 12),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 12),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 13),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 13),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 14),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 14),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 15),That’s great to hear! Keep spreading your joy to those around you. (variant 15),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 16),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 16),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 17),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 17),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 18),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 18),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 19),That’s great to hear! Keep spreading your joy to those around you. (variant 19),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 20),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 20),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 21),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 21),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 22),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 22),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 23),That’s great to hear! Keep spreading your joy to those around you. (variant 23),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 24),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 24),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 25),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 25),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 26),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 26),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 27),That’s great to hear! Keep spreading your joy to those around you. (variant 27),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 28),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 28),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 29),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 29),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 30),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 30),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 31),That’s great to hear! Keep spreading your joy to those around you. (variant 31),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 32),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 32),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 33),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 33),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 34),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 34),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 35),That’s great to hear! Keep spreading your joy to those around you. (variant 35),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 36),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 36),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 37),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 37),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 38),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 38),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 39),That’s great to hear! Keep spreading your joy to those around you. (variant 39),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 40),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 40),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 41),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 41),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 42),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 42),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 43),That’s great to hear! Keep spreading your joy to those around you. (variant 43),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 44),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 44),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 45),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 45),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 46),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 46),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 47),That’s great to hear! Keep spreading your joy to those around you. (variant 47),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 48),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 48),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 49),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 49),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 50),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 50),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 51),That’s great to hear! Keep spreading your joy to those around you. (variant 51),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 52),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 52),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 53),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 53),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 54),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 54),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 55),That’s great to hear! Keep spreading your joy to those around you. (variant 55),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 56),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 56),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 57),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 57),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 58),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 58),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 59),That’s great to hear! Keep spreading your joy to those around you. (variant 59),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 60),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 60),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 61),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 61),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 62),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 62),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 63),That’s great to hear! Keep spreading your joy to those around you. (variant 63),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 64),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 64),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 65),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 65),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 66),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 66),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 67),That’s great to hear! Keep spreading your joy to those around you. (variant 67),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 68),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 68),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 69),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 69),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 70),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 70),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 71),That’s great to hear! Keep spreading your joy to those around you. (variant 71),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 72),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 72),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 73),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 73),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 74),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 74),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 75),That’s great to hear! Keep spreading your joy to those around you. (variant 75),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 76),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 76),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 77),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 77),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 78),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 78),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 79),That’s great to hear! Keep spreading your joy to those around you. (variant 79),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 80),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 80),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 81),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 81),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 82),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 82),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 83),That’s great to hear! Keep spreading your joy to those around you. (variant 83),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 84),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 84),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 85),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 85),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 86),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 86),Neutral,Mental Health Tip,Positivity,Neutral
+I’m so happy today! (variant 87),That’s great to hear! Keep spreading your joy to those around you. (variant 87),Positive,General Conversation,Celebration,Happiness
+What are some ways to relax? (variant 88),Relaxation techniques like yoga or deep breathing can help you unwind. (variant 88),Neutral,Mental Health Tip,Relaxation-related,Neutral
+I’m feeling really anxious. (variant 89),Anxiety can be tough. Try grounding exercises to bring yourself to the present. (variant 89),Negative,Mental Health Tip,Anxiety-related,Anxiety
+How can I stay positive? (variant 90),Gratitude journaling can help. Write down 3 things you're thankful for daily. (variant 90),Neutral,Mental Health Tip,Positivity,Neutral
