@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../static/Styles/utility.css" />
+    <link href="../static/images/main-logo.png" rel="icon" type="image/png">
+    <style>
+        body {
+            background: linear-gradient(to right, #9267cd, #7323eb);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        .navbar .nav-options a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #6200ea;
+            font-weight: bold;
+        }
+
+        .navbar .nav-options button {
+            background: #6200ea;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navbar .nav-options button:hover {
+            background: #4500c4;
+        }
+
+        .form-container {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #6200ea;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-container button:hover {
+            background: #4500c4;
+        }
+
+        .form-container p button {
+            background: none;
+            border: none;
+            color: #6200ea;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .form-container p button:hover {
+            color: #4500c4;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../static/images/main-logo.png" alt="Strong Brain Logo" />
+            <span>MOOD MAP</span>
+        </div>
+        <div class="nav-options container-row">
+            <a href="./blog.html">BLOG</a>
+            <a href="#">ABOUT</a>
+            <a href="#">REGISTER</a>
+            <a href="#" id="login-btn"><button>LOGIN</button></a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post">
+            <input type="text" placeholder="Username" name="username" required />
+            <input type="email" placeholder="Email" name="email" required />
+            <input type="password" placeholder="Password" name="password" required />
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Don't have an account? <button type="button" onclick="window.location.href='/login'">Sign Up</button></p>
+
+    </div>
+</body>
+</html>

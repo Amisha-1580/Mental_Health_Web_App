@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link href="../static/images/main-logo.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="../static/Styles/utility.css" />
+    <link rel="stylesheet" href="../static/Styles/chatbot.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <img src="../static/images/main-logo.png" alt="Strong Brain Logo" />
+        <span>MOOD MAP</span>
+      </div>
+      <div class="nav-options container-row">
+        <a href="./blog.html">BLOG</a>
+        <a href="#">ABOUT</a>
+        <a href="#">REGISTER</a>
+        <a href="./LoginPage.html" id="login-btn"><button>LOGIN</button></a>
+      </div>
+      <div class="menu">
+        <img src="../static/images/Hamburger Menu.png" alt="menu" id="menu" />
+      </div>
+    </div>
+    <div class="nav-options container-row">
+        <a href="./blog.html">BLOG</a>
+        <a href="#">ABOUT</a>
+        <a href="#">REGISTER</a>
+        <a href="./LoginPage.html" id="login-btn"><button>LOGIN</button></a>
+    </div>
+    <div class="menu">
+        <img src="../static/images/menu-bar.jpg" alt="menu" id="menu">
+    </div>
+</div>
+
+<div class="menu-list">
+    <ul class="container-column">
+        <div class="cross-icon">
+            <img src="../static/images/close.png" alt="cross" id="cross">
+        </div>
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./blog.html">BLOG</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">REGISTER</a></li>
+        <li><a href="#" id="login-btn"><button>LOGIN</button></a></li>
+    </ul>
+</div>
+
+<!-- Chatbot -->
+<div class="chat-card">
+    <img src="../static/images/mental_chatbot.jpg" alt="chatbot" class="chatbot-img">
+    <div id="chat-display" class="chat-window">
+        <!-- Messages will appear here -->
+    </div>
+    <div class="bottom-chat container-row">
+        <input type="text" id="chat-input" placeholder="Type your message here..." />
+        <button id="send-btn" style="border: 2px solid white; padding: 0.8rem;">Send</button>
+    </div>
+</div>
+
+<script SRC="../static/Scripts/chatbotScript.js"></script>
+<script src="../static/Scripts/utilityScript.js"></script>
+
+
+</body>
+</html>

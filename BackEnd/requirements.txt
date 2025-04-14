@@ -18,3 +18,9 @@ torch
 textblob
 scikit-learn
 joblib
+flask-sqlalchemy
+flask-bcrypt 
+flask-login
+flask
+flask_cors
+openai

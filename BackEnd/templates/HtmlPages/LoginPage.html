@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginSignup Page</title>
+    <link rel="stylesheet" href="../static/Styles/utility.css" />
+    <style>
+        body {
+            background: linear-gradient(to right, #9267cd, #7323eb);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            width: 100%;
+        }
+
+        /* Flip Card Container */
+        .flip-card-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            margin: 2rem;
+        }
+
+        /* Flip Card */
+        .flip-card {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* Front & Back Panels */
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Input Fields */
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Buttons */
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #6200ea;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #4500c4;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .flip-card-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../static/images/main-logo.png" alt="Strong Brain Logo" />
+            <span>MOOD MAP</span>
+        </div>
+        <div class="nav-options container-row">
+            <a href="./blog.html">BLOG</a>
+            <a href="#">ABOUT</a>
+            <a href="#">REGISTER</a>
+            <a href="#" id="login-btn"><button>LOGIN</button></a>
+        </div>
+        <div class="menu">
+            <img src="../static/images/Hamburger Menu.png" alt="menu" id="menu">
+        </div>
+    </div>
+    
+    <div class="menu-list">
+        <ul class="container-column">
+            <div class="cross-icon">
+                <img src="../static/images/close.png" alt="cross" id="cross">
+            </div>
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./blog.html">BLOG</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">REGISTER</a></li>
+            <li><a href="#" id="login-btn"><button>LOGIN</button></a></li>
+        </ul>
+    </div>
+
+    <div class="flip-card-container">
+        <div class="flip-card" id="flip-card">
+            <!-- Front: Login Form -->
+            <div class="flip-card-front">
+                <h2>Login</h2>
+                <form action="/login" method="post">
+                    <input type="email" placeholder="Email"  name="email" required />
+                    <input type="password" placeholder="Password" name="password" required />
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <button type="button" onclick="toggleFlip()">Sign Up</button></p>
+            </div>
+
+            <!-- Back: Signup Form -->
+            <div class="flip-card-back">
+                <h2>Sign Up</h2>
+                <form action="/register" method="post">
+                    <input type="text" placeholder="username" name="username" required />
+                    <input type="email" placeholder="email" name="email" required />
+                    <input type="password" placeholder="password" name="password" required />
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <button type="button" onclick="toggleFlip()">Login</button></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleFlip() {
+            document.getElementById("flip-card").classList.toggle("flipped");
+        }
+    </script>
+    <script src="../static/Scripts/utilityScript.js"></script>
+</body>
+</html>

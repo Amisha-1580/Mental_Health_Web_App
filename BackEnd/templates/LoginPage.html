@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginSignup Page</title>
-    <link rel="stylesheet" href="../Styles/utility.css" />
+    <link href="../static/images/main-logo.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="../static/Styles/utility.css" />
     <style>
         body {
             background: linear-gradient(to right, #9267cd, #7323eb);
@@ -94,7 +95,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="logo">
-            <img src="../images/main-logo.png" alt="Strong Brain Logo" />
+            <img src="../static/images/main-logo.png" alt="Strong Brain Logo" />
             <span>MOOD MAP</span>
         </div>
         <div class="nav-options container-row">
@@ -104,14 +105,14 @@
             <a href="#" id="login-btn"><button>LOGIN</button></a>
         </div>
         <div class="menu">
-            <img src="../images/Hamburger Menu.png" alt="menu" id="menu">
+            <img src="../static/images/Hamburger Menu.png" alt="menu" id="menu">
         </div>
     </div>
     
     <div class="menu-list">
         <ul class="container-column">
             <div class="cross-icon">
-                <img src="../images/close.png" alt="cross" id="cross">
+                <img src="../static/images/close.png" alt="cross" id="cross">
             </div>
             <li><a href="./index.html">HOME</a></li>
             <li><a href="./blog.html">BLOG</a></li>
@@ -126,9 +127,9 @@
             <!-- Front: Login Form -->
             <div class="flip-card-front">
                 <h2>Login</h2>
-                <form>
-                    <input type="email" placeholder="Email" required />
-                    <input type="password" placeholder="Password" required />
+                <form action="/login" method="post">
+                    <input type="email" placeholder="Email"  name="email" required />
+                    <input type="password" placeholder="Password" name="password" required />
                     <button type="submit">Login</button>
                 </form>
                 <p>Don't have an account? <button type="button" onclick="toggleFlip()">Sign Up</button></p>
@@ -137,10 +138,10 @@
             <!-- Back: Signup Form -->
             <div class="flip-card-back">
                 <h2>Sign Up</h2>
-                <form>
-                    <input type="text" placeholder="Full Name" required />
-                    <input type="email" placeholder="Email" required />
-                    <input type="password" placeholder="Password" required />
+                <form action="/signup" method="post">
+                    <input type="text" placeholder="username" name="username" required />
+                    <input type="email" placeholder="email" name="email" required />
+                    <input type="password" placeholder="password" name="password" required />
                     <button type="submit">Sign Up</button>
                 </form>
                 <p>Already have an account? <button type="button" onclick="toggleFlip()">Login</button></p>
@@ -153,6 +154,6 @@
             document.getElementById("flip-card").classList.toggle("flipped");
         }
     </script>
-    <script src="../Scripts/utilityScript.js"></script>
+    <script src="../static/Scripts/utilityScript.js"></script>
 </body>
 </html>

@@ -33,7 +33,7 @@ function displayQuestion(data) {
         optionDiv.dataset.optionId = option.id;
 
         optionDiv.innerHTML = `
-            <img src="../images/simple_smiley.png" alt="option-img" height="60px" width="60px">
+            <img src="../static/images/simple_smiley.png" alt="option-img" height="60px" width="60px">
             <label>${option.text}</label>
         `;
 
@@ -53,7 +53,7 @@ const changeSmileyAndSelectOption = function () {
     });
 
     this.style.backgroundColor = "rgba(0, 0, 255, 0.2)";
-    this.querySelector("img").src = "../images/opt_img.jpg";
+    this.querySelector("img").src = "../static/images/opt_img.jpg";
     
     const optionIndex = [...this.parentElement.children].indexOf(this);
     answers[currentQuestionId] = optionIndex;
