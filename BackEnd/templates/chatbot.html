@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
-    <link href="../static/images/main-logo.png" rel="icon" type="image/png">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Chat UI</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
     <link rel="stylesheet" href="../static/Styles/utility.css" />
     <link rel="stylesheet" href="../static/Styles/chatbot.css" />
 </head>
+
 <body>
 
-<!-- Navbar -->
-<div class="navbar">
-    <div class="logo">
-        <img src="../static/images/main-logo.png" alt="Strong Brain Logo" />
-        <span>MOOD MAP</span>
-      </div>
-      <div class="nav-options container-row">
-        <a href="./blog.html">BLOG</a>
-        <a href="#">ABOUT</a>
-        <a href="#">REGISTER</a>
-        <a href="./LoginPage.html" id="login-btn"><button>LOGIN</button></a>
-      </div>
-      <div class="menu">
-        <img src="../static/images/Hamburger Menu.png" alt="menu" id="menu" />
-      </div>
-    </div>
-    <div class="nav-options container-row">
-        <a href="./blog.html">BLOG</a>
-        <a href="#">ABOUT</a>
-        <a href="#">REGISTER</a>
-        <a href="./LoginPage.html" id="login-btn"><button>LOGIN</button></a>
-    </div>
-    <div class="menu">
-        <img src="../static/images/menu-bar.jpg" alt="menu" id="menu">
-    </div>
-</div>
-
-<div class="menu-list">
-    <ul class="container-column">
-        <div class="cross-icon">
-            <img src="../static/images/close.png" alt="cross" id="cross">
+<div class="wrapper">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../static/images/main-logo.png" alt="Strong Brain Logo">
+            <span>MOOD MAP</span>
         </div>
-        <li><a href="./index.html">HOME</a></li>
-        <li><a href="./blog.html">BLOG</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">REGISTER</a></li>
-        <li><a href="#" id="login-btn"><button>LOGIN</button></a></li>
-    </ul>
-</div>
-
-<!-- Chatbot -->
-<div class="chat-card">
-    <img src="../static/images/mental_chatbot.jpg" alt="chatbot" class="chatbot-img">
-    <div id="chat-display" class="chat-window">
-        <!-- Messages will appear here -->
+        <a href="/blog">BLOG</a>
+        <a href="/about">ABOUT</a>
+        <a href="/login" id="login-btn">LOGIN</a>
     </div>
-    <div class="bottom-chat container-row">
-        <input type="text" id="chat-input" placeholder="Type your message here..." />
-        <button id="send-btn" style="border: 2px solid white; padding: 0.8rem;">Send</button>
-    </div>
-</div>
 
+    <!-- Navbar
+    <nav>
+        <div class="logo">
+            <img src="logo.PNG" alt="logo">
+        </div>
+        <h2>MoodMap</h2>
+    </nav> -->
+
+    <!-- Main Area (starts in landing mode) -->
+    <div class="main landing" id="main">
+
+        <!-- Center Logo (hidden after first chat) -->
+        <div class="logo big-logo" id="centerLogo">
+            <img src="logo.PNG" alt="logo">
+        </div>
+
+        <!-- Chat Messages (hidden until chat starts) -->
+        <div class="chat-messages hidden" id="chatMessages"></div>
+
+        <!-- Chat Bar -->
+        <div class="chat-bar">
+
+            <div class="icon">
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+
+            <input
+                id="userInput"
+                class="chat-input"
+                placeholder="What's in your mind today ?" />
+
+            <div class="send-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- 
+<script src="index.js"></script> -->
 <script SRC="../static/Scripts/chatbotScript.js"></script>
 <script src="../static/Scripts/utilityScript.js"></script>
-
-
 </body>
 </html>
