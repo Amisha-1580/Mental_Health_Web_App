@@ -40,19 +40,20 @@ An intelligent, user-friendly web application designed to analyze a user's menta
 ## 🧱 Tech Stack
 
 ### 🎨 Frontend
-- HTML5  
-- CSS3  
-- JavaScript  
+## 🧱 Tech Stack
 
+![HTML](https://img.shields.io/badge/HTML5-orange?logo=html5)
+![CSS](https://img.shields.io/badge/CSS3-blue?logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow?logo=javascript)
 ### ⚙️ Backend
-- Python  
-- Flask  
+![Python](https://img.shields.io/badge/Python-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-black?logo=flask) 
+![Gemini](https://img.shields.io/badge/Gemini-API-blue?logo=gemini)
 
 ### 🗄️ Database
-- SQLite  
+![SQLite](https://img.shields.io/badge/SQLite-lightblue?logo=sqlite)
 
-### 🤖 AI Integration
-- Gemini API (for chatbot functionality)
+
 
 ---
 
