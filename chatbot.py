@@ -12,7 +12,7 @@ chat = Blueprint('chat', __name__)
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Create model instance
-model = genai.GenerativeModel("gemini-2.5-flash")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 # System instruction
 SYSTEM_PROMPT = """
