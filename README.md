@@ -40,7 +40,6 @@ An intelligent, user-friendly web application designed to analyze a user's menta
 ## 🧱 Tech Stack
 
 ### 🎨 Frontend
-## 🧱 Tech Stack
 
 ![HTML](https://img.shields.io/badge/HTML5-orange?logo=html5)
 ![CSS](https://img.shields.io/badge/CSS3-blue?logo=css3)
