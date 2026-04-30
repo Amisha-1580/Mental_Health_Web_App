@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+
+{% block title %}User Dashboard - Mood Map{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+    .dashboard-container {
+        padding: 3rem 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .welcome-banner {
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        color: white;
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: var(--shadow);
+    }
+
+    .welcome-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+    }
+
+    .welcome-text p {
+        opacity: 0.9;
+        font-size: 1.1rem;
+    }
+
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .card-section {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        margin-bottom: 2rem;
+    }
+
+    .card-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Quick Actions */
+    .action-btns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .action-card {
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    .action-card:hover {
+        transform: translateY(-5px);
+        filter: brightness(1.1);
+    }
+
+    .action-quiz { background: #6a5acd; }
+    .action-chat { background: #4b3f72; }
+
+    .action-card i {
+        font-size: 2.5rem;
+    }
+
+    /* History Table */
+    .history-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .history-table th, .history-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+    .history-table th {
+        color: var(--text-muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+
+    .score-badge {
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .score-high { background: #e8f5e9; color: #2e7d32; }
+    .score-mid { background: #fff3e0; color: #ef6c00; }
+    .score-low { background: #ffebee; color: #c62828; }
+
+    /* Mindfulness Section */
+    .activity-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .activity-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--bg-color);
+        border-radius: 10px;
+        transition: var(--transition);
+    }
+
+    .activity-item:hover {
+        background: #f0edff;
+    }
+
+    .activity-item i {
+        width: 40px;
+        height: 40px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: var(--primary-color);
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 992px) {
+        .dashboard-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container animate-fade">
+    
+    <!-- Header Section -->
+    <div class="welcome-banner">
+        <div class="welcome-text">
+            <h1>Hello, {{ current_user.username }}!</h1>
+            <p>Welcome to your personal mental health space. How are you feeling today?</p>
+        </div>
+        <div class="header-icon">
+            <i class="fas fa-sparkles fa-3x" style="opacity: 0.5;"></i>
+        </div>
+    </div>
+
+    <div class="dashboard-grid">
+        
+        <!-- Left Column -->
+        <div class="left-col">
+            
+            <!-- Quick Actions -->
+            <section class="card-section">
+                <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                <div class="action-btns">
+                    <a href="/quiz" class="action-card action-quiz">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Take Mental Health Quiz</span>
+                    </a>
+                    <a href="/chatbot" class="action-card action-chat">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Chat with AI Assistant</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Quiz History -->
+            <section class="card-section">
+                <h3><i class="fas fa-history"></i> Recent Quiz History</h3>
+                {% if history %}
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in history %}
+                        <tr>
+                            <td>{{ item.date.strftime('%b %d, %Y') }}</td>
+                            <td>{{ item.score }}/10</td>
+                            <td>
+                                {% if item.score >= 8 %}
+                                    <span class="score-badge score-high">Excellent</span>
+                                {% elif item.score >= 5 %}
+                                    <span class="score-badge score-mid">Good</span>
+                                {% else %}
+                                    <span class="score-badge score-low">Needs Attention</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p style="color: var(--text-muted); text-align: center; padding: 2rem;">No quiz history yet. Start your first quiz today!</p>
+                {% endif %}
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-col">
+            
+            <!-- Mindfulness Activities -->
+            <section class="card-section">
+                <h3><i class="fas fa-leaf"></i> Mindful Activities</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <strong>Deep Breathing</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">5 minutes of focused breathwork</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-walking"></i>
+                        <div>
+                            <strong>Nature Walk</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">A short walk in fresh air</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-pen-fancy"></i>
+                        <div>
+                            <strong>Daily Journaling</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Write down 3 things you're grateful for</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <i class="fas fa-music"></i>
+                        <div>
+                            <strong>Calming Music</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Listen to some lo-fi or classical beats</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support Card -->
+            <div class="card-section" style="background: rgba(106, 90, 205, 0.05); border: 1px dashed var(--primary-color);">
+                <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Need immediate support?</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Our AI chatbot is always here to listen and help you navigate through tough moments.</p>
+                <a href="/chatbot" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Start chatting now →</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

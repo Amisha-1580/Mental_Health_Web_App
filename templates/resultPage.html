@@ -1,101 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>resultPage</title>
-    <link href="../static/images/main-logo.png" rel="icon" type="image/png">
-    <link href="../static/Styles/resultStyle.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="../static/Styles/utility.css" />
-  </head>
-  <body>
-    <!-- navbar -->
-    <div class="navbar">
-      <div class="logo">
-        <img src="../images/main-logo.png" alt="Strong Brain Logo" />
-        <span>MOOD MAP</span>
-      </div>
-      <div class="nav-options container-row">
-        <a href="./blog.html">BLOG</a>
-        <a href="#">ABOUT</a>
-        <a href="#">REGISTER</a>
-        <a href="#" id="login-btn"><button>LOGIN</button></a>
-      </div>
+{% extends "base.html" %}
 
-      <div class="menu">
-        <img src="../static/images/menu-bar.jpg" alt="menu" id="menu" />
-      </div>
+{% block title %}Quiz Results - Mood Map{% endblock %}
+
+{% block head %}
+<style>
+    .result-wrapper {
+        max-width: 900px;
+        margin: 4rem auto;
+        padding: 0 20px;
+        width: 100%;
+    }
+    .result-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .result-header h2 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+    }
+    .result-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .score-summary {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 3rem;
+    }
+    .score-item {
+        text-align: center;
+    }
+    .score-item span {
+        display: block;
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+    }
+    .score-item .score {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+    .grade-box {
+        text-align: center;
+    }
+    .grade-box span {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text-color);
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .grade-box img {
+        width: 100px;
+        height: 100px;
+    }
+    .suggestions-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: var(--text-color);
+        text-align: left;
+    }
+    .tips {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    .tip {
+        background: var(--bg-color);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        text-align: center;
+        transition: var(--transition);
+    }
+    .tip:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .tip p {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+    .tip img {
+        width: 100%;
+        max-width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .chatbot-fab {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 70px;
+        height: 70px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(106, 90, 205, 0.4);
+        transition: var(--transition);
+        z-index: 1000;
+    }
+    .chatbot-fab:hover {
+        transform: scale(1.1) rotate(10deg);
+        background: var(--primary-dark);
+    }
+    .chatbot-fab img {
+        width: 40px;
+        height: 40px;
+        filter: brightness(0) invert(1);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="result-wrapper animate-fade">
+    <div class="result-header">
+        <h2>Your Mental Health Tracker</h2>
     </div>
 
-    <div class="menu-list">
-      <ul class="container-column">
-        <div class="cross-icon">
-          <img src="../static/images/close.png" alt="cross" id="cross" />
+    <div class="result-card">
+        <div class="score-summary">
+            <div class="score-item">
+                <span>Your Score</span>
+                <div class="score">0/10</div>
+            </div>
+            <div class="grade-box">
+                <span>Assessment...</span>
+                <img src="{{ url_for('static', filename='images/simple_smiley.png') }}" alt="Result" class="smiley">
+            </div>
         </div>
-        <li><a href="./index.html">HOME</a></li>
-        <li><a href="./blog.html">BLOG</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">REGISTER</a></li>
-        <a href="./LoginPage.html" id="login-btn"><button>LOGIN</button></a>
-      </ul>
+
+        <div class="suggestions-section">
+            <h2>Recommended Tips for You</h2>
+            <div class="tips">
+                <!-- Tips will be injected by JavaScript -->
+            </div>
+        </div>
     </div>
+</div>
 
-    <!-- result content -->
-    <h2>Here is Your Performance tracker :</h2>
-    <div class="result-card ">
-        <div class="result-box container-row">
-            <div class="score-box container-column">
-              <span>Score : </span>
-              <div class="score">3/10</div>
-            </div>
-            <div class="grade-box container-column">
-              <span>Excellent</span>
-              <img src="../static/images/simple_smiley.png" alt="smiley" class="smiley" />
-            </div>
-          </div>
-      
-          <div class="suggestions container-column">
-            <h2>Tips :</h2>
-            <div class="tips container-row">
-              <div class="tip container-column">
-                <p>Meditation</p>
-                <img
-                  src="../static/images/meditation_tip.jpg"
-                  alt="meditation"
-                  class="tip-img"
-                />
-              </div>
-              <div class="tip container-column">
-                <p>listen to music</p>
-                <img
-                  src="../static/images/music_listen_tip.png"
-                  alt="music"
-                  class="tip-img"
-                />
-              </div>
-              <div class="tip container-column">
-                <p>good sleep</p>
-                <img src="../static/images/sleep_mental.png" alt="sleep" class="tip-img" />
-              </div>
-            </div>
-          </div>
-    </div>
+<a href="/chatbot" class="chatbot-fab" title="Talk to AI Assistant">
+    <img src="{{ url_for('static', filename='images/mental_chatbot.jpg') }}" alt="Chatbot">
+</a>
+{% endblock %}
 
-
-    <a href="./chatbot.html">
-      <div class="chatbot">
-        <img
-          src="../static/images/mental_chatbot.jpg"
-          alt="chatbot"
-          class="chatbot-img"
-        />
-      </div>
-    </a>
-<<<<<<< HEAD
-
-=======
->>>>>>> 480664d (chatbot working added)
-    <script src="../static/Scripts/resultScript.js"></script>
-    <script src="../static/Scripts/utilityScript.js"></script>
-  </body>
-</html>
+{% block scripts %}
+<script src="{{ url_for('static', filename='Scripts/resultScript.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MOOD MAP{% endblock %}</title>
+    <link href="{{ url_for('static', filename='images/main-logo.png') }}" rel="icon" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/global.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <img src="{{ url_for('static', filename='images/main-logo.png') }}" alt="Mood Map Logo">
+            <span>MOOD MAP</span>
+        </a>
+        <div class="nav-links">
+            {% if request.endpoint != 'routes.index' %}
+                <a href="{{ url_for('routes.index') }}">Home</a>
+            {% endif %}
+            
+            {% if request.endpoint != 'routes.blog' %}
+                <a href="{{ url_for('routes.blog') }}">Blog</a>
+            {% endif %}
+            
+            {% if request.endpoint != 'routes.about' %}
+                <a href="{{ url_for('routes.about') }}">About</a>
+            {% endif %}
+
+            {% if current_user.is_authenticated %}
+                {% if request.endpoint != 'routes.dashboard' %}
+                    <a href="{{ url_for('routes.dashboard') }}">Dashboard</a>
+                {% endif %}
+                
+                {% if request.endpoint != 'routes.quiz' %}
+                    <a href="{{ url_for('routes.quiz') }}">Quiz</a>
+                {% endif %}
+                
+                {% if request.endpoint != 'routes.chatbot' %}
+                    <a href="{{ url_for('routes.chatbot') }}">Chatbot</a>
+                {% endif %}
+                
+                <a href="{{ url_for('routes.logout') }}">Logout</a>
+            {% else %}
+                {% if request.endpoint != 'routes.register' %}
+                    <a href="{{ url_for('routes.register') }}">Sign Up</a>
+                {% endif %}
+                
+                {% if request.endpoint != 'routes.login' %}
+                    <a href="{{ url_for('routes.login') }}" class="btn-login">Login</a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </nav>
+
+    <main class="main-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }} animate-fade">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <style>
+        .flash-messages {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 2000;
+        }
+        .flash-message {
+            padding: 1rem 2rem;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .flash-message.success { background-color: #4caf50; }
+        .flash-message.danger { background-color: #f44336; }
+        .flash-message.warning { background-color: #ff9800; }
+        .flash-message.info { background-color: #2196f3; }
+    </style>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

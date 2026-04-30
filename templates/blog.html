@@ -1,125 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link href="../static/images/main-logo.png" rel="icon" type="image/png">
-    <link href="../static/Styles/blogStyle.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../static/Styles/utility.css" />
-</head>
-<body>
+{% extends "base.html" %}
 
-     <!-- Navbar -->
-     <div class="navbar">
-        <div class="logo">
-          <img src="../static/images/main-logo.png" alt="Strong Brain Logo" />
-          <span>MOOD MAP</span>
-        </div>
-        <div class="nav-options container-row">
-          <a href="./blog.html">BLOG</a>
-          <a href="#">ABOUT</a>
-          <a href="#">REGISTER</a>
-          <a href="./LoginPage.html" id="login-btn"><button>LOGIN</button></a>
-        </div>
-  
-        <div class="menu">
-          <img src="../static/images/menu-bar.jpg" alt="menu" id="menu">
-      </div>
-       
-      </div>
-  
+{% block title %}Mental Health Blogs - Mood Map{% endblock %}
+
+{% block head %}
+<style>
+    .blog-section {
+        padding: 4rem 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .blog-section h2 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
+    .blog-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    .blog-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .blog-card-content {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+        text-align: left;
+    }
+    .blog-card p {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        flex: 1;
+    }
+    .blog-card .btn-learn {
+        background: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: var(--transition);
+    }
+    .blog-card .btn-learn:hover {
+        background: var(--primary-dark);
+    }
+    .load-more-container {
+        text-align: center;
+        margin-top: 4rem;
+    }
+    .btn-load-more {
+        background: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        padding: 0.8rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    .btn-load-more:hover {
+        background: var(--primary-color);
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="blog-section animate-fade">
+    <h2>Explore Our Mental Health Blogs</h2>
     
-  
-    <div class="menu-list">
-  
-      <ul class="container-column">
-        <div class="cross-icon">
-          <img src="../static/images/close.png" alt="cross" id="cross">
+    <div class="blog-grid">
+        <div class="blog-card">
+            <img src="{{ url_for('static', filename='images/blog1.jpg') }}" alt="Mental Health Awareness">
+            <div class="blog-card-content">
+                <h3>Mental Health Awareness & Education</h3>
+                <p>Learn about the importance of mental health awareness and its inclusion in the modern education system.</p>
+                <a href="https://www.jhs.ac.in/mental-health-awareness-and-its-inclusion-into-the-indian-education-system.php" target="_blank" class="btn-learn">Learn More</a>
+            </div>
         </div>
-        <li><a href="./index.html">HOME</a></li>
-        <li><a href="./blog.html">BLOG</a></li>
-        <li> <a href="#">ABOUT</a></li>
-        <li> <a href="#">REGISTER</a></li>
-        <li><a href="#" id="login-btn"><button>LOGIN</button></a></li>
-      </ul>
-      
+
+        <div class="blog-card">
+            <img src="{{ url_for('static', filename='images/blog2.jpg') }}" alt="Self-Care">
+            <div class="blog-card-content">
+                <h3>Self-Care & Well-Being Tips</h3>
+                <p>Discover practical self-care ideas that you can incorporate into your daily routine for a better lifestyle.</p>
+                <a href="https://www.goodhousekeeping.com/health/wellness/g25643343/self-care-ideas/" target="_blank" class="btn-learn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="{{ url_for('static', filename='images/blog3.jpg') }}" alt="Stress Management">
+            <div class="blog-card-content">
+                <h3>Stress & Anxiety Management</h3>
+                <p>Effective strategies and nutrition tips to help you relieve stress and manage anxiety naturally.</p>
+                <a href="https://www.healthline.com/nutrition/16-ways-relieve-stress-anxiety#takeaway" target="_blank" class="btn-learn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="{{ url_for('static', filename='images/blog1.jpg') }}" alt="Emotional Health">
+            <div class="blog-card-content">
+                <h3>Emotional Health & Relationships</h3>
+                <p>How emotional health contributes to stronger, healthier relationships with those around you.</p>
+                <a href="https://www.willowhouseforwomen.com/how-emotional-health-contributes-to-relationship-health/" target="_blank" class="btn-learn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="{{ url_for('static', filename='images/blog2.jpg') }}" alt="Digital Well-Being">
+            <div class="blog-card-content">
+                <h3>Digital Well-Being & Social Media</h3>
+                <p>A student's guide to maintaining mental balance in a digital world dominated by social media.</p>
+                <a href="https://www.verizon.com/about/blog/students-guide-to-digital-well-being" target="_blank" class="btn-learn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="{{ url_for('static', filename='images/blog3.jpg') }}" alt="Work Life Balance">
+            <div class="blog-card-content">
+                <h3>Mental Health & Professional Life</h3>
+                <p>The World Health Organization's fact sheet on mental health at work and maintaining professional well-being.</p>
+                <a href="https://www.who.int/news-room/fact-sheets/detail/mental-health-at-work" target="_blank" class="btn-learn">Learn More</a>
+            </div>
+        </div>
     </div>
 
-    <h2> Blogs </h2>
-
-    <div class="blog-box">
-
-        <div class="card">
-
-            <img src="../static/images/blog1.jpg" alt="blog image" />
-            <h3>Mental Health Awareness & Education</h3>
-            <p>blog desription</p>
-            <a href="" target="_blank" rel="noreferrer">Visit</a> 
-            <a href="https://www.jhs.ac.in/mental-health-awareness-and-its-inclusion-into-the-indian-education-system.php">
-            <button>Learn More</button>
-            </a>
-        </div>
-        <div class="card">
-    
-            <img src="../static/images/blog2.jpg" alt="blog image" />
-            <h3>Self-Care & Well-Being Tips</h3>
-            <p>blog desription</p>
-            <a href="" target="_blank" rel="noreferrer">Visit</a>
-            <a href="https://www.goodhousekeeping.com/health/wellness/g25643343/self-care-ideas/">
-                <button>Learn More</button>
-                </a> 
-            
-        </div>
-        <div class="card">
-    
-            <img src="../static/images/blog3.jpg" alt="blog image" />
-            <h3>Stress & Anxiety Management</h3>
-            <p>blog desription</p>
-            <a href="" target="_blank" rel="noreferrer">Visit</a> 
-            <a href="https://www.healthline.com/nutrition/16-ways-relieve-stress-anxiety#takeaway">
-                <button>Learn More</button>
-                </a>
-            
-        </div>
-        <div class="card">
-    
-            <img src="../static/images/blog1.jpg" alt="blog image" />
-            <h3>Emotional Health & Relationships</h3>
-            <p>blog desription</p>
-            <a href="" target="_blank" rel="noreferrer">Visit</a> 
-            <a href="https://www.willowhouseforwomen.com/how-emotional-health-contributes-to-relationship-health/">
-                <button>Learn More</button>
-                </a>
-    
-        </div>
-        <div class="card">
-    
-            <img src="../static/images/blog2.jpg" alt="blog image" />
-            <h3>Digital Well-Being & Social Media</h3>
-            <p>blog desription</p>
-            <a href="" target="_blank" rel="noreferrer">Visit</a> 
-            <a href="https://www.verizon.com/about/blog/students-guide-to-digital-well-being">
-                <button>Learn More</button>
-                </a>
- 
-        </div>
-        <div class="card">
-    
-            <img src="../static/images/blog3.jpg" alt="blog image" />
-            <h3>Mental Health & Professional Life</h3>
-            <p>blog desription</p>
-            <a href="" target="_blank" rel="noreferrer">Visit</a> 
-            <a href="https://www.who.int/news-room/fact-sheets/detail/mental-health-at-work">
-                <button>Learn More</button>
-                </a> 
-        </div>
-        
-
+    <div class="load-more-container">
+        <button class="btn-load-more">Load More Articles</button>
     </div>
-    <button>Load More </button>
-
-    <script src="../static/Scripts/utilityScript.js"></script>
-   
-</body>
-</html>
+</section>
+{% endblock %}

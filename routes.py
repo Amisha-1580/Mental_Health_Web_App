@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request, jsonify
 from flask_login import login_user, logout_user, login_required, current_user
-from models import db, User
+from models import db, User, QuizResult
 import pandas as pd
 import os
 
@@ -55,12 +55,37 @@ def login():
             flash('Logged in successfully!', 'success')
 
             next_page = request.args.get('next')
-            return redirect(next_page) if next_page else redirect(url_for('routes.index'))
+            return redirect(next_page) if next_page else redirect(url_for('routes.dashboard'))
 
         flash('Invalid credentials. Please try again.', 'danger')
         return redirect(url_for('routes.login'))
 
     return render_template('login.html')
+
+@routes.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+@routes.route('/about')
+def about():
+    return render_template('about.html')
+
+@routes.route('/contact', methods=['POST'])
+def contact():
+    flash('Thank you for your message! We will get back to you soon.', 'success')
+    return redirect(url_for('routes.index'))
+
+@routes.route('/result')
+@login_required
+def result():
+    return render_template('resultPage.html')
+
+@routes.route('/dashboard')
+@login_required
+def dashboard():
+    history = QuizResult.query.filter_by(user_id=current_user.id).order_by(QuizResult.date.desc()).all()
+    return render_template('dashboard.html', history=history)
+
 
 ########### Logout from logged account #############
 @routes.route('/logout')
@@ -84,6 +109,21 @@ def quiz():
 @login_required
 def chatbot():
     return render_template('chatbot.html')
+
+@routes.route('/start-quiz')
+def start_quiz():
+    # Get 10 random unique question strings
+    unique_questions = df['Question'].unique()
+    import random
+    selected_questions = random.sample(list(unique_questions), min(10, len(unique_questions)))
+    
+    # Get one Question_id for each selected question string
+    question_ids = []
+    for q_text in selected_questions:
+        q_id = df[df['Question'] == q_text]['Question_id'].iloc[0]
+        question_ids.append(int(q_id))
+    
+    return jsonify({"question_ids": question_ids})
 
 # Endpoint to fetch a question with options
 @routes.route('/get-question/<int:question_id>', methods=['GET'])
@@ -123,8 +163,19 @@ def submit_quiz():
         else:
             return jsonify({"error": f"Question ID {question_id} not found"}), 400
 
-    max_possible_score = len(user_answers) * 3  # Adjust based on actual data
+    max_possible_score = 0
+    for question_id in user_answers.keys():
+        question_rows = df[df['Question_id'] == int(question_id)]
+        if not question_rows.empty:
+            max_possible_score += question_rows['Score'].max()
+
+    if max_possible_score == 0: max_possible_score = 1
     scaled_score = round((total_score / max_possible_score) * 10)
+
+    if current_user.is_authenticated:
+        result = QuizResult(score=scaled_score, user_id=current_user.id)
+        db.session.add(result)
+        db.session.commit()
 
     return jsonify({
         "score": scaled_score,
