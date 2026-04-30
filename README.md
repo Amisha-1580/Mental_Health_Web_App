@@ -116,15 +116,15 @@ http://localhost:5000/
 ```
 
 ### 📌 Future Improvements (TODO)
-🧠 Make quiz adaptive (dynamic difficulty based on user responses)
-📊 Improve ML-based mental state prediction model
-📱 Make fully responsive mobile-first UI
-📈 Add progress tracking over time
-🔔 Add reminders & wellness notifications
-👨‍💻 Project Status
-🚧 Currently Under Development
-✔ Core features implemented
-⚙ Enhancements in progress
+- Make quiz adaptive (dynamic difficulty based on user responses)
+- Improve ML-based mental state prediction model
+- Make fully responsive mobile-first UI
+- Add progress tracking over time
+- Add reminders & wellness notifications
+- Project Status
+- Currently Under Development
+- Core features implemented
+- Enhancements in progress
 
 
 ### ✨Inspiration
@@ -134,5 +134,5 @@ This project is built to promote mental awareness using technology, helping user
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## 🙌 Developer
-Amisha Bhasme
-Gauri Bhasme
+- Amisha Bhasme
+- Gauri Bhasme
