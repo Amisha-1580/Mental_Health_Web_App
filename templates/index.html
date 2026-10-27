@@ -67,7 +67,8 @@
     </div>
 
     <div class="contact-container">
-        <form action="{{ url_for('routes.contact') }}" method="POST" class="auth-card" style="margin: 0 auto; width: 100%; max-width: 600px;">
+        <form action="{{ url_for('main_routes.contact') }}" method="POST" class="auth-card" style="margin: 0 auto; width: 100%; max-width: 600px;">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" class="form-control" placeholder="Enter your name">
