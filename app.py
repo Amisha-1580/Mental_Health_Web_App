@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from models import db, bcrypt, login_manager
-from routes import routes  # Import the Blueprint
+from routes import main_routes, chat_routes, mindful_activities  # Import the Blueprint
 from chatbot import chat  # Import the chatbot Blueprint
 import os
 
@@ -23,9 +23,9 @@ with app.app_context():
     db.create_all()
 
 # Register the Blueprint
-app.register_blueprint(routes, url_prefix='/')  # Use '/' as the prefix
-app.register_blueprint(chat, url_prefix='/chat') 
-
+app.register_blueprint(main_routes, url_prefix='/')  # Use '/' as the prefix
+app.register_blueprint(mindful_activities, url_prefix='/mindful-activities')
+app.register_blueprint(chat_routes, url_prefix='/chat')  # Use '/chat' as the prefix
 # Run the app
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')

@@ -26,4 +26,4 @@ flask_cors
 openai
 google
 python-dotenv
-google-generativeai
+google-genai

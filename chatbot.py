@@ -1,6 +1,6 @@
-from flask import Flask, jsonify, request, Blueprint
-from flask_cors import CORS
-import google.generativeai as genai
+from flask import jsonify, request, Blueprint
+# from flask_cors import CORS
+from google import genai
 from dotenv import load_dotenv
 import os
 
@@ -9,10 +9,7 @@ load_dotenv()
 chat = Blueprint('chat', __name__)
 
 # Configure Gemini
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-
-# Create model instance
-model = genai.GenerativeModel("gemini-1.5-flash")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 # System instruction
 SYSTEM_PROMPT = """
@@ -41,7 +38,10 @@ def chat_route():
 
         full_prompt = f"{SYSTEM_PROMPT}\n\nUser: {user_message}"
 
-        response = model.generate_content(full_prompt)
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=full_prompt,
+        )
 
         return jsonify({
             "reply": response.text
