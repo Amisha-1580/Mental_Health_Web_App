@@ -2,8 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from flask_wtf.csrf import CSRFProtect
 from models import db, bcrypt, login_manager
-from routes import main_routes, mindful_activities
-from chatbot import chat
+from routes import main_routes, mindful_activities, chat_api
 import os
 from dotenv import load_dotenv
 
@@ -30,7 +29,8 @@ csrf = CSRFProtect(app)
 # Flask-WTF skips CSRF for requests whose Content-Type is application/json when
 # WTF_CSRF_CHECK_DEFAULT is True, but we explicitly exempt them to be explicit.
 csrf.exempt('routes.main_routes.submit_quiz')
-csrf.exempt('chatbot.chat_route')
+csrf.exempt(chat_api)
+csrf.exempt(mindful_activities)
 
 # ── CORS ───────────────────────────────────────────────────────────────────────
 CORS(app, resources={
@@ -50,7 +50,6 @@ with app.app_context():
 # ── Blueprints ─────────────────────────────────────────────────────────────────
 app.register_blueprint(main_routes,       url_prefix='/')
 app.register_blueprint(mindful_activities, url_prefix='/mindful-activities')
-app.register_blueprint(chat,              url_prefix='/chat')
 
 # ── Run ────────────────────────────────────────────────────────────────────────
 if __name__ == '__main__':

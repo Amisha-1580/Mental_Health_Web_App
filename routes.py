@@ -1,13 +1,37 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request, jsonify
 from flask_login import login_user, logout_user, login_required, current_user
 from models import db, User, QuizResult
+from google import genai
+from dotenv import load_dotenv
 import pandas as pd
 import random
 import os
+import logging
+
+load_dotenv()
 
 # ── Blueprints ─────────────────────────────────────────────────────────────────
 main_routes       = Blueprint('main_routes',       __name__)
 mindful_activities = Blueprint('mindful_activities', __name__)
+logger = logging.getLogger(__name__)
+
+_api_key = os.getenv("GEMINI_API_KEY")
+if not _api_key:
+    raise RuntimeError(
+        "GEMINI_API_KEY environment variable is not set. "
+        "Add it to your .env file."
+    )
+gemini_client = genai.Client(api_key=_api_key)
+GEMINI_MODEL = "gemini-3.6-flash"
+SYSTEM_PROMPT = """\
+You are a kind, empathetic, human-like assistant.
+
+When users talk about emotions or mental health:
+- Respond warmly and naturally.
+- Offer simple, practical coping ideas.
+- Be supportive but clarify you are not a doctor.
+- If the user shows crisis signs, gently suggest professional help.\
+"""
 
 # ── Dataset ────────────────────────────────────────────────────────────────────
 df_path = os.path.join(os.path.dirname(__file__), 'DataSets', 'corrected_mental_health_questions.csv')
@@ -35,7 +59,32 @@ def contact():
     flash('Thank you for your message! We will get back to you soon.', 'success')
     return redirect(url_for('main_routes.index'))
 
-# ── Mindful activities ─────────────────────────────────────────────────────────
+# ── Mindful activities shortcuts (direct URL support) ─────────────────────────
+@main_routes.route('/mindful-activities')
+def mindful_activities_shortcut():
+    return redirect(url_for('mindful_activities.index'))
+
+@main_routes.route('/breathing')
+def breathing_shortcut():
+    return redirect(url_for('mindful_activities.breathing'))
+
+@main_routes.route('/nature-walk')
+def nature_walk_shortcut():
+    return redirect(url_for('mindful_activities.nature_walk'))
+
+@main_routes.route('/journaling')
+def journaling_shortcut():
+    return redirect(url_for('mindful_activities.journaling'))
+
+@main_routes.route('/calming-music')
+def calming_music_shortcut():
+    return redirect(url_for('mindful_activities.calming_music'))
+
+# ── Mindful activities blueprint ───────────────────────────────────────────────
+@mindful_activities.route('/')
+def index():
+    return render_template('mindful_index.html')
+
 @mindful_activities.route('/breathing')
 def breathing():
     return render_template('breathing.html')
@@ -51,6 +100,37 @@ def journaling():
 @mindful_activities.route('/calming-music')
 def calming_music():
     return render_template('calming_music.html')
+
+# ── Mindful activities mock APIs (Ready to connect with backend) ───────────────
+@mindful_activities.route('/api/journal', methods=['POST'])
+def api_save_journal():
+    payload = request.get_json(silent=True) or {}
+    logger.info("Received journal submission: %s", payload)
+    return jsonify({
+        "status": "success",
+        "message": "Today's positive reflection was saved successfully!",
+        "data": payload
+    }), 200
+
+@mindful_activities.route('/api/calming-music', methods=['GET', 'POST'])
+def api_calming_music():
+    if request.method == 'POST':
+        payload = request.get_json(silent=True) or {}
+        logger.info("Received calming track save: %s", payload)
+        return jsonify({
+            "status": "success",
+            "message": "Calming track saved to your favorites!",
+            "data": payload
+        }), 201
+    return jsonify({"status": "success", "message": "Calming music API ready"}), 200
+
+@mindful_activities.route('/api/calming-music/<string:track_id>', methods=['DELETE'])
+def api_delete_calming_music(track_id):
+    logger.info("Received request to remove calming track: %s", track_id)
+    return jsonify({
+        "status": "success",
+        "message": f"Track {track_id} removed from favorites."
+    }), 200
 
 # ── Auth ───────────────────────────────────────────────────────────────────────
 @main_routes.route('/signup', methods=['GET', 'POST'])
@@ -114,6 +194,28 @@ def result():
 @login_required
 def chatbot():
     return render_template('chatbot.html')
+
+@main_routes.route('/chat', methods=['POST'])
+@login_required
+def chat_api():
+    data = request.get_json(silent=True) or {}
+    user_message = data.get("message", "").strip()
+
+    if not user_message:
+        return jsonify({"reply": "Please provide a message."}), 400
+
+    try:
+        response = gemini_client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=f"{SYSTEM_PROMPT}\n\nUser: {user_message}",
+        )
+    except Exception:
+        logger.exception("Gemini chat request failed")
+        return jsonify({
+            "reply": "Sorry — the assistant is temporarily unavailable."
+        }), 502
+
+    return jsonify({"reply": response.text})
 
 @main_routes.route('/quiz')
 @login_required
