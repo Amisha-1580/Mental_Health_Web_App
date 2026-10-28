@@ -1,0 +1,394 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Positivity Journaling - Mood Map{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='Styles/mindful.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="mindful-page-container">
+    <!-- Breadcrumb & Top Bar -->
+    <div class="mindful-nav-bar">
+        <a href="{{ url_for('main_routes.dashboard') }}" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+        <div style="display: flex; gap: 0.8rem; align-items: center;">
+            <a href="{{ url_for('mindful_activities.index') }}" class="activity-badge" style="text-decoration: none;">
+                <i class="fas fa-compass"></i> All Activities
+            </a>
+            <span class="activity-badge">
+                <i class="fas fa-pen-fancy"></i> Mindful Journaling
+            </span>
+        </div>
+    </div>
+
+    <!-- Header Banner -->
+    <div class="mindful-banner">
+        <div class="mindful-banner-content">
+            <h1><i class="fas fa-feather-pointed"></i> Daily Positivity Journal</h1>
+            <p>Training your brain to notice the good. Write down three positive things that brought you joy, pride, or gratitude today.</p>
+        </div>
+        <div class="mindful-banner-meta">
+            <div class="meta-pill">
+                <i class="far fa-calendar-alt"></i> <span id="currentDateDisplay">Today</span>
+            </div>
+            <div class="meta-pill">
+                <i class="fas fa-fire" style="color: #ffb74d;"></i> <span id="streakCount">3 Day Streak</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Workspace Grid -->
+    <div class="mindful-grid">
+        <!-- Left Column: The 3 Positive Prompts Form -->
+        <div class="left-workspace">
+            <div class="mindful-card">
+                <h2><i class="fas fa-heart-pulse"></i> Today's Three Good Things</h2>
+                <p class="card-subtitle">Take a quiet moment to reflect on your day and capture three bright spots, no matter how simple.</p>
+
+                <form id="positivityJournalForm" onsubmit="handleJournalSubmit(event)">
+                    <!-- Text Box 1 -->
+                    <div class="journal-prompt-card">
+                        <div class="journal-prompt-header">
+                            <span class="journal-step-num">1</span>
+                            <span class="journal-prompt-title">A Bright Moment Today</span>
+                        </div>
+                        <p class="journal-prompt-guide">What is something that made you smile, laughed, or felt warm today?</p>
+                        <textarea 
+                            id="positiveThing1" 
+                            class="journal-textarea" 
+                            maxlength="300"
+                            placeholder="e.g. Sipped my favorite morning tea while watching the sunlight stream into the window..."
+                            required
+                            oninput="updateCharCount('positiveThing1', 'count1')"></textarea>
+                        <div class="journal-char-count"><span id="count1">0</span> / 300</div>
+                    </div>
+
+                    <!-- Text Box 2 -->
+                    <div class="journal-prompt-card">
+                        <div class="journal-prompt-header">
+                            <span class="journal-step-num">2</span>
+                            <span class="journal-prompt-title">Something I Handled or Accomplished</span>
+                        </div>
+                        <p class="journal-prompt-guide">What is a challenge you faced, a boundary you kept, or a small win you feel proud of?</p>
+                        <textarea 
+                            id="positiveThing2" 
+                            class="journal-textarea" 
+                            maxlength="300"
+                            placeholder="e.g. Even though my schedule was packed, I paused for a 5-minute walk and stayed patient..."
+                            required
+                            oninput="updateCharCount('positiveThing2', 'count2')"></textarea>
+                        <div class="journal-char-count"><span id="count2">0</span> / 300</div>
+                    </div>
+
+                    <!-- Text Box 3 -->
+                    <div class="journal-prompt-card">
+                        <div class="journal-prompt-header">
+                            <span class="journal-step-num">3</span>
+                            <span class="journal-prompt-title">A Person, Kindness, or Blessing</span>
+                        </div>
+                        <p class="journal-prompt-guide">Who or what helped you feel supported, loved, or thankful for being in your life?</p>
+                        <textarea 
+                            id="positiveThing3" 
+                            class="journal-textarea" 
+                            maxlength="300"
+                            placeholder="e.g. Received a thoughtful check-in message from my best friend when I needed it..."
+                            required
+                            oninput="updateCharCount('positiveThing3', 'count3')"></textarea>
+                        <div class="journal-char-count"><span id="count3">0</span> / 300</div>
+                    </div>
+
+                    <!-- Mood Tag Selector -->
+                    <div>
+                        <label style="font-weight: 600; font-size: 0.95rem; color: var(--text-color); display: block; margin-bottom: 0.4rem;">
+                            How does reflecting on these make you feel?
+                        </label>
+                        <div class="mood-chips-container" id="moodChips">
+                            <span class="mood-chip active" data-mood="Grateful">🌸 Grateful</span>
+                            <span class="mood-chip" data-mood="Calm & Peaceful">🌿 Calm & Peaceful</span>
+                            <span class="mood-chip" data-mood="Joyful">☀️ Joyful</span>
+                            <span class="mood-chip" data-mood="Relieved">🕊️ Relieved</span>
+                            <span class="mood-chip" data-mood="Proud & Inspired">⭐ Proud & Inspired</span>
+                            <span class="mood-chip" data-mood="Hopeful">🌈 Hopeful</span>
+                        </div>
+                    </div>
+
+                    <!-- Submission & Actions -->
+                    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                        <button type="submit" id="saveJournalBtn" class="btn-mindful">
+                            <i class="fas fa-check-circle"></i> Save Today's Reflection
+                        </button>
+                        <button type="button" class="btn-mindful-outline" onclick="resetJournalForm()">
+                            <i class="fas fa-undo"></i> Clear
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Past Reflections History Feed -->
+            <div class="mindful-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3><i class="fas fa-clock-rotate-left"></i> Past Journal Reflections</h3>
+                    <span style="font-size: 0.85rem; color: var(--text-muted);" id="reflectionsCounter">Loaded from history</span>
+                </div>
+                <p class="card-subtitle">Revisit previous moments of gratitude and see how your positivity practice grows over time.</p>
+
+                <div class="reflections-list" id="reflectionsFeed">
+                    <!-- Populated dynamically by JS with rich mock data + user entries -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Sidebar & Motivation -->
+        <div class="right-sidebar">
+            <!-- Science Card -->
+            <div class="mindful-card" style="background: linear-gradient(to bottom, #ffffff, #faf9ff);">
+                <h3><i class="fas fa-brain"></i> The 3 Good Things Practice</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                    Developed by positive psychology researchers (Dr. Martin Seligman), writing down <strong>three positive events</strong> each day helps counteract the brain's natural negativity bias.
+                </p>
+                <div style="background: rgba(106, 90, 205, 0.06); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary-color);">
+                    <p style="font-size: 0.85rem; color: var(--primary-dark); font-weight: 500; margin: 0;">
+                        💡 Studies show doing this for just 7 consecutive days significantly increases happiness and lowers depressive symptoms for up to 6 months.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Daily Inspiring Affirmation Card -->
+            <div class="mindful-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+                    <h3 style="margin-bottom: 0;"><i class="fas fa-quote-left"></i> Daily Thought</h3>
+                    <button onclick="rotateAffirmation()" style="background:none; border:none; color:var(--primary-color); cursor:pointer; font-size:0.85rem; font-weight:600;">
+                        <i class="fas fa-sync-alt"></i> New
+                    </button>
+                </div>
+                <blockquote id="affirmationQuote" style="font-size: 1rem; font-style: italic; color: var(--text-color); margin: 0.8rem 0; border-left: 3px solid #ffb74d; padding-left: 1rem;">
+                    "Gratitude turns what we have into enough, and more. It turns denial into acceptance, chaos into order, and confusion into clarity."
+                </blockquote>
+                <span id="affirmationAuthor" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500; display: block; text-align: right;">
+                    — Melody Beattie
+                </span>
+            </div>
+
+            <!-- Quick Mindful Switcher -->
+            <div class="mindful-card">
+                <h3><i class="fas fa-compass"></i> Explore Other Activities</h3>
+                <div class="activity-list" style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <a href="{{ url_for('mindful_activities.breathing') }}" style="text-decoration: none; color: inherit;">
+                        <div class="activity-item" style="padding: 0.8rem; background: var(--bg-color); border-radius: 8px; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-wind" style="width: 32px; height: 32px; font-size: 1rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color);"></i>
+                            <div>
+                                <strong style="font-size: 0.9rem;">Deep Breathing</strong>
+                                <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">5 mins guided breathwork</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ url_for('mindful_activities.nature_walk') }}" style="text-decoration: none; color: inherit;">
+                        <div class="activity-item" style="padding: 0.8rem; background: var(--bg-color); border-radius: 8px; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-tree" style="width: 32px; height: 32px; font-size: 1rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color);"></i>
+                            <div>
+                                <strong style="font-size: 0.9rem;">Nature Walk</strong>
+                                <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Natural music & walking guide</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ url_for('mindful_activities.calming_music') }}" style="text-decoration: none; color: inherit;">
+                        <div class="activity-item" style="padding: 0.8rem; background: var(--bg-color); border-radius: 8px; display: flex; align-items: center; gap: 0.8rem;">
+                            <i class="fas fa-music" style="width: 32px; height: 32px; font-size: 1rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color);"></i>
+                            <div>
+                                <strong style="font-size: 0.9rem;">Calming Music</strong>
+                                <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Spotify tranquil favorites</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Feedback -->
+<div id="mindfulToast" class="mindful-toast">
+    <i class="fas fa-check-circle"></i> <span id="toastMsg">Journal entry saved!</span>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Initial Mock Journal Reflections
+    const MOCK_JOURNAL_ENTRIES = [
+        {
+            id: 'mock-1',
+            date: 'Yesterday, ' + new Date(Date.now() - 86400000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+            mood: 'Grateful',
+            items: [
+                'Enjoyed a quiet 15-minute coffee break in the morning sun before meetings.',
+                'Finished reading an insightful chapter on emotional resilience and shared a quote with my sibling.',
+                'A coworker complimented the project presentation I worked hard on.'
+            ]
+        },
+        {
+            id: 'mock-2',
+            date: new Date(Date.now() - 172800000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+            mood: 'Calm & Peaceful',
+            items: [
+                'Took a slow mindful walk around the neighbourhood park and noticed the autumn leaves.',
+                'Cooked a nourishing, wholesome dinner from scratch and ate mindfully without screens.',
+                'Felt deep peace during my evening 10-minute deep breathing session.'
+            ]
+        },
+        {
+            id: 'mock-3',
+            date: new Date(Date.now() - 259200000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+            mood: 'Proud & Inspired',
+            items: [
+                'Woke up early and took time to stretch before starting the day.',
+                'Handled a stressful email calmly without taking things personally.',
+                'Remembered to stay hydrated and drank 2 liters of water today.'
+            ]
+        }
+    ];
+
+    const AFFIRMATIONS = [
+        { quote: "Gratitude turns what we have into enough, and more. It turns denial into acceptance, chaos into order.", author: "Melody Beattie" },
+        { quote: "When you arise in the morning think of what a privilege it is to be alive, to think, to enjoy, to love.", author: "Marcus Aurelius" },
+        { quote: "There are always flowers for those who want to see them.", author: "Henri Matisse" },
+        { quote: "Cultivate the habit of being grateful for every good thing that comes to you.", author: "Ralph Waldo Emerson" },
+        { quote: "Peace comes from within. Do not seek it without.", author: "Buddha" }
+    ];
+
+    let currentAffirmationIdx = 0;
+
+    // Date display
+    document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date();
+        const options = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
+        document.getElementById('currentDateDisplay').textContent = today.toLocaleDateString('en-US', options);
+
+        // Mood chip toggle
+        document.querySelectorAll('.mood-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('.mood-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+            });
+        });
+
+        loadReflections();
+    });
+
+    function updateCharCount(textareaId, countSpanId) {
+        const len = document.getElementById(textareaId).value.length;
+        document.getElementById(countSpanId).textContent = len;
+    }
+
+    function rotateAffirmation() {
+        currentAffirmationIdx = (currentAffirmationIdx + 1) % AFFIRMATIONS.length;
+        const item = AFFIRMATIONS[currentAffirmationIdx];
+        document.getElementById('affirmationQuote').textContent = `"${item.quote}"`;
+        document.getElementById('affirmationAuthor').textContent = `— ${item.author}`;
+    }
+
+    function showToast(message) {
+        const toast = document.getElementById('mindfulToast');
+        document.getElementById('toastMsg').textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    function getSelectedMood() {
+        const activeChip = document.querySelector('.mood-chip.active');
+        return activeChip ? activeChip.getAttribute('data-mood') : 'Grateful';
+    }
+
+    // Save submission: ready for backend API + persists to localStorage
+    async function handleJournalSubmit(e) {
+        e.preventDefault();
+
+        const item1 = document.getElementById('positiveThing1').value.trim();
+        const item2 = document.getElementById('positiveThing2').value.trim();
+        const item3 = document.getElementById('positiveThing3').value.trim();
+        const mood = getSelectedMood();
+
+        if (!item1 || !item2 || !item3) {
+            alert('Please fill out all 3 positive things to complete your reflection.');
+            return;
+        }
+
+        const newEntry = {
+            id: 'journal-' + Date.now(),
+            date: 'Today, ' + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+            mood: mood,
+            items: [item1, item2, item3]
+        };
+
+        // 1. Dispatch to backend API (Mock ready endpoint)
+        try {
+            fetch('/mindful-activities/api/journal', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newEntry)
+            }).catch(err => console.log('Mock API dispatched (offline/local fallback):', err));
+        } catch (err) {
+            console.log('API fallback');
+        }
+
+        // 2. Persist to localStorage for client-side persistence
+        const userEntries = JSON.parse(localStorage.getItem('moodmap_journal_entries') || '[]');
+        userEntries.unshift(newEntry);
+        localStorage.setItem('moodmap_journal_entries', JSON.stringify(userEntries));
+
+        // 3. UI Update
+        showToast('🌟 Beautiful! Today’s 3 positive reflections have been saved.');
+        resetJournalForm();
+        loadReflections();
+
+        // Update streak
+        const streak = parseInt(localStorage.getItem('moodmap_streak') || '3') + 1;
+        localStorage.setItem('moodmap_streak', streak);
+        document.getElementById('streakCount').textContent = streak + ' Day Streak';
+    }
+
+    function resetJournalForm() {
+        document.getElementById('positivityJournalForm').reset();
+        document.getElementById('count1').textContent = '0';
+        document.getElementById('count2').textContent = '0';
+        document.getElementById('count3').textContent = '0';
+    }
+
+    function loadReflections() {
+        const container = document.getElementById('reflectionsFeed');
+        const userEntries = JSON.parse(localStorage.getItem('moodmap_journal_entries') || '[]');
+        const allEntries = [...userEntries, ...MOCK_JOURNAL_ENTRIES];
+
+        container.innerHTML = '';
+
+        allEntries.forEach(entry => {
+            const el = document.createElement('div');
+            el.className = 'reflection-item';
+            el.innerHTML = `
+                <div class="reflection-header">
+                    <span class="reflection-date"><i class="far fa-calendar-check" style="margin-right: 5px;"></i> ${entry.date}</span>
+                    <span class="reflection-mood-badge">${entry.mood}</span>
+                </div>
+                <ul class="reflection-bullets">
+                    <li><i class="fas fa-sun"></i> <span>${escapeHtml(entry.items[0])}</span></li>
+                    <li><i class="fas fa-seedling"></i> <span>${escapeHtml(entry.items[1])}</span></li>
+                    <li><i class="fas fa-heart"></i> <span>${escapeHtml(entry.items[2])}</span></li>
+                </ul>
+            `;
+            container.appendChild(el);
+        });
+
+        document.getElementById('reflectionsCounter').textContent = `${allEntries.length} reflections recorded`;
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+</script>
+{% endblock %}

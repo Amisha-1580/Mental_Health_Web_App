@@ -15,39 +15,43 @@
             <span>MOOD MAP</span>
         </a>
         <div class="nav-links">
-            {% if request.endpoint != 'routes.index' %}
-                <a href="{{ url_for('routes.index') }}">Home</a>
+            {% if request.endpoint != 'main_routes.index' %}
+                <a href="{{ url_for('main_routes.index') }}">Home</a>
             {% endif %}
             
-            {% if request.endpoint != 'routes.blog' %}
-                <a href="{{ url_for('routes.blog') }}">Blog</a>
+            {% if request.endpoint != 'main_routes.blog' %}
+                <a href="{{ url_for('main_routes.blog') }}">Blog</a>
             {% endif %}
             
-            {% if request.endpoint != 'routes.about' %}
-                <a href="{{ url_for('routes.about') }}">About</a>
+            {% if request.endpoint != 'main_routes.about' %}
+                <a href="{{ url_for('main_routes.about') }}">About</a>
+            {% endif %}
+
+            {% if not request.endpoint or not request.endpoint.startswith('mindful_activities') %}
+                <a href="{{ url_for('mindful_activities.index') }}">Mindfulness</a>
             {% endif %}
 
             {% if current_user.is_authenticated %}
-                {% if request.endpoint != 'routes.dashboard' %}
-                    <a href="{{ url_for('routes.dashboard') }}">Dashboard</a>
+                {% if request.endpoint != 'main_routes.dashboard' %}
+                    <a href="{{ url_for('main_routes.dashboard') }}">Dashboard</a>
                 {% endif %}
                 
-                {% if request.endpoint != 'routes.quiz' %}
-                    <a href="{{ url_for('routes.quiz') }}">Quiz</a>
+                {% if request.endpoint != 'main_routes.quiz' %}
+                    <a href="{{ url_for('main_routes.quiz') }}">Quiz</a>
                 {% endif %}
                 
-                {% if request.endpoint != 'routes.chatbot' %}
-                    <a href="{{ url_for('routes.chatbot') }}">Chatbot</a>
+                {% if request.endpoint != 'main_routes.chatbot' %}
+                    <a href="{{ url_for('main_routes.chatbot') }}">Chatbot</a>
                 {% endif %}
                 
-                <a href="{{ url_for('routes.logout') }}">Logout</a>
+                <a href="{{ url_for('main_routes.logout') }}">Logout</a>
             {% else %}
-                {% if request.endpoint != 'routes.register' %}
-                    <a href="{{ url_for('routes.register') }}">Sign Up</a>
+                {% if request.endpoint != 'main_routes.register' %}
+                    <a href="{{ url_for('main_routes.register') }}">Sign Up</a>
                 {% endif %}
                 
-                {% if request.endpoint != 'routes.login' %}
-                    <a href="{{ url_for('routes.login') }}" class="btn-login">Login</a>
+                {% if request.endpoint != 'main_routes.login' %}
+                    <a href="{{ url_for('main_routes.login') }}" class="btn-login">Login</a>
                 {% endif %}
             {% endif %}
         </div>

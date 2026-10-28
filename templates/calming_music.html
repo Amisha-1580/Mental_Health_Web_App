@@ -1,0 +1,479 @@
+{% extends "base.html" %}
+
+{% block title %}Calming Music & Spotify Sanctuary - Mood Map{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='Styles/mindful.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="mindful-page-container">
+    <!-- Breadcrumb & Top Bar -->
+    <div class="mindful-nav-bar">
+        <a href="{{ url_for('main_routes.dashboard') }}" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+        <div style="display: flex; gap: 0.8rem; align-items: center;">
+            <a href="{{ url_for('mindful_activities.index') }}" class="activity-badge" style="text-decoration: none;">
+                <i class="fas fa-compass"></i> All Activities
+            </a>
+            <span class="activity-badge">
+                <i class="fab fa-spotify" style="color: #1ed760;"></i> Calming Music
+            </span>
+        </div>
+    </div>
+
+    <!-- Header Banner -->
+    <div class="mindful-banner">
+        <div class="mindful-banner-content">
+            <h1><i class="fas fa-music"></i> Calming Music Sanctuary</h1>
+            <p>Save and organize your favorite therapeutic music from Spotify. Build a personalized oasis of soothing frequencies, lo-fi beats, and classical harmonies.</p>
+        </div>
+        <div class="mindful-banner-meta">
+            <div class="meta-pill">
+                <i class="fab fa-spotify" style="color: #1ed760;"></i> Spotify Integrated
+            </div>
+            <div class="meta-pill">
+                <i class="fas fa-bookmark"></i> <span id="savedTracksCount">4 Saved Tracks</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Workspace Grid -->
+    <div class="mindful-grid">
+        <!-- Left Column: Add Spotify Music & Saved Favorites Feed -->
+        <div class="left-workspace">
+            <!-- Add Spotify Favorite Form Card -->
+            <div class="mindful-card">
+                <h2><i class="fas fa-plus-circle" style="color: #1ed760;"></i> Save a Calming Track from Spotify</h2>
+                <p class="card-subtitle">Paste a Spotify song link or track details to save it to your soothing collection.</p>
+
+                <form id="addMusicForm" onsubmit="handleSaveMusic(event)" class="spotify-add-box">
+                    <div class="form-group" style="margin-bottom: 1.2rem;">
+                        <label for="spotifyUrl" style="font-weight: 600; font-size: 0.95rem;">
+                            <i class="fab fa-spotify" style="color: #1ed760;"></i> Spotify Track or Playlist Link:
+                        </label>
+                        <input 
+                            type="text" 
+                            id="spotifyUrl" 
+                            class="form-control" 
+                            placeholder="e.g. https://open.spotify.com/track/6kkwzB6hXLIONkEk9JciA6" 
+                            required
+                            oninput="previewSpotifyEmbed(this.value)">
+                        <small style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px; display: block;">
+                            Tip: Open any song on Spotify, click <strong>••• > Share > Copy Song Link</strong> and paste it here.
+                        </small>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+                        <div class="form-group" style="margin: 0;">
+                            <label for="trackTitle" style="font-weight: 600; font-size: 0.95rem;">Track Title:</label>
+                            <input type="text" id="trackTitle" class="form-control" placeholder="e.g. Weightless" required>
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="trackArtist" style="font-weight: 600; font-size: 0.95rem;">Artist Name:</label>
+                            <input type="text" id="trackArtist" class="form-control" placeholder="e.g. Marconi Union" required>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+                        <div class="form-group" style="margin: 0;">
+                            <label for="trackCategory" style="font-weight: 600; font-size: 0.95rem;">Vibe / Category:</label>
+                            <select id="trackCategory" class="form-control" style="cursor: pointer;">
+                                <option value="Lo-Fi">🎧 Lo-Fi Beats</option>
+                                <option value="Piano">🎹 Peaceful Piano</option>
+                                <option value="Ambient" selected>🌌 Ambient & Soundscape</option>
+                                <option value="Classical">🎻 Classical Peace</option>
+                                <option value="Meditation">🧘 Meditation & Binaural</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label for="trackNote" style="font-weight: 600; font-size: 0.95rem;">Personal Calming Note (Optional):</label>
+                            <input type="text" id="trackNote" class="form-control" placeholder="e.g. Relieves evening stress">
+                        </div>
+                    </div>
+
+                    <!-- Live Live Embed Preview -->
+                    <div id="embedPreviewContainer" style="display: none; margin-bottom: 1.2rem;">
+                        <label style="font-weight: 600; font-size: 0.85rem; color: var(--primary-color);">Live Player Preview:</label>
+                        <div id="embedPreviewIframe" class="spotify-iframe-wrapper"></div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <button type="submit" class="btn-mindful" style="background: #1db954;">
+                            <i class="fas fa-heart"></i> Save to My Calming Favorites
+                        </button>
+                        <button type="button" class="btn-mindful-outline" onclick="resetMusicForm()">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Saved Favorites Collection -->
+            <div class="mindful-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1rem;">
+                    <h2><i class="fas fa-heart" style="color: #e91e63;"></i> My Saved Calming Music</h2>
+                    <span style="font-size: 0.85rem; color: var(--text-muted);" id="feedStatusText">Ready to connect to backend</span>
+                </div>
+                <p class="card-subtitle">Your personal collection of tracks that ease anxiety and bring peace to your mind.</p>
+
+                <!-- Category Filter Chips -->
+                <div class="filter-chips">
+                    <button class="filter-chip active" data-filter="all" onclick="filterMusic('all')">All Vibes</button>
+                    <button class="filter-chip" data-filter="Ambient" onclick="filterMusic('Ambient')">🌌 Ambient</button>
+                    <button class="filter-chip" data-filter="Piano" onclick="filterMusic('Piano')">🎹 Piano</button>
+                    <button class="filter-chip" data-filter="Lo-Fi" onclick="filterMusic('Lo-Fi')">🎧 Lo-Fi</button>
+                    <button class="filter-chip" data-filter="Classical" onclick="filterMusic('Classical')">🎻 Classical</button>
+                    <button class="filter-chip" data-filter="Meditation" onclick="filterMusic('Meditation')">🧘 Meditation</button>
+                </div>
+
+                <!-- Tracks Feed -->
+                <div class="spotify-tracks-list" id="spotifyTracksFeed">
+                    <!-- Populated dynamically by JS with rich mock data + user favorites -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Curated Spotify Playlists & Science -->
+        <div class="right-sidebar">
+            <!-- Curated Official Spotify Playlists -->
+            <div class="mindful-card">
+                <h3><i class="fab fa-spotify" style="color: #1ed760;"></i> Featured Playlists</h3>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+                    Verified playlists curated by Spotify musicologists for mental focus and calm.
+                </p>
+
+                <!-- Peaceful Piano Playlist Embed -->
+                <div style="margin-bottom: 1.2rem;">
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; color: var(--text-color);">
+                        🎹 Peaceful Piano
+                    </div>
+                    <div class="spotify-iframe-wrapper">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO?utm_source=generator&theme=0" 
+                            height="152" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Lo-Fi Beats Playlist Embed -->
+                <div style="margin-bottom: 1.2rem;">
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; color: var(--text-color);">
+                        🎧 Lo-Fi Beats to Relax & Study
+                    </div>
+                    <div class="spotify-iframe-wrapper">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1DXdLEN7aqioXM?utm_source=generator&theme=0" 
+                            height="152" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Deep Focus Playlist Embed -->
+                <div>
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; color: var(--text-color);">
+                        🧘 Deep Focus & Ambient
+                    </div>
+                    <div class="spotify-iframe-wrapper">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZeKCadgRdKQ?utm_source=generator&theme=0" 
+                            height="152" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Science of Music Therapy -->
+            <div class="mindful-card">
+                <h3><i class="fas fa-brain"></i> Music & Anxiety</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.8rem;">
+                    Listening to 60 BPM (beats per minute) music encourages the brain to synchronize its neural oscillations with the beat, producing tranquil <strong>Alpha brainwaves</strong> (8–14 Hz).
+                </p>
+                <div style="background: rgba(29, 185, 84, 0.08); border-left: 3px solid #1db954; padding: 0.8rem 1rem; border-radius: 8px;">
+                    <p style="font-size: 0.85rem; color: #156930; font-weight: 500; margin: 0;">
+                        🎵 Mindlab International found that Marconi Union's track <em>"Weightless"</em> resulted in a striking 65% reduction in overall anxiety.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="mindful-card">
+                <h3><i class="fas fa-compass"></i> Other Activities</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <a href="{{ url_for('mindful_activities.journaling') }}" class="btn-mindful-outline" style="justify-content: center;">
+                        <i class="fas fa-pen-fancy"></i> Daily Journaling
+                    </a>
+                    <a href="{{ url_for('mindful_activities.breathing') }}" class="btn-mindful-outline" style="justify-content: center;">
+                        <i class="fas fa-wind"></i> Deep Breathing
+                    </a>
+                    <a href="{{ url_for('mindful_activities.nature_walk') }}" class="btn-mindful-outline" style="justify-content: center;">
+                        <i class="fas fa-tree"></i> Nature Walk
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Feedback -->
+<div id="mindfulToast" class="mindful-toast">
+    <i class="fas fa-check-circle"></i> <span id="toastMsg">Track saved to favorites!</span>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Rich Pre-populated Mock Spotify Favorites
+    const MOCK_SPOTIFY_FAVORITES = [
+        {
+            id: 'spotify-mock-1',
+            spotifyUrl: 'https://open.spotify.com/track/6kkwzB6hXLIONkEk9JciA6',
+            embedUrl: 'https://open.spotify.com/embed/track/6kkwzB6hXLIONkEk9JciA6?utm_source=generator&theme=0',
+            title: 'Weightless',
+            artist: 'Marconi Union',
+            category: 'Ambient',
+            note: 'Scientifically crafted to slow heart rate and lower cortisol. Best for evening calm.',
+            dateAdded: 'Oct 26, 2026'
+        },
+        {
+            id: 'spotify-mock-2',
+            spotifyUrl: 'https://open.spotify.com/track/6N7gPTunv9xcG1x18df42e',
+            embedUrl: 'https://open.spotify.com/embed/track/6N7gPTunv9xcG1x18df42e?utm_source=generator&theme=0',
+            title: 'Suite Bergamasque: Clair de Lune',
+            artist: 'Claude Debussy, Alexis Weissenberg',
+            category: 'Classical',
+            note: 'Gentle, timeless classical piano melody that clears the mind of chatter.',
+            dateAdded: 'Oct 25, 2026'
+        },
+        {
+            id: 'spotify-mock-3',
+            spotifyUrl: 'https://open.spotify.com/track/2MZSXhq4XDJWuCi0Tne209',
+            embedUrl: 'https://open.spotify.com/embed/track/2MZSXhq4XDJWuCi0Tne209?utm_source=generator&theme=0',
+            title: 'Avril 14th',
+            artist: 'Aphex Twin',
+            category: 'Piano',
+            note: 'Intimate acoustic piano piece. Brings warmth and emotional groundedness.',
+            dateAdded: 'Oct 24, 2026'
+        },
+        {
+            id: 'spotify-mock-4',
+            spotifyUrl: 'https://open.spotify.com/track/7qDnhXg8v2Jj84g049Uo8z',
+            embedUrl: 'https://open.spotify.com/embed/track/7qDnhXg8v2Jj84g049Uo8z?utm_source=generator&theme=0',
+            title: 'Sunflower Seeds',
+            artist: 'Kudasai (Lo-Fi Chill)',
+            category: 'Lo-Fi',
+            note: 'Comforting, slow lo-fi hip hop cadence for casual reading and mindful breathing.',
+            dateAdded: 'Oct 23, 2026'
+        }
+    ];
+
+    let currentFilter = 'all';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadSpotifyTracks();
+    });
+
+    // Helper: Parse any Spotify URL/URI into embeddable URL
+    function parseSpotifyEmbed(url) {
+        if (!url) return null;
+        url = url.trim();
+
+        // Handle URI: spotify:track:xxx or spotify:playlist:xxx
+        if (url.startsWith('spotify:')) {
+            const parts = url.split(':');
+            if (parts.length >= 3) {
+                return `https://open.spotify.com/embed/${parts[1]}/${parts[2]}?utm_source=generator&theme=0`;
+            }
+        }
+
+        // Handle URL: https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC?...
+        const match = url.match(/open\.spotify\.com\/(track|playlist|album|artist)\/([a-zA-Z0-9]+)/);
+        if (match) {
+            const type = match[1];
+            const id = match[2];
+            return `https://open.spotify.com/embed/${type}/${id}?utm_source=generator&theme=0`;
+        }
+
+        // Fallback default search track if raw string
+        return `https://open.spotify.com/embed/track/6kkwzB6hXLIONkEk9JciA6?utm_source=generator&theme=0`;
+    }
+
+    function previewSpotifyEmbed(url) {
+        const embedUrl = parseSpotifyEmbed(url);
+        const container = document.getElementById('embedPreviewContainer');
+        const iframeBox = document.getElementById('embedPreviewIframe');
+
+        if (embedUrl) {
+            container.style.display = 'block';
+            iframeBox.innerHTML = `
+                <iframe 
+                    src="${embedUrl}" 
+                    height="152" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
+            `;
+        } else {
+            container.style.display = 'none';
+        }
+    }
+
+    function showToast(message) {
+        const toast = document.getElementById('mindfulToast');
+        document.getElementById('toastMsg').textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    // Save Music: Client persistence + Mock API dispatch ready for backend
+    async function handleSaveMusic(e) {
+        e.preventDefault();
+
+        const url = document.getElementById('spotifyUrl').value.trim();
+        const title = document.getElementById('trackTitle').value.trim();
+        const artist = document.getElementById('trackArtist').value.trim();
+        const category = document.getElementById('trackCategory').value;
+        const note = document.getElementById('trackNote').value.trim();
+
+        const embedUrl = parseSpotifyEmbed(url);
+        if (!embedUrl) {
+            alert('Please enter a valid Spotify track or playlist URL.');
+            return;
+        }
+
+        const newTrack = {
+            id: 'spotify-user-' + Date.now(),
+            spotifyUrl: url,
+            embedUrl: embedUrl,
+            title: title,
+            artist: artist,
+            category: category,
+            note: note || 'My calming favorite',
+            dateAdded: 'Today, ' + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+        };
+
+        // 1. Dispatch to mock backend API (Front end ready to connect with backend)
+        try {
+            fetch('/mindful-activities/api/calming-music', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newTrack)
+            }).catch(err => console.log('Mock API dispatched (local fallback active):', err));
+        } catch (err) {
+            console.log('API fallback');
+        }
+
+        // 2. Persist to localStorage
+        const savedTracks = JSON.parse(localStorage.getItem('moodmap_spotify_favorites') || '[]');
+        savedTracks.unshift(newTrack);
+        localStorage.setItem('moodmap_spotify_favorites', JSON.stringify(savedTracks));
+
+        showToast(`🎶 "${title}" saved to your calming Spotify favorites!`);
+        resetMusicForm();
+        loadSpotifyTracks();
+    }
+
+    function resetMusicForm() {
+        document.getElementById('addMusicForm').reset();
+        document.getElementById('embedPreviewContainer').style.display = 'none';
+        document.getElementById('embedPreviewIframe').innerHTML = '';
+    }
+
+    function removeTrack(trackId) {
+        if (!confirm('Remove this track from your calming favorites?')) return;
+
+        // Backend mock DELETE dispatch
+        try {
+            fetch(`/mindful-activities/api/calming-music/${trackId}`, { method: 'DELETE' })
+                .catch(err => console.log('Mock delete dispatched:', err));
+        } catch (e) {}
+
+        let savedTracks = JSON.parse(localStorage.getItem('moodmap_spotify_favorites') || '[]');
+        savedTracks = savedTracks.filter(t => t.id !== trackId);
+        localStorage.setItem('moodmap_spotify_favorites', JSON.stringify(savedTracks));
+
+        showToast('Track removed from favorites.');
+        loadSpotifyTracks();
+    }
+
+    function filterMusic(cat) {
+        currentFilter = cat;
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.classList.toggle('active', chip.getAttribute('data-filter') === cat);
+        });
+        loadSpotifyTracks();
+    }
+
+    function loadSpotifyTracks() {
+        const container = document.getElementById('spotifyTracksFeed');
+        const userTracks = JSON.parse(localStorage.getItem('moodmap_spotify_favorites') || '[]');
+        let allTracks = [...userTracks, ...MOCK_SPOTIFY_FAVORITES];
+
+        if (currentFilter !== 'all') {
+            allTracks = allTracks.filter(t => t.category.toLowerCase() === currentFilter.toLowerCase());
+        }
+
+        container.innerHTML = '';
+
+        if (allTracks.length === 0) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 3rem 1rem; color: var(--text-muted);">
+                    <i class="fas fa-music" style="font-size: 2.5rem; color: #ccc; margin-bottom: 1rem;"></i>
+                    <p>No calming tracks found in this category yet. Add your favorite above!</p>
+                </div>
+            `;
+            return;
+        }
+
+        allTracks.forEach(track => {
+            const card = document.createElement('div');
+            card.className = 'spotify-track-card';
+            card.innerHTML = `
+                <div class="track-header">
+                    <div>
+                        <div class="track-info-title">
+                            <i class="fab fa-spotify" style="color: #1ed760;"></i>
+                            <span>${escapeHtml(track.title)}</span>
+                            <span class="track-badge">${track.category}</span>
+                        </div>
+                        <div class="track-artist">By ${escapeHtml(track.artist)} • <span style="font-size: 0.8rem; color: #888;">Added ${track.dateAdded}</span></div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <a href="${track.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="btn-mindful-outline" style="padding: 0.35rem 0.8rem; font-size: 0.8rem;" title="Open in Spotify">
+                            <i class="fas fa-external-link-alt"></i> Spotify
+                        </a>
+                        <button class="btn-mindful-danger" onclick="removeTrack('${track.id}')" title="Remove track">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                ${track.note ? `<div class="track-note"><i class="fas fa-quote-left" style="color: var(--primary-color); margin-right: 6px;"></i> ${escapeHtml(track.note)}</div>` : ''}
+
+                <div class="spotify-iframe-wrapper">
+                    <iframe 
+                        src="${track.embedUrl}" 
+                        height="152" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy"></iframe>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        const totalCount = userTracks.length + MOCK_SPOTIFY_FAVORITES.length;
+        document.getElementById('savedTracksCount').textContent = `${totalCount} Saved Tracks`;
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+</script>
+{% endblock %}

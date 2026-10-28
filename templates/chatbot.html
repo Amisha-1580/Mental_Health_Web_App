@@ -158,16 +158,27 @@
         userInput.value = '';
 
         try {
-            const response = await fetch('/chat/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: message })
+            const response = await fetch("{{ url_for('main_routes.chat_api') }}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({ message })
             });
-            const data = await response.json();
-            appendMessage(data.reply, false);
+            const contentType = response.headers.get("content-type") || "";
+            const data = contentType.includes("application/json")
+                ? await response.json()
+                : { error: `Server returned ${response.status} instead of JSON.` };
+
+            if (!response.ok) {
+                throw new Error(data.error || data.reply || "Chat request failed.");
+            }
+
+            appendMessage(data.reply || "The assistant returned an empty response.", false);
         } catch (error) {
             console.error('Error:', error);
-            appendMessage("Sorry, I'm having trouble connecting right now.", false);
+            appendMessage(`Sorry, I'm having trouble connecting right now. ${error.message}`, false);
         }
     }
 

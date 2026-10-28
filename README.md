@@ -95,6 +95,32 @@ cd mood-map
 ```bash
 pip install -r requirements.txt
 ```
+
+### Windows setup
+
+If Windows shows `ImportError: DLL load failed while importing pandas_parser`
+with an "Application Control policy" message, the policy is blocking a native
+package file in the virtual environment. Recreate the environment outside the
+project's Desktop folder and use Python 3.12 or another supported Python
+version:
+
+```powershell
+py -3.12 -m venv "$env:USERPROFILE\venvs\mental-health-web-app"
+& "$env:USERPROFILE\venvs\mental-health-web-app\Scripts\python.exe" -m pip install -r requirements.txt
+```
+
+In VS Code, select
+`%USERPROFILE%\venvs\mental-health-web-app\Scripts\python.exe` using
+**Python: Select Interpreter**, then run the application with:
+
+```powershell
+& "$env:USERPROFILE\venvs\mental-health-web-app\Scripts\python.exe" app.py
+```
+
+Do not disable Windows Application Control or antivirus protections. If the
+error persists outside the Desktop folder, ask your administrator to approve
+the Python environment or the signed package files.
+
 3️⃣ Add Gemini API Key
 Create a .env file and add:
 Environment

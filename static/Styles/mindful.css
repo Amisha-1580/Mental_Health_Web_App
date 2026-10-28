@@ -1,0 +1,1106 @@
+/* ==========================================================================
+   MOOD MAP - Mindful Activities Stylesheet (mindful.css)
+   Consistent with global.css theme: Outfit font, #6a5acd palette, clean cards
+   ========================================================================== */
+
+/* Main Page Container */
+.mindful-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 5% 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumb & Navigation Header */
+.mindful-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    background: rgba(106, 90, 205, 0.08);
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateX(-3px);
+}
+
+.activity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #eef0ff;
+    color: var(--primary-dark);
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+/* Hero / Header Banner */
+.mindful-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    padding: 2.5rem 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.mindful-banner::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.mindful-banner-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mindful-banner-content p {
+    font-size: 1.05rem;
+    opacity: 0.92;
+    max-width: 650px;
+    line-height: 1.5;
+}
+
+.mindful-banner-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.meta-pill {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* Two-Column Grid Layout */
+.mindful-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.mindful-grid.equal {
+    grid-template-columns: 1fr 1fr;
+}
+
+.mindful-grid.single-col {
+    grid-template-columns: 1fr;
+}
+
+/* Card Sections */
+.mindful-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(106, 90, 205, 0.08);
+    margin-bottom: 1.8rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.mindful-card:hover {
+    border-color: rgba(106, 90, 205, 0.2);
+}
+
+.mindful-card h2, .mindful-card h3 {
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.35rem;
+}
+
+.mindful-card h2 i, .mindful-card h3 i {
+    color: var(--primary-color);
+}
+
+.card-subtitle {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-top: -0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.btn-mindful {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.85rem 1.8rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(106, 90, 205, 0.25);
+    text-decoration: none;
+}
+
+.btn-mindful:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106, 90, 205, 0.35);
+}
+
+.btn-mindful-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.75rem 1.6rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-mindful-outline:hover {
+    background: rgba(106, 90, 205, 0.08);
+    transform: translateY(-2px);
+}
+
+.btn-mindful-danger {
+    background: #fff0f0;
+    color: #e53935;
+    border: 1px solid #ffcdd2;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-mindful-danger:hover {
+    background: #e53935;
+    color: white;
+}
+
+/* ==========================================================================
+   1. JOURNALING SPECIFIC STYLES
+   ========================================================================== */
+.journal-prompt-card {
+    background: #faf9ff;
+    border: 1px solid #e5e0ff;
+    border-radius: 12px;
+    padding: 1.4rem;
+    margin-bottom: 1.4rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.journal-prompt-card:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.12);
+    background: var(--white);
+}
+
+.journal-prompt-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.journal-step-num {
+    width: 28px;
+    height: 28px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.journal-prompt-title {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.05rem;
+}
+
+.journal-prompt-guide {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+    margin-left: 38px;
+    font-style: italic;
+}
+
+.journal-textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 0.9rem;
+    border: 1px solid #dcd7f5;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    background: var(--white);
+    resize: vertical;
+    transition: var(--transition);
+}
+
+.journal-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.journal-char-count {
+    text-align: right;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Mood Selection Chips */
+.mood-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.2rem 0 1.8rem;
+}
+
+.mood-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 1rem;
+    background: var(--bg-color);
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.mood-chip:hover {
+    border-color: var(--primary-color);
+    background: #f0edff;
+}
+
+.mood-chip.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(106, 90, 205, 0.25);
+}
+
+/* Past Reflections Feed */
+.reflections-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.reflection-item {
+    background: var(--bg-color);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    transition: var(--transition);
+}
+
+.reflection-item:hover {
+    background: #f3f1ff;
+    transform: translateX(3px);
+}
+
+.reflection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.reflection-date {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+}
+
+.reflection-mood-badge {
+    background: #e8e3ff;
+    color: var(--primary-color);
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.reflection-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.reflection-bullets li {
+    font-size: 0.92rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.reflection-bullets li i {
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   2. DEEP BREATHING SPECIFIC STYLES
+   ========================================================================== */
+.breathing-visualizer-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pattern Selection Pills */
+.pattern-selector {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.pattern-btn {
+    background: var(--bg-color);
+    border: 2px solid #e0dcfa;
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pattern-btn:hover {
+    border-color: var(--primary-color);
+    background: #f0edff;
+}
+
+.pattern-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(106, 90, 205, 0.25);
+}
+
+/* Breathing Animated Circle */
+.breathing-stage-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto 2.5rem;
+}
+
+.breathing-outer-ring {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    border: 2px dashed rgba(106, 90, 205, 0.3);
+    animation: rotateSlow 40s linear infinite;
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.breathing-glow-halo {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(142, 125, 236, 0.25) 0%, rgba(142, 125, 236, 0) 70%);
+    transition: transform 1s ease-in-out;
+}
+
+.breathing-circle {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8e7dec, #6a5acd);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(106, 90, 205, 0.35);
+    z-index: 2;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 1s ease;
+    user-select: none;
+}
+
+.breathing-phase-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.breathing-countdown {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.breathing-instruction {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+    margin-bottom: 1.8rem;
+    min-height: 28px;
+}
+
+/* Stats / Counters */
+.breathing-stats-bar {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.stat-pill {
+    background: var(--bg-color);
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    border: 1px solid #e8e8e8;
+}
+
+.stat-pill span {
+    color: var(--primary-color);
+}
+
+/* Breathing Controls */
+.breathing-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video Grid for Guided Sessions */
+.video-sessions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.video-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(106, 90, 205, 0.15);
+}
+
+.video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    background: #000;
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-card-body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.video-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.video-tag {
+    background: #eef0ff;
+    color: var(--primary-color);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.video-duration {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.video-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+}
+
+.video-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   3. NATURE WALK SPECIFIC STYLES
+   ========================================================================== */
+.nature-player-hero {
+    background: linear-gradient(rgba(45, 55, 72, 0.65), rgba(45, 55, 72, 0.75)), 
+                url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
+    color: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.nature-player-hero h3 {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.nature-player-hero p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Sound Wave Visualizer */
+.sound-wave-bars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 40px;
+    margin: 1.5rem 0;
+}
+
+.wave-bar {
+    width: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    height: 8px;
+    transition: height 0.2s ease;
+}
+
+.playing .wave-bar {
+    animation: soundWave 1.2s ease-in-out infinite alternate;
+}
+
+.playing .wave-bar:nth-child(2) { animation-delay: 0.2s; }
+.playing .wave-bar:nth-child(3) { animation-delay: 0.4s; }
+.playing .wave-bar:nth-child(4) { animation-delay: 0.1s; }
+.playing .wave-bar:nth-child(5) { animation-delay: 0.5s; }
+.playing .wave-bar:nth-child(6) { animation-delay: 0.3s; }
+.playing .wave-bar:nth-child(7) { animation-delay: 0.6s; }
+
+@keyframes soundWave {
+    0% { height: 6px; }
+    100% { height: 35px; background: #a5f3fc; }
+}
+
+/* Nature Sound Grid */
+.sound-environments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.sound-card {
+    background: var(--white);
+    border: 2px solid #eef0ff;
+    border-radius: 12px;
+    padding: 1.4rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.sound-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(106, 90, 205, 0.12);
+}
+
+.sound-card.active {
+    border-color: var(--primary-color);
+    background: #f4f2ff;
+    box-shadow: 0 8px 25px rgba(106, 90, 205, 0.2);
+}
+
+.sound-icon-circle {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: #eef0ff;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.sound-card.active .sound-icon-circle {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.sound-card-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+}
+
+.sound-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Ambient Mixer Controls */
+.mixer-slider-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.mixer-label {
+    min-width: 110px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mindful-slider {
+    flex: 1;
+    accent-color: var(--primary-color);
+    height: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Sensory Grounding Steps */
+.grounding-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.grounding-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--bg-color);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.grounding-num {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+    min-width: 20px;
+}
+
+.grounding-text strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 2px;
+}
+
+.grounding-text p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ==========================================================================
+   4. CALMING MUSIC SPECIFIC STYLES (SPOTIFY SAVER)
+   ========================================================================== */
+.spotify-add-box {
+    background: #f7f6fd;
+    border: 2px dashed #d5d0f8;
+    border-radius: 12px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.spotify-add-box:focus-within {
+    border-color: var(--primary-color);
+    background: var(--white);
+    box-shadow: 0 6px 20px rgba(106, 90, 205, 0.1);
+}
+
+.filter-chips {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.filter-chip {
+    background: var(--white);
+    border: 1px solid #ddd;
+    color: var(--text-color);
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-chip:hover {
+    border-color: var(--primary-color);
+    background: #f0edff;
+}
+
+.filter-chip.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+/* Saved Spotify Tracks List */
+.spotify-tracks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.spotify-track-card {
+    background: var(--white);
+    border: 1px solid #eef0ff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    transition: var(--transition);
+}
+
+.spotify-track-card:hover {
+    box-shadow: 0 8px 25px rgba(106, 90, 205, 0.12);
+    border-color: #dcd7fa;
+}
+
+.track-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.track-info-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.track-artist {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.track-badge {
+    background: #eef0ff;
+    color: var(--primary-color);
+    padding: 0.25rem 0.65rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.track-note {
+    font-size: 0.85rem;
+    color: #555;
+    background: #faf9ff;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.spotify-iframe-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 0.4rem;
+}
+
+.spotify-iframe-wrapper iframe {
+    border-radius: 12px;
+    width: 100%;
+    border: none;
+}
+
+/* Curated Playlists Carousel / Grid */
+.playlist-embed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* ==========================================================================
+   5. MINDFUL HUB OVERVIEW
+   ========================================================================== */
+.hub-activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.hub-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2.2rem 1.8rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(106, 90, 205, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.hub-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(106, 90, 205, 0.18);
+    border-color: rgba(106, 90, 205, 0.3);
+}
+
+.hub-card-top {
+    margin-bottom: 1.5rem;
+}
+
+.hub-icon-wrapper {
+    width: 65px;
+    height: 65px;
+    border-radius: 16px;
+    background: #f0edff;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    transition: var(--transition);
+}
+
+.hub-card:hover .hub-icon-wrapper {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.hub-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-color);
+}
+
+.hub-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.hub-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.2rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.hub-duration {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Toast Notifications */
+.mindful-toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #2e7d32;
+    color: white;
+    padding: 1rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9999;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.mindful-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+    .mindful-grid, .mindful-grid.equal {
+        grid-template-columns: 1fr;
+    }
+    .mindful-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    .mindful-banner-meta {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .mindful-page-container {
+        padding: 1.5rem 1rem;
+    }
+    .mindful-card {
+        padding: 1.4rem;
+    }
+    .breathing-stage-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+    .breathing-outer-ring {
+        width: 210px;
+        height: 210px;
+    }
+    .breathing-circle {
+        width: 140px;
+        height: 140px;
+    }
+}

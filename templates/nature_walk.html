@@ -1,0 +1,509 @@
+{% extends "base.html" %}
+
+{% block title %}Nature Walk & Natural Music - Mood Map{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='Styles/mindful.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="mindful-page-container">
+    <!-- Breadcrumb & Top Bar -->
+    <div class="mindful-nav-bar">
+        <a href="{{ url_for('main_routes.dashboard') }}" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+        <div style="display: flex; gap: 0.8rem; align-items: center;">
+            <a href="{{ url_for('mindful_activities.index') }}" class="activity-badge" style="text-decoration: none;">
+                <i class="fas fa-compass"></i> All Activities
+            </a>
+            <span class="activity-badge">
+                <i class="fas fa-walking"></i> Nature Walk & Soundscapes
+            </span>
+        </div>
+    </div>
+
+    <!-- Header Banner -->
+    <div class="mindful-banner">
+        <div class="mindful-banner-content">
+            <h1><i class="fas fa-tree"></i> Mindful Nature Walk</h1>
+            <p>Combine movement with natural acoustics. Listen to calming natural soundscapes designed to accompany your walk or bring the serenity of nature indoors.</p>
+        </div>
+        <div class="mindful-banner-meta">
+            <div class="meta-pill">
+                <i class="fas fa-headphones"></i> Natural Audio Player
+            </div>
+            <div class="meta-pill">
+                <i class="fas fa-shoe-prints" style="color: #80cbc4;"></i> 5-4-3-2-1 Grounding
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Nature Soundscape Hero Player -->
+    <div class="nature-player-hero">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <div>
+                <span class="activity-badge" style="background: rgba(255,255,255,0.2); color: #fff; margin-bottom: 0.8rem;">
+                    <i class="fas fa-play-circle"></i> Live Ambient Player
+                </span>
+                <h3 id="currentTrackTitle">Forest Birds & Gentle Stream</h3>
+                <p id="currentTrackDesc">Crisp morning air, rustling pine leaves, and distant melodic birdsong.</p>
+            </div>
+            <!-- Master Player Controls -->
+            <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
+                <button id="masterPlayBtn" class="btn-mindful" onclick="toggleMasterAudio()" style="padding: 0.9rem 2.2rem; font-size: 1.1rem;">
+                    <i class="fas fa-play"></i> Play Soundscape
+                </button>
+            </div>
+        </div>
+
+        <!-- Animated Sound Wave Visualizer -->
+        <div class="sound-wave-bars" id="soundWaveVisualizer">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+        </div>
+
+        <!-- Master Volume Slider -->
+        <div style="max-width: 400px; margin: 0 auto; display: flex; align-items: center; gap: 12px; background: rgba(0,0,0,0.3); padding: 0.6rem 1.2rem; border-radius: 50px;">
+            <i class="fas fa-volume-down" style="color: rgba(255,255,255,0.8);"></i>
+            <input type="range" id="masterVolume" class="mindful-slider" min="0" max="1" step="0.05" value="0.7" oninput="setMasterVolume(this.value)">
+            <i class="fas fa-volume-up" style="color: rgba(255,255,255,0.8);"></i>
+            <span id="volVal" style="font-size: 0.82rem; min-width: 32px; text-align: right;">70%</span>
+        </div>
+    </div>
+
+    <!-- Sound Environments Selection Grid -->
+    <div class="mindful-card">
+        <h2><i class="fas fa-music"></i> Select Natural Environment</h2>
+        <p class="card-subtitle">Choose from five carefully crafted natural acoustic environments tailored for walking, relaxation, and mental clarity.</p>
+
+        <div class="sound-environments-grid">
+            <!-- Sound Card 1 -->
+            <div class="sound-card active" data-sound="forest" onclick="selectSoundEnvironment('forest')">
+                <div class="sound-icon-circle">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="sound-card-title">Forest Songbirds</div>
+                <div class="sound-card-desc">Morning breeze, gentle leaves & birdsong</div>
+            </div>
+
+            <!-- Sound Card 2 -->
+            <div class="sound-card" data-sound="rain" onclick="selectSoundEnvironment('rain')">
+                <div class="sound-icon-circle">
+                    <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+                <div class="sound-card-title">Woodland Rain</div>
+                <div class="sound-card-desc">Gentle raindrops pattering on forest canopy</div>
+            </div>
+
+            <!-- Sound Card 3 -->
+            <div class="sound-card" data-sound="ocean" onclick="selectSoundEnvironment('ocean')">
+                <div class="sound-icon-circle">
+                    <i class="fas fa-water"></i>
+                </div>
+                <div class="sound-card-title">Coastal Ocean Waves</div>
+                <div class="sound-card-desc">Rhythmic tide rolling onto smooth pebbles</div>
+            </div>
+
+            <!-- Sound Card 4 -->
+            <div class="sound-card" data-sound="river" onclick="selectSoundEnvironment('river')">
+                <div class="sound-icon-circle">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <div class="sound-card-title">Alpine River Stream</div>
+                <div class="sound-card-desc">Flowing clean mountain spring water</div>
+            </div>
+
+            <!-- Sound Card 5 -->
+            <div class="sound-card" data-sound="night" onclick="selectSoundEnvironment('night')">
+                <div class="sound-icon-circle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="sound-card-title">Dusk & Crickets</div>
+                <div class="sound-card-desc">Peaceful summer twilight with evening breeze</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Two-Column Grid: Ambient Mixer & Grounding Guide -->
+    <div class="mindful-grid">
+        <!-- Left: Multi-Channel Sound Mixer -->
+        <div class="mindful-card">
+            <h2><i class="fas fa-sliders"></i> Custom Ambient Mixer</h2>
+            <p class="card-subtitle">Fine-tune the individual layers of your natural soundscape to create your ideal acoustic balance.</p>
+
+            <div class="mixer-slider-group">
+                <span class="mixer-label"><i class="fas fa-dove" style="color: #6a5acd;"></i> Birds</span>
+                <input type="range" class="mindful-slider" id="mixBirds" min="0" max="1" step="0.1" value="0.8" oninput="updateMixer()">
+            </div>
+
+            <div class="mixer-slider-group">
+                <span class="mixer-label"><i class="fas fa-cloud-rain" style="color: #29b6f6;"></i> Soft Rain</span>
+                <input type="range" class="mindful-slider" id="mixRain" min="0" max="1" step="0.1" value="0.2" oninput="updateMixer()">
+            </div>
+
+            <div class="mixer-slider-group">
+                <span class="mixer-label"><i class="fas fa-wind" style="color: #81c784;"></i> Gentle Wind</span>
+                <input type="range" class="mindful-slider" id="mixWind" min="0" max="1" step="0.1" value="0.5" oninput="updateMixer()">
+            </div>
+
+            <div class="mixer-slider-group">
+                <span class="mixer-label"><i class="fas fa-water" style="color: #4dd0e1;"></i> Brook Stream</span>
+                <input type="range" class="mindful-slider" id="mixStream" min="0" max="1" step="0.1" value="0.6" oninput="updateMixer()">
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 1rem; background: #faf9ff; border-radius: 8px; border: 1px dashed #dcd7fa; font-size: 0.88rem; color: var(--text-muted);">
+                <i class="fas fa-info-circle" style="color: var(--primary-color);"></i>
+                <strong>Tip:</strong> Plug in your headphones and walk at an unhurried, natural pace for maximum sensory immersion.
+            </div>
+        </div>
+
+        <!-- Right: Mindful Walking Companion & Timer -->
+        <div>
+            <!-- Walking Timer Card -->
+            <div class="mindful-card">
+                <h3><i class="fas fa-stopwatch"></i> Walking Session Tracker</h3>
+                <div style="text-align: center; margin: 1.2rem 0;">
+                    <div id="walkTimerDisplay" style="font-size: 2.5rem; font-weight: 800; color: var(--primary-color);">00:00:00</div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Pace: Relaxed Mindful Stride</p>
+                </div>
+                <div style="display: flex; gap: 0.8rem; justify-content: center;">
+                    <button id="walkTimerBtn" class="btn-mindful" onclick="toggleWalkTimer()" style="padding: 0.6rem 1.4rem; font-size: 0.95rem;">
+                        <i class="fas fa-play"></i> Start Walk
+                    </button>
+                    <button class="btn-mindful-outline" onclick="resetWalkTimer()" style="padding: 0.6rem 1.2rem; font-size: 0.95rem;">
+                        <i class="fas fa-undo"></i> Reset
+                    </button>
+                </div>
+            </div>
+
+            <!-- 5-4-3-2-1 Sensory Walk Guide -->
+            <div class="mindful-card">
+                <h3><i class="fas fa-eye"></i> 5-4-3-2-1 Sensory Walk</h3>
+                <p class="card-subtitle">As you walk, tune your attention to the world around you:</p>
+
+                <div class="grounding-list">
+                    <div class="grounding-step">
+                        <span class="grounding-num">5</span>
+                        <div class="grounding-text">
+                            <strong>Notice 5 things you can SEE</strong>
+                            <p>Tree bark texture, dancing shadows, cloud shapes, colors.</p>
+                        </div>
+                    </div>
+                    <div class="grounding-step">
+                        <span class="grounding-num">4</span>
+                        <div class="grounding-text">
+                            <strong>Notice 4 things you can TOUCH</strong>
+                            <p>Cool air on your cheeks, feet pressing the ground, a smooth stone.</p>
+                        </div>
+                    </div>
+                    <div class="grounding-step">
+                        <span class="grounding-num">3</span>
+                        <div class="grounding-text">
+                            <strong>Notice 3 things you can HEAR</strong>
+                            <p>Bird calls, rustling leaves, distant water, your steady breath.</p>
+                        </div>
+                    </div>
+                    <div class="grounding-step">
+                        <span class="grounding-num">2</span>
+                        <div class="grounding-text">
+                            <strong>Notice 2 things you can SMELL</strong>
+                            <p>Fresh pine, damp earth, blooming flora, crisp fresh rain.</p>
+                        </div>
+                    </div>
+                    <div class="grounding-step">
+                        <span class="grounding-num">1</span>
+                        <div class="grounding-text">
+                            <strong>Notice 1 thing you FEEL GRATITUDE for</strong>
+                            <p>The ability to move your body freely and breathe fresh air.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Natural Soundscapes definition
+    const ENVIRONMENTS = {
+        forest: {
+            title: "Forest Birds & Gentle Stream",
+            desc: "Crisp morning air, rustling pine leaves, and distant melodic birdsong.",
+            birds: 0.8, rain: 0.1, wind: 0.4, stream: 0.6
+        },
+        rain: {
+            title: "Woodland Rain on Canopy",
+            desc: "Gentle rhythmic raindrops pattering down upon forest leaves, washing away stress.",
+            birds: 0.1, rain: 0.9, wind: 0.3, stream: 0.4
+        },
+        ocean: {
+            title: "Coastal Ocean Waves & Breeze",
+            desc: "Expansive ocean horizon with rolling rhythmic tides calming your thoughts.",
+            birds: 0.2, rain: 0.0, wind: 0.7, stream: 0.8
+        },
+        river: {
+            title: "Alpine River Stream",
+            desc: "Clear alpine water rushing across polished stones with invigorating mountain air.",
+            birds: 0.4, rain: 0.1, wind: 0.3, stream: 0.9
+        },
+        night: {
+            title: "Summer Twilight & Crickets",
+            desc: "Warm dusk breeze and serene, gentle night crickets preparing your mind for rest.",
+            birds: 0.0, rain: 0.1, wind: 0.6, stream: 0.3
+        }
+    };
+
+    let activeEnv = 'forest';
+    let isAudioPlaying = false;
+    let audioCtx = null;
+    let masterGain = null;
+    let birdInterval = null;
+    let noiseNodes = [];
+
+    // Initialize Web Audio API Ambient Sound Synthesizer
+    function initAudio() {
+        if (audioCtx) return;
+        try {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            masterGain = audioCtx.createGain();
+            masterGain.gain.setValueAtTime(0.7, audioCtx.currentTime);
+            masterGain.connect(audioCtx.destination);
+        } catch (e) {
+            console.log('Web Audio init error:', e);
+        }
+    }
+
+    // Generate natural pink/brown noise for rain and streams
+    function createNoiseNode(type = 'pink') {
+        if (!audioCtx) return null;
+        const bufferSize = audioCtx.sampleRate * 2;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+
+        let lastOut = 0.0;
+        let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+
+        for (let i = 0; i < bufferSize; i++) {
+            const white = Math.random() * 2 - 1;
+            if (type === 'pink') {
+                b0 = 0.99886 * b0 + white * 0.0555179;
+                b1 = 0.99332 * b1 + white * 0.0750759;
+                b2 = 0.96900 * b2 + white * 0.1538520;
+                b3 = 0.86650 * b3 + white * 0.3104856;
+                b4 = 0.55000 * b4 + white * 0.5329522;
+                b5 = -0.7616 * b5 - white * 0.0168980;
+                data[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.05;
+                b6 = white * 0.115926;
+            } else {
+                // Brown noise (deeper rumble for waves/wind)
+                lastOut = (lastOut + (0.02 * white)) / 1.02;
+                data[i] = lastOut * 0.8;
+            }
+        }
+
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+        noise.loop = true;
+        return noise;
+    }
+
+    // Synthesize gentle bird chirps
+    function chirpBird() {
+        if (!isAudioPlaying || !audioCtx) return;
+        const birdsVol = parseFloat(document.getElementById('mixBirds').value);
+        if (birdsVol <= 0.05) return;
+
+        try {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            const baseFreq = 2200 + Math.random() * 1200;
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(baseFreq, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(baseFreq + (Math.random() * 800 - 400), audioCtx.currentTime + 0.15);
+
+            gain.gain.setValueAtTime(0.01 * birdsVol, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.08 * birdsVol, audioCtx.currentTime + 0.05);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.22);
+
+            osc.connect(gain);
+            gain.connect(masterGain);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.25);
+        } catch (e) {}
+    }
+
+    // Toggle Master Play / Pause
+    function toggleMasterAudio() {
+        initAudio();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+
+        if (isAudioPlaying) {
+            stopAudio();
+        } else {
+            startAudio();
+        }
+    }
+
+    let rainFilter, rainGain, windFilter, windGain, streamFilter, streamGain;
+
+    function startAudio() {
+        isAudioPlaying = true;
+        document.getElementById('masterPlayBtn').innerHTML = '<i class="fas fa-pause"></i> Pause Soundscape';
+        document.getElementById('masterPlayBtn').style.background = '#e53935';
+        document.getElementById('soundWaveVisualizer').classList.add('playing');
+
+        // Rain channel
+        const rainSource = createNoiseNode('pink');
+        rainFilter = audioCtx.createBiquadFilter();
+        rainFilter.type = 'bandpass';
+        rainFilter.frequency.value = 1200;
+        rainGain = audioCtx.createGain();
+        rainSource.connect(rainFilter);
+        rainFilter.connect(rainGain);
+        rainGain.connect(masterGain);
+        rainSource.start();
+        noiseNodes.push(rainSource);
+
+        // Wind / Ocean swell channel
+        const windSource = createNoiseNode('brown');
+        windFilter = audioCtx.createBiquadFilter();
+        windFilter.type = 'lowpass';
+        windFilter.frequency.value = 350;
+        windGain = audioCtx.createGain();
+        windSource.connect(windFilter);
+        windFilter.connect(windGain);
+        windGain.connect(masterGain);
+        windSource.start();
+        noiseNodes.push(windSource);
+
+        // Stream channel
+        const streamSource = createNoiseNode('pink');
+        streamFilter = audioCtx.createBiquadFilter();
+        streamFilter.type = 'lowpass';
+        streamFilter.frequency.value = 800;
+        streamGain = audioCtx.createGain();
+        streamSource.connect(streamFilter);
+        streamFilter.connect(streamGain);
+        streamGain.connect(masterGain);
+        streamSource.start();
+        noiseNodes.push(streamSource);
+
+        updateMixer();
+
+        // Birdsong random interval
+        birdInterval = setInterval(() => {
+            if (Math.random() > 0.4) {
+                chirpBird();
+                setTimeout(() => chirpBird(), 120);
+            }
+        }, 1800);
+    }
+
+    function stopAudio() {
+        isAudioPlaying = false;
+        document.getElementById('masterPlayBtn').innerHTML = '<i class="fas fa-play"></i> Play Soundscape';
+        document.getElementById('masterPlayBtn').style.background = 'var(--primary-color)';
+        document.getElementById('soundWaveVisualizer').classList.remove('playing');
+
+        clearInterval(birdInterval);
+        noiseNodes.forEach(n => {
+            try { n.stop(); n.disconnect(); } catch (e) {}
+        });
+        noiseNodes = [];
+    }
+
+    function selectSoundEnvironment(key) {
+        activeEnv = key;
+        const env = ENVIRONMENTS[key];
+
+        document.querySelectorAll('.sound-card').forEach(card => {
+            card.classList.toggle('active', card.getAttribute('data-sound') === key);
+        });
+
+        document.getElementById('currentTrackTitle').textContent = env.title;
+        document.getElementById('currentTrackDesc').textContent = env.desc;
+
+        // Apply environment mixer presets
+        document.getElementById('mixBirds').value = env.birds;
+        document.getElementById('mixRain').value = env.rain;
+        document.getElementById('mixWind').value = env.wind;
+        document.getElementById('mixStream').value = env.stream;
+
+        updateMixer();
+
+        // If not playing, start automatically on card selection
+        if (!isAudioPlaying) {
+            toggleMasterAudio();
+        }
+    }
+
+    function updateMixer() {
+        if (!audioCtx || !isAudioPlaying) return;
+        const rainVal = parseFloat(document.getElementById('mixRain').value);
+        const windVal = parseFloat(document.getElementById('mixWind').value);
+        const streamVal = parseFloat(document.getElementById('mixStream').value);
+
+        if (rainGain) rainGain.gain.setValueAtTime(rainVal * 0.35, audioCtx.currentTime);
+        if (windGain) windGain.gain.setValueAtTime(windVal * 0.5, audioCtx.currentTime);
+        if (streamGain) streamGain.gain.setValueAtTime(streamVal * 0.4, audioCtx.currentTime);
+    }
+
+    function setMasterVolume(val) {
+        if (masterGain && audioCtx) {
+            masterGain.gain.setValueAtTime(parseFloat(val), audioCtx.currentTime);
+        }
+        document.getElementById('volVal').textContent = Math.round(val * 100) + '%';
+    }
+
+    // Walking Stopwatch Tracker
+    let walkSeconds = 0;
+    let walkInterval = null;
+    let isWalking = false;
+
+    function toggleWalkTimer() {
+        if (isWalking) {
+            clearInterval(walkInterval);
+            isWalking = false;
+            document.getElementById('walkTimerBtn').innerHTML = '<i class="fas fa-play"></i> Resume Walk';
+            document.getElementById('walkTimerBtn').style.background = 'var(--primary-color)';
+        } else {
+            isWalking = true;
+            document.getElementById('walkTimerBtn').innerHTML = '<i class="fas fa-pause"></i> Pause Walk';
+            document.getElementById('walkTimerBtn').style.background = '#e53935';
+
+            walkInterval = setInterval(() => {
+                walkSeconds++;
+                const hrs = String(Math.floor(walkSeconds / 3600)).padStart(2, '0');
+                const mins = String(Math.floor((walkSeconds % 3600) / 60)).padStart(2, '0');
+                const secs = String(walkSeconds % 60).padStart(2, '0');
+                document.getElementById('walkTimerDisplay').textContent = `${hrs}:${mins}:${secs}`;
+            }, 1000);
+        }
+    }
+
+    function resetWalkTimer() {
+        clearInterval(walkInterval);
+        isWalking = false;
+        walkSeconds = 0;
+        document.getElementById('walkTimerDisplay').textContent = '00:00:00';
+        document.getElementById('walkTimerBtn').innerHTML = '<i class="fas fa-play"></i> Start Walk';
+        document.getElementById('walkTimerBtn').style.background = 'var(--primary-color)';
+    }
+</script>
+{% endblock %}
