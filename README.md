@@ -136,6 +136,27 @@ OR
 ```bash
 python app.py
 ```
+
+For Render, use this build command:
+
+```bash
+pip install -r requirements.txt
+```
+
+and this start command:
+
+```bash
+gunicorn app:app
+```
+
+Add these environment variables in the Render dashboard under
+**Environment**; do not commit them to the repository:
+
+```text
+SECRET_KEY=<a long random value>
+GEMINI_API_KEY=<your Gemini API key>
+```
+
 5️⃣ Open in Browser
 ```bash
 http://localhost:5000/
