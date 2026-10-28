@@ -1,6 +1,6 @@
 // <<<<<<< HEAD
 // // Backend API URL
-// const API_URL = "http://127.0.0.1:5000/chat"; // Update with your backend URL if hosted elsewhere
+// const API_URL = "/chat"; // Uses the current host in development and production
 
 // const chatWindow = document.getElementById("chat-display");
 // const chatInput = document.getElementById("chat-input");
